@@ -1053,8 +1053,8 @@ body>header.nemi-site-header .brand-wordmark{display:block;flex:0 0 auto;width:a
 @media(max-width:370px){#portfolio .intro h1{font-size:26px}#portfolio .stage-caption{font-size:26px}#portfolio .scene-choice .scene-label{font-size:12px}#portfolio .scene-choice{grid-template-columns:24px 1fr}#portfolio .contact{font-size:11px}}
 @media(prefers-reduced-motion:reduce){#portfolio *,#portfolio *::before,#portfolio *::after{scroll-behavior:auto!important;transition:none!important}}
 /* Intégration NEMI : continuité des fonds, cadre vidéo au ratio natif et navigation lisible. */
-#services.nemi-control-room{border-bottom:0}
-#portfolio{--ink:#172b46;--paper:#f7f4ee;--accent:#d9b76e;--second:#168bff;--muted:#c5cfda;--stage:#0b1422;--line:rgba(247,244,238,.2);--wash:#1b3555;background:linear-gradient(180deg,var(--ink) 0%,var(--ink) 72%,#0b1422 100%)}
+main>#services.nemi-control-room{border-bottom:0!important}
+#portfolio{--ink:#172b46;--paper:#f7f4ee;--accent:#d9b76e;--second:#168bff;--muted:#c5cfda;--stage:#0b1422;--line:rgba(247,244,238,.2);--wash:#1b3555;background:linear-gradient(180deg,#0b1422 0%,color-mix(in srgb,#0b1422 52%,var(--ink)) 11%,var(--ink) 29%,var(--ink) 76%,color-mix(in srgb,#0b1422 55%,var(--ink)) 91%,#0b1422 100%);transition:background .7s ease,color .65s ease}
 #portfolio .page{height:auto;min-height:calc(100svh - var(--nemi-nav-height,78px));overflow:visible}
 #portfolio .workbench{grid-template-columns:minmax(270px,.72fr) minmax(0,1.48fr);flex:0 0 auto;align-items:center;min-height:0}
 #portfolio .stage-wrap{align-items:center;justify-content:center}
@@ -1066,7 +1066,6 @@ body>header.nemi-site-header .brand-wordmark{display:block;flex:0 0 auto;width:a
 @media(max-width:650px){#portfolio .page{min-height:calc(100svh - var(--nemi-nav-height,92px))}#portfolio .stage-frame{width:100%;height:auto;aspect-ratio:16/9}#portfolio .stage-frame video{width:100%;height:100%;aspect-ratio:16/9;object-fit:cover}#portfolio .stage-stamp{top:12px;right:12px;width:46px;height:46px;font-size:6px}}
 </style>
 <div class="page">
-<header class="mast"><div class="brand">NEMI <b>Digital Studio</b></div><div class="meta"><span class="meta-extra">Direction · image · digital</span><a class="contact" href="#contact">Parlons de votre projet ↗</a></div></header>
 <section class="intro" aria-labelledby="page-title"><div><div class="kicker">Une activité. Des images qui la font rayonner.</div><h1 id="page-title">Votre univers, <span>en mouvement.</span></h1></div><p class="intro-note">Identité, images, vidéo et supports numériques pensés ensemble pour aider votre public à comprendre votre offre et passer à l’action.</p></section>
 <main class="workbench">
 <section class="editorial" aria-live="polite"><div class="scene-overline"><span id="scene-kind">Étude d’univers · 01</span><strong id="deliverable-tag">Photos · vidéos · contenus</strong></div><h2 id="scene-title">Toutes les disciplines, au rythme de la saison.</h2><p class="summary" id="scene-copy">Basket, boxe, football, volley : chaque discipline a ses temps forts. NEMI Digital Studio crée vos photos, vidéos et contenus pour faire vivre vos équipes, raconter leur saison et annoncer leurs prochains rendez-vous.</p>
@@ -1074,7 +1073,7 @@ body>header.nemi-site-header .brand-wordmark{display:block;flex:0 0 auto;width:a
 <section class="stage-wrap" aria-label="Aperçu vidéo"><div class="stage-frame"><video id="film" controls playsinline preload="auto" poster="assets/nemi-concepts-preview-v2/sport-poster.jpg"><source src="assets/nemi-concepts-preview-v2/01-sport-multisport.mp4" type="video/mp4">Votre navigateur ne prend pas en charge la vidéo.</video><div class="stage-top"><span class="live-mark"><i></i><span id="film-label">Film de campagne · Sport</span></span><span id="film-count">01 — 04</span></div><div class="stage-stamp">NEMI<br>Digital<br>Studio</div><div class="stage-bottom"><div class="stage-caption" id="film-caption">Le sport<br>en <em>mouvement.</em></div></div></div></section>
 </main>
 
-<footer class="bottomline"><div class="services"><b>Une histoire cohérente, du premier regard au contact</b><span>—</span><span>Image</span><span>·</span><span>Vidéo</span><span>·</span><span>Contenus</span><span>·</span><span>Supports numériques</span></div></footer>
+<footer class="bottomline"><div class="services"><b>Une histoire cohérente, du premier regard au contact</b><span>—</span><span>Image</span><span>·</span><span>Vidéo</span><span>·</span><span>Contenus</span><span>·</span><span>Supports numériques</span></div><a class="contact" href="#contact">Parlons de votre projet ↗</a></footer>
 </div>
 
 <script>
