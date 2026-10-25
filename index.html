@@ -1052,6 +1052,18 @@ body>header.nemi-site-header .brand-wordmark{display:block;flex:0 0 auto;width:a
 @media(max-height:760px) and (min-width:651px){#portfolio .page{height:auto;min-height:100svh;overflow:visible;padding-top:8px;padding-bottom:8px}#portfolio .workbench{flex:none;height:480px;min-height:480px}#portfolio .editorial{height:480px;min-height:480px}#portfolio .mast{height:36px;padding-bottom:8px}#portfolio .intro{padding:8px 0 7px}#portfolio .editorial h2{font-size:clamp(27px,3.1vw,42px);margin:9px 0 7px}#portfolio .summary{font-size:12px;line-height:1.35;margin-bottom:8px}#portfolio .scene-choice{min-height:43px}#portfolio .bottomline{margin-top:7px;padding-top:7px}}
 @media(max-width:370px){#portfolio .intro h1{font-size:26px}#portfolio .stage-caption{font-size:26px}#portfolio .scene-choice .scene-label{font-size:12px}#portfolio .scene-choice{grid-template-columns:24px 1fr}#portfolio .contact{font-size:11px}}
 @media(prefers-reduced-motion:reduce){#portfolio *,#portfolio *::before,#portfolio *::after{scroll-behavior:auto!important;transition:none!important}}
+/* Intégration NEMI : continuité des fonds, cadre vidéo au ratio natif et navigation lisible. */
+#services.nemi-control-room{border-bottom:0}
+#portfolio{--ink:#172b46;--paper:#f7f4ee;--accent:#d9b76e;--second:#168bff;--muted:#c5cfda;--stage:#0b1422;--line:rgba(247,244,238,.2);--wash:#1b3555;background:linear-gradient(180deg,#172b46 0%,#172b46 72%,#14243b 100%)}
+#portfolio .page{height:auto;min-height:calc(100svh - var(--nemi-nav-height,78px));overflow:visible}
+#portfolio .workbench{grid-template-columns:minmax(270px,.72fr) minmax(0,1.48fr);flex:0 0 auto;align-items:center;min-height:0}
+#portfolio .stage-wrap{align-items:center;justify-content:center}
+#portfolio .stage-frame{width:100%;height:auto;aspect-ratio:16/9;flex:none}
+#portfolio .stage-frame video{width:100%;height:100%;aspect-ratio:16/9;object-fit:cover}
+#portfolio .stage-stamp{top:18px;right:18px;transform:none}
+#portfolio .bottomline{background:transparent}
+#portfolio .bottomline .services{background:transparent;border:0}
+@media(max-width:650px){#portfolio .page{min-height:calc(100svh - var(--nemi-nav-height,92px))}#portfolio .stage-frame{width:100%;height:auto;aspect-ratio:16/9}#portfolio .stage-frame video{width:100%;height:100%;aspect-ratio:16/9;object-fit:cover}#portfolio .stage-stamp{top:12px;right:12px;width:46px;height:46px;font-size:6px}}
 </style>
 <div class="page">
 <header class="mast"><div class="brand">NEMI <b>Digital Studio</b></div><div class="meta"><span class="meta-extra">Direction · image · digital</span><a class="contact" href="#contact">Parlons de votre projet ↗</a></div></header>
