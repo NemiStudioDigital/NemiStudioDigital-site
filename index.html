@@ -1055,7 +1055,10 @@ body>header.nemi-site-header .brand-wordmark{display:block;flex:0 0 auto;width:a
 /* Intégration NEMI : continuité des fonds, cadre vidéo au ratio natif et navigation lisible. */
 main>#services.nemi-control-room{border-bottom:0!important}
 main>#services.nemi-control-room{overflow:clip}
-main>#services.nemi-control-room .control-index{position:sticky;top:calc(var(--nemi-nav-height,78px) + 8px);z-index:40}
+main>#services.nemi-control-room .control-index{position:sticky;top:calc(var(--nemi-nav-height,78px) + 8px);z-index:40;width:max-content;max-width:100%;margin:0 auto 16px;padding:5px;gap:4px;overflow:visible;border:1px solid rgba(217,183,110,.24);border-radius:999px;background:rgba(20,37,59,.94);box-shadow:0 8px 24px rgba(0,0,0,.22);backdrop-filter:blur(12px)}
+main>#services.nemi-control-room .index-label{display:none}
+main>#services.nemi-control-room .service-tab{width:auto!important;min-height:48px!important;flex:0 1 auto;padding:10px 14px!important;border:0!important;border-radius:999px;transform:none!important}
+@media(max-width:760px){main>#services.nemi-control-room .control-index{width:100%;margin-bottom:12px;border-radius:16px;flex-wrap:wrap}main>#services.nemi-control-room .service-tab{flex:1 1 30%;min-width:0;padding:10px 5px!important;font-size:clamp(.55rem,2.6vw,.72rem);white-space:normal;justify-content:center}}
 #portfolio{--ink:#172b46;--paper:#f7f4ee;--accent:#d9b76e;--second:#168bff;--muted:#c5cfda;--stage:#0b1422;--line:rgba(247,244,238,.2);--wash:#1b3555;background:linear-gradient(180deg,#0b1422 0%,color-mix(in srgb,#0b1422 52%,var(--ink)) 11%,var(--ink) 29%,var(--ink) 76%,color-mix(in srgb,#0b1422 55%,var(--ink)) 91%,#0b1422 100%);transition:background .7s ease,color .65s ease}
 #portfolio .page{height:auto;min-height:calc(100svh - var(--nemi-nav-height,78px));overflow:visible}
 #portfolio .workbench{grid-template-columns:minmax(270px,.72fr) minmax(0,1.48fr);flex:0 0 auto;align-items:center;min-height:0}
