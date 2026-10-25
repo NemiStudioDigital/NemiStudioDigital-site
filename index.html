@@ -935,7 +935,35 @@ body>header.nemi-site-header .brand-wordmark{display:block;flex:0 0 auto;width:a
 @media(max-width:620px){#video-presentation .presentation-play{min-height:54px;padding:7px 15px 7px 8px;font-size:.78rem}#video-presentation .presentation-play span:first-child{width:38px;height:38px}}
 @media(prefers-reduced-motion:reduce){#video-presentation .presentation-play{transition:none}}
 </style>
-</head>
+<style id="nemi-header-and-portfolio-footer">
+/* En-tête plus affirmé, toujours dans la palette NEMI. */
+body>header.nemi-site-header{background:linear-gradient(112deg,rgba(13,30,51,.99),rgba(23,43,70,.98) 58%,rgba(20,36,59,.99));border-bottom:1px solid rgba(217,183,110,.36);box-shadow:0 12px 34px rgba(4,10,18,.28),inset 0 -1px rgba(22,139,255,.12)}
+body>header.nemi-site-header:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#168bff 0%,#79ddff 34%,#d9b76e 72%,#168bff 100%);opacity:.96}
+body>header.nemi-site-header .nav{min-height:94px;grid-template-columns:minmax(270px,.43fr) minmax(0,1fr);gap:clamp(24px,4vw,66px)}
+body>header.nemi-site-header .brand{width:clamp(270px,25vw,318px);filter:drop-shadow(0 5px 14px rgba(0,0,0,.18));transition:transform .2s ease,filter .2s ease}
+body>header.nemi-site-header .brand-lockup{height:78px}
+body>header.nemi-site-header .brand-emblem{flex-basis:clamp(66px,6.6vw,78px);height:calc(clamp(66px,6.6vw,78px)*.66)}
+body>header.nemi-site-header .brand-wordmark{height:calc(clamp(66px,6.6vw,78px)*.66)}
+body>header.nemi-site-header .brand:hover{transform:translateY(-1px);filter:drop-shadow(0 7px 18px rgba(22,139,255,.2))}
+body>header.nemi-site-header nav.main-nav{gap:clamp(5px,.75vw,14px)}
+body>header.nemi-site-header .nav-link{display:flex;flex-direction:column;gap:4px;min-height:60px;padding:8px 10px;border:1px solid transparent;border-radius:5px;background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,0));font-size:.82rem;letter-spacing:.075em;transition:color .18s ease,background .18s ease,border-color .18s ease,transform .18s ease}
+body>header.nemi-site-header .nav-link:before{content:"";height:2px;width:20px;background:linear-gradient(90deg,#168bff,#d9b76e);opacity:.82;transition:width .18s ease}
+body>header.nemi-site-header .nav-link:after{left:10px;right:calc(100% - 10px);bottom:4px;height:2px}
+body>header.nemi-site-header .nav-link:hover,body>header.nemi-site-header .nav-link:focus-visible,body>header.nemi-site-header .nav-link.is-current{background:linear-gradient(145deg,rgba(22,139,255,.13),rgba(217,183,110,.055));border-color:rgba(121,183,250,.2);transform:translateY(-1px)}
+body>header.nemi-site-header .nav-link:hover:before,body>header.nemi-site-header .nav-link:focus-visible:before,body>header.nemi-site-header .nav-link.is-current:before{width:38px}
+@media(max-width:1100px) and (min-width:761px){body>header.nemi-site-header .nav{min-height:86px;grid-template-columns:minmax(230px,.38fr) minmax(0,1fr);gap:18px}body>header.nemi-site-header .brand{width:245px}body>header.nemi-site-header .brand-lockup{height:68px}body>header.nemi-site-header .brand-emblem{flex-basis:64px;height:42px}body>header.nemi-site-header .brand-wordmark{height:42px}body>header.nemi-site-header nav.main-nav{gap:4px}body>header.nemi-site-header .nav-link{padding-inline:5px;font-size:.72rem}}
+@media(max-width:760px){body>header.nemi-site-header .nav{min-height:0;padding:9px 0 4px}body>header.nemi-site-header .brand{width:clamp(185px,48vw,218px);margin-bottom:5px}body>header.nemi-site-header .brand-lockup{height:54px}body>header.nemi-site-header .brand-emblem{flex-basis:58px;height:38px}body>header.nemi-site-header .brand-wordmark{height:38px}body>header.nemi-site-header .nav-link{display:inline-flex;flex-direction:row;gap:0;min-height:39px;padding:7px 8px;border-radius:4px;font-size:.74rem}body>header.nemi-site-header .nav-link:before{content:none}}
+@media(prefers-reduced-motion:reduce){body>header.nemi-site-header .brand,body>header.nemi-site-header .nav-link,body>header.nemi-site-header .nav-link:before{transition:none}}
+/* Le pied de la démonstration reste simple : contraste net, lien sans encadrement. */
+#portfolio .bottomline{border-top:1px solid rgba(217,183,110,.3);padding:15px 0 4px;color:#e7edf3}
+#portfolio .bottomline .services{gap:10px;color:#e7edf3}
+#portfolio .bottomline .services b{color:#f7f4ee;font-weight:650}
+#portfolio .bottomline .services span{color:#79b7fa}
+#portfolio .bottomline a.contact{display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:0 0 auto;padding:9px 0 8px!important;border:0!important;border-bottom:2px solid #168bff!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#f7f4ee!important;font-size:clamp(.82rem,1vw,.95rem);font-weight:750;letter-spacing:.015em;text-decoration:none;text-align:right;white-space:nowrap;transition:color .18s ease,border-color .18s ease,transform .18s ease}
+#portfolio .bottomline a.contact:hover,#portfolio .bottomline a.contact:focus-visible{color:#d9b76e!important;border-bottom-color:#d9b76e!important;transform:translateY(-1px)}
+#portfolio .bottomline a.contact:focus-visible{outline:2px solid #79b7fa;outline-offset:5px}
+@media(max-width:650px){#portfolio .bottomline{gap:8px;padding-top:12px}#portfolio .bottomline .services{row-gap:5px}#portfolio .bottomline a.contact{align-self:flex-start}}
+</style></head>
 <body>
 <header class="nemi-site-header">
   <div class="wrap nav">
