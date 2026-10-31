@@ -38,6 +38,6 @@ Une couche `MessageJournal` a été ajoutée à SQLite pour préparer les échan
 - Des motifs courants de secrets sont refusés avant stockage ; le filtre est heuristique et ne garantit pas la détection de toute donnée sensible.
 - Les événements de test/demo sont marqués simulés.
 
-**Validation : 11 tests réussis, 0 échec**, dont 4 tests du journal de messages. Tests relancés avec `PYTHONWARNINGS=error::ResourceWarning` sans fuite de connexion SQLite. Aucun appel fournisseur réel n'a été effectué.
+**Validation : 11 tests réussis, 0 échec**, dont 4 tests du journal de messages. Tests relancés avec `PYTHONWARNINGS=error::ResourceWarning`, sans fuite de connexion SQLite. Tests relancés avec `PYTHONWARNINGS=error::ResourceWarning` sans fuite de connexion SQLite. Aucun appel fournisseur réel n'a été effectué.
 
-Archive locale : `NEMI_Autoevolution_Core_0.3_2026-10-31.zip`. SHA-256 : `9a04cd55b0023654ed7298ffe952741d216c0c242e21c44eca7b912d122eaa41`.
+Archive locale : `NEMI_Autoevolution_Core_0.3_2026-10-31.zip`. SHA-256 : `9590f551150700a16a44d3161564e03b0ea5b112d11cd9f81ff52094f26fd42a`.
