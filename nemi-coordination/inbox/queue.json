@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2",
-  "updated_at": "2026-10-31T19:35:00Z",
+  "schema_version": "1.3",
+  "updated_at": "2026-10-31T19:39:00Z",
   "missions": [
     {
       "id": "NEMI-MCP-001",
@@ -87,6 +87,21 @@
         "séparer analytics et CRM jusqu'à validation CNIL"
       ],
       "next_action": "Spécifier les événements et indicateurs du MVP à partir de la démo existante."
+    },
+    {
+      "id": "NEMI-PULSE-METRICS-001",
+      "title": "Valider les calculs agrégés NEMI Pulse Metrics",
+      "status": "completed_local_tests",
+      "priority": "medium",
+      "owner": "NEMI-product",
+      "objective": "Vérifier les calculs agrégés, les dénominateurs nuls, l'étiquetage du revenu estimé et le rejet de données directement identifiantes.",
+      "evidence": "Prototype local NEMI_Pulse_Metrics_0.1 ; 6 tests unitaires réussis ; données synthétiques uniquement.",
+      "constraints": [
+        "aucune connexion analytics/CRM",
+        "aucune donnée client réelle",
+        "prototype non prêt pour production"
+      ],
+      "next_action": "Utiliser le prototype uniquement pour la lisibilité et les calculs de la maquette ; demander validation Steve avant toute connexion à un site."
     }
   ]
 }
