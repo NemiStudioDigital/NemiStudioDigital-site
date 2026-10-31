@@ -1,0 +1,29 @@
+{
+  "name": "NEMI Autoevolution Core",
+  "version": "0.3",
+  "artifact": "NEMI_Autoevolution_Core_0.3_2026-10-31.zip",
+  "sha256": "9a04cd55b0023654ed7298ffe952741d216c0c242e21c44eca7b912d122eaa41",
+  "tests": {
+    "passed": 11,
+    "failed": 0,
+    "resource_warnings": "none with PYTHONWARNINGS=error::ResourceWarning",
+    "sqlite_integrity_check": "ok",
+    "journal_mode": "wal"
+  },
+  "features": [
+    "transactional SQLite mission queue",
+    "atomic concurrent claims",
+    "checkpoint/recovery",
+    "verified-capability relay (local flag only)",
+    "simulated event marking",
+    "message journal with provenance fields",
+    "secret-pattern heuristic rejection"
+  ],
+  "limitations": [
+    "no provider adapters",
+    "no real inter-AI conversations",
+    "no MCP server",
+    "no network authentication or cryptographic message provenance",
+    "not production ready"
+  ]
+}
