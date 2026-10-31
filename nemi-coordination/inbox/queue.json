@@ -1,30 +1,72 @@
 {
-  "schema_version": "1.0",
-  "updated_at": "2026-10-31T19:15:00Z",
+  "schema_version": "1.1",
+  "updated_at": "2026-10-31T19:29:00Z",
   "missions": [
     {
       "id": "NEMI-MCP-001",
-      "title": "Établir la communication réelle ChatGPT ↔ Kilo ↔ agents NEMI",
-      "status": "queued",
+      "title": "Établir la communication réelle entre modèles indépendants",
+      "status": "blocked_on_local_session_access",
       "priority": "critical",
       "owner": "NEMI-coordinator",
       "requested_by": "Steve",
-      "created_at": "2026-10-31T19:15:00Z",
-      "objective": "Mettre en place un canal bidirectionnel authentique, traçable et sans coût logiciel/API additionnel; rendre les échanges consultables.",
+      "objective": "Lancer un comité de modèles réellement indépendants (OpenAI, Gemini, Mistral et/ou Groq/Meta Llama), avec propositions indépendantes, critiques croisées, réponses et journal de preuves.",
       "acceptance_criteria": [
-        "Kilo peut lire une mission déposée par ChatGPT",
-        "Kilo peut publier une réponse authentifiée et horodatée",
-        "ChatGPT peut lire cette réponse et y répondre",
-        "les messages conservent auteur, destinataire, horodatage et preuves",
-        "tests d'intégration réels documentés"
+        "Au moins deux fournisseurs distincts répondent réellement",
+        "fournisseur et modèle identifiés pour chaque réponse",
+        "IDs de session/réponse et horodatages conservés",
+        "deux tours de critique-réponse effectués",
+        "aucun coût ni paiement activé",
+        "désaccords résiduels transmis à Steve"
       ],
       "constraints": [
-        "aucun coût ni abonnement sans validation de Steve",
-        "aucune publication sur le site public",
-        "aucun secret ou token dans Git",
-        "ne pas confondre boîte de dépôt Git avec communication temps réel"
+        "aucun coût, carte ou activation pay-as-you-go",
+        "aucun secret dans Git",
+        "aucune publication, prospection ou déploiement",
+        "ne pas présenter Kilo Swarm comme un bus universel"
       ],
-      "next_action": "Inspecter le dépôt sur le poste Kilo, vérifier accès Git et configurer un serveur MCP partagé ou un mécanisme de polling sans secrets en clair."
+      "next_action": "Depuis VS Code sur le dépôt principal, inventorier les modèles via Kilo Agent Manager; démarrer des sessions distinctes avec fournisseurs gratuits effectivement disponibles; utiliser des prompts ciblés et conserver les transcriptions."
+    },
+    {
+      "id": "NEMI-MCP-002",
+      "title": "Exposer SQLite Core 0.2 via un MCP local authentifié",
+      "status": "queued",
+      "priority": "high",
+      "owner": "NEMI-technical",
+      "objective": "Permettre à Kilo, OpenCode, Gemini CLI et Codex de lire/écrire la même file de missions et le même journal sans créer de conversations fictives.",
+      "acceptance_criteria": [
+        "Serveur MCP local fonctionnel",
+        "authentification/identité client",
+        "outils mission/message/checkpoint/evidence",
+        "test de deux clients distincts",
+        "aucune clé ni donnée client dans les logs"
+      ],
+      "constraints": [
+        "réutiliser Python/Node existants sans réinstallation automatique",
+        "respecter 8 Go RAM",
+        "ne pas modifier WSL/Hyper-V",
+        "aucun déploiement distant"
+      ],
+      "next_action": "Vérifier sur le poste de Steve les versions Python/Node et les packages MCP déjà installés, puis choisir le SDK existant."
+    },
+    {
+      "id": "NEMI-PULSE-001",
+      "title": "Valider le MVP interne NEMI Pulse",
+      "status": "queued",
+      "priority": "medium",
+      "owner": "NEMI-product",
+      "objective": "Transformer des métriques synthétiques de trafic et de conversion en tableau de bord client compréhensible.",
+      "acceptance_criteria": [
+        "données synthétiques clairement marquées",
+        "indicateurs trafic/conversions/leads séparés",
+        "aucune collecte réelle",
+        "tests des calculs et du parcours"
+      ],
+      "constraints": [
+        "aucune donnée client réelle",
+        "aucun tracker déployé",
+        "séparer analytics et CRM jusqu'à validation CNIL"
+      ],
+      "next_action": "Spécifier les événements et indicateurs du MVP à partir de la démo existante."
     }
   ]
 }
