@@ -1,0 +1,10 @@
+{
+  "name": "NEMI Pulse Metrics",
+  "version": "0.1",
+  "artifact": "NEMI_Pulse_Metrics_0.1_2026-10-31.zip",
+  "sha256": "3fa2b2b448d28134c14e649fa5730626945ee6127857413900d8b42a0dcd7db0",
+  "tests": {"passed": 6, "failed": 0},
+  "scope": "synthetic aggregate metrics only; no analytics or CRM connection",
+  "pii_guard": "direct identifiers rejected",
+  "production_ready": false
+}
