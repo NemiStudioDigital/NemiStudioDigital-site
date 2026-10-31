@@ -27,3 +27,17 @@ Ce relevé n'est pas exhaustif et les offres publiques ne prouvent ni ventes ni 
 ## 4. Échanges inter-IA
 
 Toujours aucun appel fournisseur réel ni conversation croisée dans ce cycle. Les recherches, documents et prototypes ont été produits par le coordinateur ChatGPT et des outils locaux d'exécution Python, pas par Gemini, Codex, Kilo, OpenCode, Mistral, Groq ou Claude.
+
+
+## 5. NEMI Autoevolution Core 0.3 — journal de messages
+
+Une couche `MessageJournal` a été ajoutée à SQLite pour préparer les échanges du comité : fil, message parent, mission, fournisseur, modèle, runtime, session ID, response ID, rôle, contenu, sources, confiance, usage, provenance et statut simulé.
+
+- Les messages synthétiques sont explicitement `simulated=true`.
+- Un message non simulé exige un fournisseur, un modèle, un session ID et un response ID, mais reste `unverified` tant qu'un adaptateur de confiance n'existe pas.
+- Des motifs courants de secrets sont refusés avant stockage ; le filtre est heuristique et ne garantit pas la détection de toute donnée sensible.
+- Les événements de test/demo sont marqués simulés.
+
+**Validation : 11 tests réussis, 0 échec**, dont 4 tests du journal de messages. Tests relancés avec `PYTHONWARNINGS=error::ResourceWarning` sans fuite de connexion SQLite. Aucun appel fournisseur réel n'a été effectué.
+
+Archive locale : `NEMI_Autoevolution_Core_0.3_2026-10-31.zip`. SHA-256 : `9a04cd55b0023654ed7298ffe952741d216c0c242e21c44eca7b912d122eaa41`.
