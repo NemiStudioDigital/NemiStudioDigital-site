@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.1",
-  "updated_at": "2026-10-31T20:29:00Z",
+  "schema_version": "1.2",
+  "updated_at": "2026-10-31T19:35:00Z",
   "agents": [
     {
       "id": "chatgpt-current",
@@ -11,6 +11,26 @@
       "verified": true,
       "evidence": "Current ChatGPT session and GitHub connector read/write confirmed",
       "limitations": "No direct access to local VS Code, Kilo, OpenCode, Gemini CLI or Codex sessions"
+    },
+    {
+      "id": "openai-chatgpt-subscription-kilo",
+      "provider": "OpenAI",
+      "kind": "subscription_model_route",
+      "role": "OpenAI model requests inside Kilo",
+      "status": "subscription_connection_confirmed_by_screenshot_2026-10-31",
+      "verified": true,
+      "evidence": "User screenshot/report confirms ChatGPT subscription connected in Kilo BYOK",
+      "limitations": "No NEMI external Gateway API call verified; local session not accessible in this cloud run"
+    },
+    {
+      "id": "kilo-gateway-external",
+      "provider": "Kilo Gateway",
+      "kind": "external_api_route",
+      "role": "allow external NEMI process to call eligible models through Gateway",
+      "status": "blocked_last_check_key_absent",
+      "verified": false,
+      "evidence": "Prior safe check reported KILO_GATEWAY_KEY absent (length 0); may have changed since, not rechecked",
+      "limitations": "External API integrations require a Kilo Gateway key; do not ask Steve to paste it into chat"
     },
     {
       "id": "gemini-cli",
@@ -44,9 +64,9 @@
       "provider": "Kilo",
       "kind": "agent_runtime",
       "role": "Agent Manager, task delegation and local execution",
-      "status": "declared_by_steve; not_accessible_this_cycle",
+      "status": "declared_by_steve; subscription_link_confirmed; session_not_accessible",
       "verified": false,
-      "evidence": "No local Kilo session accessible; Kilo Swarm scope documented"
+      "evidence": "Kilo subscription link confirmed by screenshot; no current local session access"
     },
     {
       "id": "mistral-candidate",
@@ -94,6 +114,9 @@
     "A runtime is not an independent model.",
     "A provider candidate is not a connected agent.",
     "A real conversation requires an actual provider call and response evidence.",
-    "Never store API secrets in Git."
+    "Never store API secrets in Git.",
+    "Kilo local extension can use a connected ChatGPT subscription without an external Gateway key.",
+    "External apps using Kilo Gateway require a Gateway key; ChatGPT subscription routing uses the Responses API and has no automatic paid fallback when a subscription usage limit is reached.",
+    "Check for saved OpenAI API keys or Kilo credits before enabling any external Gateway route; do not assume a subscription-only path if fallback credentials exist."
   ]
 }
