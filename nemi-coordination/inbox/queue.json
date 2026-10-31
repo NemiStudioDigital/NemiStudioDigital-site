@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.3",
-  "updated_at": "2026-10-31T19:39:00Z",
+  "schema_version": "1.4",
+  "updated_at": "2026-10-31T19:42:00Z",
   "missions": [
     {
       "id": "NEMI-MCP-001",
@@ -66,7 +66,7 @@
         "ne pas modifier WSL/Hyper-V",
         "aucun déploiement distant"
       ],
-      "next_action": "Vérifier sur le poste de Steve les versions Python/Node et les packages MCP déjà installés, puis choisir le SDK existant."
+      "next_action": "SQLite Core 0.3 et MessageJournal sont prêts en prototype local. Vérifier sur le poste de Steve les versions Python/Node et packages MCP déjà installés ; choisir le SDK existant, puis exposer le journal par MCP local authentifié."
     },
     {
       "id": "NEMI-PULSE-001",
@@ -102,6 +102,21 @@
         "prototype non prêt pour production"
       ],
       "next_action": "Utiliser le prototype uniquement pour la lisibilité et les calculs de la maquette ; demander validation Steve avant toute connexion à un site."
+    },
+    {
+      "id": "NEMI-MESSAGE-JOURNAL-001",
+      "title": "Ajouter un journal de messages inter-agents avec provenance",
+      "status": "completed_local_tests",
+      "priority": "high",
+      "owner": "NEMI-technical",
+      "objective": "Préparer le stockage auditable des propositions, critiques, réponses et synthèses des fournisseurs IA, sans confondre simulations et messages réels.",
+      "evidence": "NEMI Autoevolution Core 0.3 ; MessageJournal ; 4 tests spécifiques réussis ; messages non simulés restent unverified.",
+      "constraints": [
+        "aucune connexion fournisseur dans ce prototype",
+        "aucun secret ni donnée personnelle stockée",
+        "pas de serveur MCP ou authentification réseau"
+      ],
+      "next_action": "Construire un adaptateur fournisseur authentifié et le serveur MCP seulement après inventaire local des packages/runtimes existants."
     }
   ]
 }
