@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-10-31T19:15:00Z",
+  "missions": [
+    {
+      "id": "NEMI-MCP-001",
+      "title": "Établir la communication réelle ChatGPT ↔ Kilo ↔ agents NEMI",
+      "status": "queued",
+      "priority": "critical",
+      "owner": "NEMI-coordinator",
+      "requested_by": "Steve",
+      "created_at": "2026-10-31T19:15:00Z",
+      "objective": "Mettre en place un canal bidirectionnel authentique, traçable et sans coût logiciel/API additionnel; rendre les échanges consultables.",
+      "acceptance_criteria": [
+        "Kilo peut lire une mission déposée par ChatGPT",
+        "Kilo peut publier une réponse authentifiée et horodatée",
+        "ChatGPT peut lire cette réponse et y répondre",
+        "les messages conservent auteur, destinataire, horodatage et preuves",
+        "tests d'intégration réels documentés"
+      ],
+      "constraints": [
+        "aucun coût ni abonnement sans validation de Steve",
+        "aucune publication sur le site public",
+        "aucun secret ou token dans Git",
+        "ne pas confondre boîte de dépôt Git avec communication temps réel"
+      ],
+      "next_action": "Inspecter le dépôt sur le poste Kilo, vérifier accès Git et configurer un serveur MCP partagé ou un mécanisme de polling sans secrets en clair."
+    }
+  ]
+}
