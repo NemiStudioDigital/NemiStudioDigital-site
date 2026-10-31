@@ -2,13 +2,14 @@
   "name": "NEMI Autoevolution Core",
   "version": "0.2",
   "artifact": "NEMI_Autoevolution_Core_0.2_2026-10-31.zip",
-  "sha256": "cf8f8b9db6e4c86defc4fd004da615f7eb87b979133d5f9b16ed98aa9949803f",
+  "sha256": "0231bebbbf0a715888e4e5f818c19df5be3cf7ddf49911186413440cf3ad21fb",
   "tests": {
     "passed": 7,
     "failed": 0,
     "concurrency_claim_test": "passed",
     "sqlite_integrity_check": "ok",
-    "journal_mode": "wal"
+    "journal_mode": "wal",
+    "fixture_events_marked_simulated": true
   },
   "scope": "local prototype only; no real model/provider connections",
   "production_ready": false
