@@ -1,15 +1,15 @@
 {
-  "schema_version": "1.1",
-  "updated_at": "2026-10-31T19:29:00Z",
+  "schema_version": "1.2",
+  "updated_at": "2026-10-31T19:35:00Z",
   "missions": [
     {
       "id": "NEMI-MCP-001",
       "title": "Établir la communication réelle entre modèles indépendants",
-      "status": "blocked_on_local_session_access",
+      "status": "blocked_on_local_kilo_agent_manager_access",
       "priority": "critical",
       "owner": "NEMI-coordinator",
       "requested_by": "Steve",
-      "objective": "Lancer un comité de modèles réellement indépendants (OpenAI, Gemini, Mistral et/ou Groq/Meta Llama), avec propositions indépendantes, critiques croisées, réponses et journal de preuves.",
+      "objective": "Lancer un comité de modèles réellement indépendants (OpenAI ChatGPT subscription, Gemini, Mistral et/ou Groq/Meta Llama), avec propositions indépendantes, critiques croisées, réponses et journal de preuves.",
       "acceptance_criteria": [
         "Au moins deux fournisseurs distincts répondent réellement",
         "fournisseur et modèle identifiés pour chaque réponse",
@@ -24,7 +24,27 @@
         "aucune publication, prospection ou déploiement",
         "ne pas présenter Kilo Swarm comme un bus universel"
       ],
-      "next_action": "Depuis VS Code sur le dépôt principal, inventorier les modèles via Kilo Agent Manager; démarrer des sessions distinctes avec fournisseurs gratuits effectivement disponibles; utiliser des prompts ciblés et conserver les transcriptions."
+      "next_action": "Utiliser Kilo Agent Manager localement (la connexion ChatGPT subscription est déjà confirmée par capture) ; inventorier les modèles réellement disponibles avec agent_manager_models ; créer des sessions distinctes et les cibler pour les deux tours de critique."
+    },
+    {
+      "id": "NEMI-GATEWAY-001",
+      "title": "Préparer l'accès Gateway externe sans fallback payant",
+      "status": "blocked_last_check_KILO_GATEWAY_KEY_absent",
+      "priority": "high",
+      "owner": "NEMI-technical",
+      "objective": "Permettre au futur orchestrateur NEMI externe d'appeler le Gateway avec la subscription ChatGPT connectée, sans API OpenAI payante ni crédits Kilo.",
+      "acceptance_criteria": [
+        "clé Gateway présente dans variable utilisateur Windows sans valeur révélée",
+        "appel Responses API authentifié",
+        "Usage indique provider openai-chatgpt et coût 0",
+        "aucune route API ou crédit Kilo de secours activée"
+      ],
+      "constraints": [
+        "ne jamais demander à Steve de coller le secret dans un chat ou Git",
+        "aucun appel externe tant que le routage et les fallbacks ne sont pas vérifiés",
+        "aucun paiement ou crédit"
+      ],
+      "next_action": "Le contrôle antérieur indiquait KILO_GATEWAY_KEY absent. Vérifier l'état actuel avec le script local fourni, puis contrôler la configuration de fallback avant tout appel."
     },
     {
       "id": "NEMI-MCP-002",
