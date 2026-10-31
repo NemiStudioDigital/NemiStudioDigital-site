@@ -1,29 +1,99 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
+  "updated_at": "2026-10-31T20:29:00Z",
   "agents": [
     {
       "id": "chatgpt-current",
       "provider": "OpenAI",
+      "kind": "model_session",
       "role": "coordination, analyse, recherche, documentation",
-      "connectivity": "active_in_this_chat",
-      "can_read_write_github": true,
-      "can_access_kilo_local_session": false,
-      "verification": "GitHub connector read/write permissions confirmed; no Kilo session access"
+      "status": "connected_in_current_chat",
+      "verified": true,
+      "evidence": "Current ChatGPT session and GitHub connector read/write confirmed",
+      "limitations": "No direct access to local VS Code, Kilo, OpenCode, Gemini CLI or Codex sessions"
+    },
+    {
+      "id": "gemini-cli",
+      "provider": "Google",
+      "kind": "model_runtime",
+      "role": "recherche et analyse indépendante",
+      "status": "declared_by_steve; prior_smoke_test_via_kilo",
+      "verified": false,
+      "evidence": "Prior report recorded google/gemini-3.1-flash-lite PONG from Kilo terminal; not repeated and does not prove independent Gemini CLI session"
+    },
+    {
+      "id": "codex-local",
+      "provider": "OpenAI",
+      "kind": "coding_runtime",
+      "role": "développement et revue logicielle",
+      "status": "declared_by_steve; not_detected_this_cycle",
+      "verified": false,
+      "evidence": "No local Codex session accessible from current cloud execution"
+    },
+    {
+      "id": "opencode-local",
+      "provider": "OpenCode",
+      "kind": "agent_runtime",
+      "role": "orchestration multi-modèle et sous-agents",
+      "status": "declared_by_steve; version_1.19.5_reported_previously; not_retested",
+      "verified": false,
+      "evidence": "No local OpenCode process or session accessible this cycle"
     },
     {
       "id": "kilo-local",
       "provider": "Kilo",
-      "role": "orchestration locale et exécution projet",
-      "connectivity": "not_verified_from_this_chat",
-      "can_read_write_shared_repo": "to_be_tested",
-      "verification": "not yet confirmed"
+      "kind": "agent_runtime",
+      "role": "Agent Manager, task delegation and local execution",
+      "status": "declared_by_steve; not_accessible_this_cycle",
+      "verified": false,
+      "evidence": "No local Kilo session accessible; Kilo Swarm scope documented"
     },
     {
-      "id": "codex",
-      "provider": "OpenAI",
-      "role": "développement logiciel",
-      "connectivity": "not_verified_in_current_session",
-      "verification": "no direct inter-agent session confirmed"
+      "id": "mistral-candidate",
+      "provider": "Mistral AI",
+      "kind": "model_provider",
+      "role": "independent analysis and critique",
+      "status": "candidate_not_connected",
+      "verified": false,
+      "evidence": "Kilo docs support Mistral provider; Mistral Free mode documented but account/model limits not checked; stop on 402/payment"
+    },
+    {
+      "id": "groq-meta-llama-candidate",
+      "provider": "Groq",
+      "model_family": "Meta Llama",
+      "kind": "model_provider",
+      "role": "independent analysis and counterexamples",
+      "status": "candidate_not_connected",
+      "verified": false,
+      "evidence": "Kilo docs support Groq; Groq Free tier has quotas; account/model entitlement not checked"
+    },
+    {
+      "id": "claude-candidate",
+      "provider": "Anthropic",
+      "kind": "model_provider",
+      "role": "premium independent review",
+      "status": "candidate_requires_owner_financial_approval",
+      "verified": false,
+      "evidence": "OpenCode/Kilo support Anthropic; API uses prepaid credits, no activation without Steve approval"
     }
+  ],
+  "runtimes": [
+    {
+      "id": "github-connector",
+      "status": "verified_connected",
+      "scope": "NemiStudioDigital/NemiStudioDigital-site",
+      "branch": "nemi/ai-coordination-bootstrap"
+    },
+    {
+      "id": "windows-vscode-wsl-hyperv",
+      "status": "declared_by_steve_not_detected",
+      "notes": "No local machine access from this cloud run"
+    }
+  ],
+  "rules": [
+    "A runtime is not an independent model.",
+    "A provider candidate is not a connected agent.",
+    "A real conversation requires an actual provider call and response evidence.",
+    "Never store API secrets in Git."
   ]
 }
