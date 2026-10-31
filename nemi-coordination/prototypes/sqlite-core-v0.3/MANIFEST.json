@@ -2,7 +2,7 @@
   "name": "NEMI Autoevolution Core",
   "version": "0.3",
   "artifact": "NEMI_Autoevolution_Core_0.3_2026-10-31.zip",
-  "sha256": "9a04cd55b0023654ed7298ffe952741d216c0c242e21c44eca7b912d122eaa41",
+  "sha256": "9590f551150700a16a44d3161564e03b0ea5b112d11cd9f81ff52094f26fd42a",
   "tests": {
     "passed": 11,
     "failed": 0,
@@ -17,7 +17,9 @@
     "verified-capability relay (local flag only)",
     "simulated event marking",
     "message journal with provenance fields",
-    "secret-pattern heuristic rejection"
+    "secret-pattern heuristic rejection",
+    "threaded message journal with simulated/unverified provenance",
+    "heuristic credential-pattern rejection"
   ],
   "limitations": [
     "no provider adapters",
