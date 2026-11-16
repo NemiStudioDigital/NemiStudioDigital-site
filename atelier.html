@@ -780,6 +780,7 @@ contact.onsubmit = async event => {
  byId('envoyer-email').href = 'mailto:nemidigitalstudio@gmail.com?subject=' + encodeURIComponent('Mon projet — NEMI Digital Studio') + '&body=' + encodeURIComponent(corpsDemande);
  byId('note-envoi').textContent = 'Repli : votre messagerie s’ouvre avec le brouillon prérempli ; vérifiez-le puis envoyez-le à nemidigitalstudio@gmail.com.';
  byId('preview').hidden = false;
+ byId('preview').open = true;
  chargerAntispam();
 
  const selection=[etat.visuel,etat.site,...etat.extras].filter(Boolean).sort();
@@ -791,7 +792,7 @@ contact.onsubmit = async event => {
  requetePreparee={requestId:referenceDemande,...charge};
  byId('preparer-brouillon').disabled=envoiReussi;
  byId('form-status').className='';
- byId('form-status').textContent=CONFIG_ENVOI.actif&&CONFIG_ENVOI.endpoint?'Votre dossier est prêt.':'Dossier préparé, aucun envoi effectué. Utilisez votre messagerie ou conservez une copie.';
+ byId('form-status').textContent=CONFIG_ENVOI.actif&&CONFIG_ENVOI.endpoint?'Votre dossier est prêt.':'Dossier préparé, aucun envoi automatique effectué. Cliquez sur « Envoyer par ma messagerie » ci-dessous pour l’envoyer à NEMI, ou conservez une copie.';
  if(CONFIG_ENVOI.actif&&CONFIG_ENVOI.endpoint) await transmettreDemande();
 };
 function figerEdition(inactif){
