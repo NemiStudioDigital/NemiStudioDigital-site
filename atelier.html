@@ -419,7 +419,7 @@ h1{font:clamp(30px,4.6vw,54px)/1 Georgia,serif}
 <p class="muted">Vérifiez votre estimation et renseignez vos coordonnées. La sélection et la description du projet sont facultatives.</p>
 <section id="review" hidden><h3>Votre sélection</h3><ul id="dossier-choix"></ul><h3 class="estimation-titre">Estimation indicative</h3><div class="estimation-grid"><p><span>Ponctuel · base des offres sélectionnées</span><strong id="estimation-ponctuel"></strong></p><p><span>Mensuel</span><strong id="estimation-mensuel"></strong></p><p><span>Sur devis · hors montant affiché</span><strong id="estimation-surdevis"></strong></p></div><p class="estimation-explication">Cette estimation est indicative et sans engagement. Les offres standardisées conservent les tarifs affichés pour leur périmètre. Les prestations personnalisées peuvent être adaptées après échange, selon vos besoins. Le montant final est confirmé dans un devis personnalisé. Les éléments sur devis sont chiffrés séparément. Les estimations des offres web utilisent la borne basse de la fourchette affichée.</p></section>
 
-<p id="envoi-disponibilite" class="muted">L’envoi depuis le site n’est pas encore disponible. Aucune donnée n’est transmise. Vous pouvez préparer votre dossier puis utiliser votre messagerie ci-dessous.</p><form id="contactForm"><div class="contact">
+<p id="envoi-disponibilite" class="muted">Votre dossier est transmis à NEMI après vérification antispam, puis enregistré par notre service de réception. Vous pouvez aussi l’envoyer directement par votre messagerie ci-dessous.</p><form id="contactForm"><div class="contact">
 <div class="ligne-double">
 <label>Prénom <input name="prenom" maxlength="100" required autocomplete="given-name" placeholder="Ex. : Camille"></label>
 <label>Nom <input name="nom" maxlength="100" required autocomplete="family-name" placeholder="Ex. : Durand"></label>
@@ -714,7 +714,7 @@ document.addEventListener('keydown',event=>{
 });
 const contact = byId('contactForm');
 /* Réception préparée, volontairement désactivée. Clés privées uniquement côté Worker. */
-const CONFIG_ENVOI = {service:'cloudflare-worker-d1',actif:false,endpoint:'',sitekey:'',honeypot:'_gotcha',timeoutMs:15000};
+const CONFIG_ENVOI = {service:'cloudflare-worker-d1',actif:true,endpoint:'https://nemi-reception-devis.nemi-studio.workers.dev/api/demandes',sitekey:'0x4AAAAAAGDYRTgL-lf2Qu9b',honeypot:'_gotcha',timeoutMs:15000};
 let envoiEnCours=false,envoiReussi=false,requetePreparee=null,derniereSignature='',referenceDemande='',widgetCharge=false,selectionDossier='';
 function invaliderDemande(){
  requetePreparee=null;envoiReussi=false;byId('preparer-brouillon').disabled=false;
