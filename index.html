@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f7f4ee">
-<meta name="description" content="NEMI Studio Digital : création de contenus numériques et solutions créatives pour les professionnels.">
-<title>NEMI Studio Digital — Proposition accueil studios</title>
+<meta name="description" content="NEMI Digital Studio : création de contenus numériques et solutions créatives pour les professionnels.">
+<title>NEMI Digital Studio — Création, web et réseaux sociaux</title>
 <style>
 :root{
   --paper:#f7f4ee;
@@ -116,7 +116,7 @@ h2.section-title{font-family:Georgia,serif;font-size:clamp(2.3rem,4vw,3.8rem);fo
 .offer .btn{margin-top:auto;align-self:flex-start}
 .offer-note{font-size:.8rem;color:var(--muted);margin-top:20px}
 .contact{background:#eee8dc}
-.contact-grid{display:grid;grid-template-columns:1fr .8fr;gap:55px;align-items:center}
+.contact-grid{display:grid;grid-template-columns:1fr .8fr;gap:55px;align-items:start}
 .contact-panel{background:var(--white);padding:28px;border:1px solid var(--line);border-radius:5px}
 .contact-panel p{color:var(--muted)}
 .contact-panel .btn{width:100%;margin-top:8px}
@@ -126,6 +126,7 @@ footer strong{color:var(--yellow)}
 @media(max-width:850px){
  .hero{min-height:0;display:block;padding-top:36px;padding-bottom:40px}
  .hero-grid,.contact-grid{grid-template-columns:1fr}
+.contact-grid > :first-child{justify-content:flex-start}
  .portfolio-grid{grid-template-columns:repeat(2,1fr)}
  .hero{padding-top:44px}
 }
@@ -150,6 +151,7 @@ footer strong{color:var(--yellow)}
  .portfolio-item h3{font-size:1.25rem}
  .section-top{display:block}
  .contact-grid{gap:25px}
+ .contact-grid > :first-child{justify-content:flex-start}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 
@@ -630,7 +632,7 @@ header{background:rgba(5,8,14,.84);border-bottom:1px solid rgba(112,177,234,.18)
 .actions .btn,.contact-panel .btn,.lm-ending .btn{background:linear-gradient(115deg,#1478ee,#1ab5e7);color:#f7fbff;border:1px solid rgba(171,225,255,.5);box-shadow:0 10px 32px rgba(0,111,255,.22)}
 .actions .btn:hover,.contact-panel .btn:hover,.lm-ending .btn:hover{transform:translateY(-2px);box-shadow:0 14px 42px rgba(0,145,255,.35)}.actions .btn.secondary{background:rgba(12,22,35,.82);color:#d9e8f7;border-color:rgba(150,186,220,.26);box-shadow:none}
 .hero .note{color:#8e9db0}
-.hero-slideshow{position:relative;overflow:hidden;min-height:clamp(390px,54vw,680px);border:1px solid rgba(120,190,245,.48);border-radius:24px 92px 24px 24px;background:#080f18;box-shadow:0 34px 90px rgba(0,0,0,.55),0 0 55px rgba(0,107,255,.17);isolation:isolate}
+.hero-slideshow{position:relative;overflow:hidden;min-height:clamp(390px,min(54vw,calc(100svh - 330px)),1080px);border:1px solid rgba(120,190,245,.48);border-radius:24px 92px 24px 24px;background:#080f18;box-shadow:0 34px 90px rgba(0,0,0,.55),0 0 55px rgba(0,107,255,.17);isolation:isolate}
 .hero-slideshow:before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:inherit;background:linear-gradient(135deg,rgba(45,169,255,.14),transparent 35%,transparent 78%,rgba(213,177,86,.12));mix-blend-mode:screen}
 .hero-slideshow .slide img{filter:saturate(.93) contrast(1.06);transition:transform 1.1s cubic-bezier(.2,.75,.2,1),filter .6s}.hero-slideshow:hover .slide.active img{transform:scale(1.035);filter:saturate(1.03) contrast(1.08)}
 .hero-slideshow .slide:after{background:linear-gradient(180deg,rgba(3,6,11,.02) 36%,rgba(3,6,11,.2) 56%,rgba(3,6,11,.88) 100%)}
@@ -721,6 +723,22 @@ main>#services.nemi-control-room{height:auto;min-height:100svh;min-height:100dvh
 main>#video-presentation{padding:22px 0;min-height:100svh;min-height:100dvh}.video-grid{display:grid;grid-template-columns:1fr;gap:12px!important}.video-eyebrow{font-size:.63rem}.video-title{font-size:clamp(1.9rem,8vw,2.7rem)!important;margin:8px 0}.video-intro{font-size:.82rem;line-height:1.45;margin:8px 0}.video-benefits{display:none}.video-cta{margin-top:8px}.video-art{padding:46px 0 8px!important}.video-note{font-size:.65rem!important;top:0!important;right:55px!important}.video-arrow{width:42px!important;height:42px!important;top:0!important}.video-frame{width:min(100%,460px)!important;aspect-ratio:16/9!important}.video-frame video{width:100%;height:100%;object-fit:contain;max-height:none!important}
 main>#services.nemi-control-room{padding:25px 0 20px;min-height:100svh;min-height:100dvh}.control-room-head{display:block;margin-bottom:16px}.control-room-head h2{font-size:clamp(1.75rem,7vw,2.55rem);margin-top:8px}.control-room-head .gallery-intro{font-size:.82rem;margin-top:10px}.control-room{display:block;min-height:0}.control-index{padding:0;border-right:0;border-bottom:1px solid #97bede26}.index-label{padding:13px 14px}.service-tab{display:inline-grid;width:33.333%;grid-template-columns:1fr;gap:5px;padding:10px 6px 12px;text-align:center;border-top:1px solid #97bede1f;font-size:.62rem;line-height:1.2}.tab-number{font-size:.62rem}.tab-mark{display:none}.service-tab.is-active{box-shadow:inset 0 2px var(--nemi-blue),inset 0 0 20px #126ad01a}.control-index-foot{display:none}.control-stage{padding:12px}.service-panel{min-height:0;gap:15px;animation:none}.stage-visual{height:clamp(200px,28svh,270px);min-height:0}.panel-copy .gallery-formats{font-size:.58rem}.panel-copy h3{font-size:1.55rem;margin:0 0 8px}.panel-copy p{font-size:.81rem;line-height:1.5}.panel-link{margin-top:12px;font-size:.72rem}.ops-window{padding:13px 14px 17px}.ops-brand{padding:18px 0}.ops-orbit{width:58px;height:58px}.ops-tags span{font-size:.42rem}.control-room-foot{font-size:.48rem;padding-top:8px;letter-spacing:.07em}}
 @media(max-width:380px){.service-tab{font-size:.56rem;padding-inline:3px}.panel-copy p{font-size:.77rem}main>.hero .hero-slideshow{height:34svh}.control-room-foot{display:none}}
+@media(max-width:360px){
+  main>.hero{min-height:auto;padding:12px 0 18px;display:block}
+  main>.hero .hero-grid{display:block}
+  main>.hero .hero-slideshow{height:clamp(180px,40svh,280px);border-radius:10px 20px 10px 10px;margin:0 auto 16px;max-width:100%}
+  main>.hero .hero-content{text-align:center}
+  main>.hero .hero-content .actions{justify-content:center}
+  .slide-caption{bottom:8px!important;left:10px!important;right:10px!important;padding:6px!important;font-size:.75rem!important;line-height:1.2!important}
+  .slide-caption strong{font-size:clamp(1rem,4.5vw,1.4rem)!important;line-height:1.1!important}
+  .slide-caption small{font-size:.5rem!important}
+  .slide-dots{bottom:6px!important;left:10px!important;gap:3px!important}
+  .slide-dots button{width:5px;height:5px}
+  .slide-dots button.active{width:14px}
+  .slide-arrow{width:26px!important;height:26px!important}
+  .hero-content .actions{gap:6px}
+  .hero-content .btn{padding:8px 10px;font-size:.7rem}
+}
 @media(prefers-reduced-motion:reduce){.service-panel{animation:none}.service-tab,.panel-link{transition:none}}
 </style><style id="nemi-creative-home-v3">
 :root{--nemi-night:#060a12;--nemi-ink:#edf5fc;--nemi-blue:#168bff;--nemi-cyan:#79ddff;--nemi-chrome:#cbd7e2;--nemi-gold:#d2b56e}
@@ -733,7 +751,23 @@ main>.hero>.wrap{width:min(1540px,calc(100% - 54px));margin:auto}.hero-grid{grid
 main>#video-presentation{position:relative;isolation:isolate;min-height:100svh;min-height:100dvh;box-sizing:border-box;padding:clamp(100px,12vh,130px) 0 clamp(24px,4vh,44px);display:grid;align-items:center;overflow:hidden;background:radial-gradient(ellipse at 55% 48%,#0e4b8440,transparent 36%),linear-gradient(115deg,#060a12,#0b1522 53%,#060a12)}main>#video-presentation:before{content:"02";position:absolute;left:-.08em;top:50%;transform:translateY(-50%);font:800 52vw/.8 Arial,sans-serif;letter-spacing:-.12em;color:transparent;-webkit-text-stroke:1px #a6d9ff0c;pointer-events:none}main>#video-presentation .video-grid{width:min(1450px,calc(100% - 54px));margin:auto;display:grid;grid-template-columns:minmax(260px,.8fr) minmax(320px,.76fr) minmax(160px,.42fr);gap:clamp(24px,5vw,80px);align-items:center}.video-copy{position:relative;z-index:2}.video-eyebrow{color:#9fc0d9;letter-spacing:.17em;font-size:.69rem}.video-eyebrow span{display:inline-grid;place-items:center;width:36px;height:1px;background:linear-gradient(90deg,var(--nemi-cyan),var(--nemi-gold));color:transparent;margin-right:8px;vertical-align:middle}.video-title{font-size:clamp(3.2rem,6vw,6.8rem);line-height:.84;letter-spacing:-.075em;margin:24px 0}.video-title em{color:transparent;background:linear-gradient(100deg,#e3eff8,#71caff,#d4b873);background-clip:text;-webkit-background-clip:text;font-style:normal}.video-intro{max-width:370px;color:#a7b8c7;font-size:1rem;line-height:1.65}.video-benefits{display:none}.video-cta{margin-top:22px}.video-art{position:relative;display:grid;place-items:center;min-height:0;padding:0;background:none;border:0;box-shadow:none;overflow:visible}.video-art:before{content:"";position:absolute;inset:-12% -13%;border:1px solid #77cfff2e;border-radius:48% 52% 42% 58% / 48% 42% 58% 52%;transform:rotate(-12deg);box-shadow:0 0 45px #168bff1b,inset 0 0 55px #168bff0c;pointer-events:none}.video-frame{position:relative;z-index:2;width:auto;height:min(75vh,780px);max-width:none;aspect-ratio:9/16;overflow:hidden;border:1px solid #a7dfff8b;border-radius:22px 22px 48px 22px;padding:5px;background:#030609;box-shadow:0 28px 75px #0009,0 0 45px #168bff3c;transform:rotate(1.2deg)}.video-frame video{display:block;width:100%;height:100%;max-height:none;min-height:0;aspect-ratio:9/16;object-fit:contain;background:#000;border-radius:17px 17px 43px 17px}.foliage-shadow,.video-arrow,.video-note{display:none}.video-side-note{position:absolute;right:-64px;bottom:6vh;align-self:end;padding-bottom:0;color:#8298ad;font:600 .63rem/1.7 ui-monospace,monospace;letter-spacing:.12em;writing-mode:vertical-rl;transform:rotate(180deg)}.video-side-note b{color:var(--nemi-gold);font-weight:500}
 main>#services.nemi-control-room{position:relative;isolation:isolate;min-height:100svh;min-height:100dvh;box-sizing:border-box;padding:clamp(92px,11vh,122px) 0 clamp(24px,4vh,40px);display:grid;align-items:center;overflow:hidden;background:radial-gradient(ellipse at 22% 80%,#0c4b8131,transparent 35%),linear-gradient(135deg,#060a12,#0a121e 55%,#060a12)}main>#services.nemi-control-room:after{content:"NEMI / CREATIVE SYSTEMS";position:absolute;z-index:-1;right:-.03em;bottom:-.13em;font:800 clamp(4rem,15vw,16rem)/.8 Arial,sans-serif;letter-spacing:-.09em;color:transparent;-webkit-text-stroke:1px #d8eaff0b;white-space:nowrap;pointer-events:none}.control-room-wrap{width:min(1450px,calc(100% - 54px));margin:auto}.control-room-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:32px;margin-bottom:22px}.control-room-head h2{font-size:clamp(2.2rem,4.5vw,4.8rem);line-height:.92;letter-spacing:-.06em}.control-room-head h2 em{color:transparent;background:linear-gradient(100deg,#70caff,#d3b66f);background-clip:text;-webkit-background-clip:text;font-style:normal}.control-room-head .gallery-intro{max-width:290px;color:#9eafc1;font-size:.85rem}.control-room{display:block;min-height:0;overflow:visible;border:0;background:transparent;box-shadow:none}.control-index{position:relative;display:flex;flex-direction:row;align-items:center;gap:0;padding:0;border:0;border-bottom:1px solid #a8cce32b;background:none}.index-label{margin-right:auto;padding:0 20px 14px 0;color:#71889b;font-size:.59rem;letter-spacing:.16em}.index-label span{color:#a6c5da}.service-tab{position:relative;display:flex;align-items:center;gap:11px;padding:0 18px 14px;border:0;background:transparent;color:#8fa1b2;white-space:nowrap;font-size:.79rem}.service-tab:after{content:"";position:absolute;left:18px;right:100%;bottom:-1px;height:2px;background:linear-gradient(90deg,#168bff,var(--nemi-gold));transition:right .25s}.service-tab.is-active{color:#eef7ff;background:none;box-shadow:none}.service-tab.is-active:after{right:18px}.tab-number{font:600 .68rem ui-monospace,monospace;color:var(--nemi-cyan)}.tab-mark,.control-index-foot{display:none}.control-stage{padding:clamp(23px,3vw,42px) 0 0}.service-panel{position:relative;grid-template-columns:minmax(0,1.15fr) minmax(300px,.72fr);gap:clamp(32px,7vw,110px);min-height:clamp(360px,53vh,600px);align-items:center;animation:panel-arrive .45s ease both}.stage-visual{min-height:clamp(320px,48vh,540px);height:100%;max-height:600px;border:0;box-shadow:none;overflow:visible;background:transparent}.stage-visual:before{background:linear-gradient(145deg,#06101a05,transparent 54%,#07111b48)}.visual-coordinate{top:0;left:2px;color:#8da9bf}.stage-caption{bottom:1px;left:2px;right:4px;color:#8198ac}.visual-campaign .campaign-gallery{inset:8% 0 7% 3%;grid-template-columns:1.18fr .62fr;gap:12px;padding:0;transform:rotate(-2deg)}.visual-campaign .campaign-gallery>img{border-radius:40% 4% 4% 4%;border:1px solid #c2e5ff66;box-shadow:0 20px 60px #0007}.visual-campaign .campaign-side{gap:12px}.visual-campaign .campaign-side img:first-child{border-radius:4% 30% 4% 4%}.visual-campaign .campaign-side img:last-child{border-radius:4% 4% 32% 4%}.visual-web{background:radial-gradient(ellipse at 45% 50%,#168bff1e,transparent 55%)}.device-stack{width:min(88%,510px);height:80%;min-height:280px;transform:rotate(-4deg)}.desktop-screen{inset:4% 10% 5% 0;border-radius:24px 5px 24px 5px;border-color:#95d9ff99}.mobile-screen{border-radius:28px;width:25%;border-color:#d0b970aa}.device-label{bottom:-32px;left:2%;color:#96adc0}.visual-operations{background:radial-gradient(ellipse at 50% 52%,#1766a728,transparent 56%)}.ops-window{width:min(85%,520px);padding:clamp(22px,3vw,38px);border:1px solid #95d9ff57;border-radius:4px 50px 4px 50px;background:linear-gradient(130deg,#0a1623e8,#070c13c9);box-shadow:0 35px 90px #0007,0 0 50px #168bff18;transform:rotate(2deg)}.ops-brand strong{font-size:clamp(1.5rem,3vw,2.7rem)}.ops-orbit{width:90px;height:90px}.panel-copy{max-width:470px;position:relative}.panel-copy:before{content:"";position:absolute;z-index:-1;left:-28px;top:8px;bottom:-14px;width:1px;background:linear-gradient(180deg,var(--nemi-cyan),transparent 85%)}.gallery-pill{border:0;border-left:2px solid var(--nemi-cyan);padding:4px 0 4px 11px;background:none;color:#a8e3ff;letter-spacing:.13em}.pill-web{border-color:var(--nemi-gold);color:#e4d3a7}.pill-management{border-color:#c7d6e2;color:#d8e4ed}.panel-copy .gallery-formats{color:#8ea8bc}.panel-copy h3{font-size:clamp(2.15rem,4vw,4.3rem);line-height:.96;letter-spacing:-.06em}.panel-copy p{font-size:.95rem;color:#aab9c8;line-height:1.7}.panel-link{border-bottom-color:#6bcfff9c}.control-room-foot{padding-top:14px;color:#6e8297;font-size:.56rem}
 @media(max-width:1050px){body>header .nav{width:calc(100% - 34px)}body>header .brand{max-width:205px}body>header nav{gap:12px}body>header nav a{font-size:.68rem}.hero-grid{grid-template-columns:minmax(250px,.58fr) minmax(0,1.42fr);gap:28px}.hero h1{font-size:clamp(3rem,6vw,5rem)}.hero-slideshow{min-height:420px;height:62vh}.video-grid{grid-template-columns:minmax(220px,.7fr) minmax(300px,.85fr)}.video-side-note{display:none}}
-@media(max-width:760px){body>header{position:relative;background:#060a12;border-bottom:1px solid #a7c8e520}body>header .nav{width:calc(100% - 28px);padding:10px 0;display:block}body>header .brand{display:block;width:180px;margin:0 auto 8px}body>header nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px 10px;overflow:visible;padding:0 2px 5px}body>header nav a{font-size:.68rem;flex:auto}main>.hero{padding:26px 0;min-height:calc(100svh - var(--nemi-nav-height, 100px));min-height:calc(100dvh - var(--nemi-nav-height, 100px))}.hero-grid{grid-template-columns:1fr;gap:18px}.hero-content{max-width:none}.hero-content .hero-benefits,.hero-content .note{display:none}.hero h1{font-size:clamp(2.7rem,10vw,4.5rem);margin:.2em 0}.hero .lead{max-width:600px;font-size:.92rem;margin:9px 0 13px}.hero .actions{margin-top:12px}.hero .actions .btn{padding:10px 13px;font-size:.77rem}.hero-slideshow{height:clamp(300px,52svh,490px);min-height:0;aspect-ratio:1.28/1;border-radius:3px 30px 3px 30px}.hero-slideshow .slide--overview .overview-food{left:4%;top:10%;width:56%;height:76%}.hero-slideshow .slide--overview .overview-shop{right:5%;top:7%;width:27%;height:41%}.hero-slideshow .slide--overview .overview-craft{right:12%;bottom:9%;width:31%;height:42%}.hero-slideshow .slide--overview .overview-audio{right:1%;bottom:10%;width:30%;height:29%}.hero-slideshow .slide--overview .overview-digital{left:40%;bottom:7%;width:24%;height:25%}.overview-food{left:2%;width:57%;height:69%;top:12%}.overview-shop{width:34%;right:3%;height:35%;top:8%}.overview-craft{right:7%;width:34%;height:38%;bottom:12%}.overview-audio{width:35%;height:24%;right:1%;bottom:9%}.overview-digital{left:32%;width:31%;height:22%;bottom:8%}.overview-wordmark{left:42%;top:18%}.overview-label{font-size:.45rem;padding:5px 6px}.label-studio{bottom:41%}.slide-caption{left:18px;right:18px;bottom:43px;padding:0!important}.slide-caption strong{font-size:clamp(1.3rem,6vw,2rem)}.slide-caption small{font-size:.61rem}.slide-dots{left:18px;bottom:14px;gap:5px}.slide-dots button{width:7px;height:7px}.slide-dots button.active{width:20px}.slide-arrow{width:38px;height:38px}main>#video-presentation{padding:35px 0;min-height:100svh;min-height:100dvh}.video-grid{width:calc(100% - 32px);grid-template-columns:minmax(0,1fr) minmax(180px,.8fr);gap:20px;align-items:center}.video-title{font-size:clamp(2.6rem,9vw,4.2rem);margin:16px 0}.video-intro{font-size:.87rem}.video-frame{height:auto;width:min(100%,28svh);max-width:100%;aspect-ratio:9/16;border-radius:15px 15px 34px 15px;padding:4px}.video-frame video{border-radius:12px 12px 30px 12px}.video-art:before{inset:-8% -10%}.video-cta{font-size:.78rem;padding:11px 13px}main>#services.nemi-control-room{padding:44px 0;min-height:100svh;min-height:100dvh}.control-room-wrap{width:calc(100% - 32px)}.control-room-head{display:block;margin-bottom:17px}.control-room-head h2{font-size:clamp(2rem,8vw,3.4rem)}.control-room-head .gallery-intro{font-size:.81rem;margin-top:12px}.control-index{overflow-x:auto;scrollbar-width:none}.control-index::-webkit-scrollbar{display:none}.index-label{display:none}.service-tab{padding:11px 10px;font-size:.68rem;gap:7px}.service-tab:after{left:10px}.service-tab.is-active:after{right:10px}.control-stage{padding-top:20px}.service-panel{grid-template-columns:1fr;gap:16px;min-height:0}.stage-visual{height:clamp(245px,37svh,340px);min-height:0}.visual-campaign .campaign-gallery{inset:8% 3% 8% 1%}.device-stack{min-height:220px}.ops-window{width:82%}.ops-orbit{width:64px;height:64px}.panel-copy{max-width:none}.panel-copy:before{left:-12px}.panel-copy h3{font-size:clamp(1.8rem,7vw,2.8rem)}.panel-copy p{font-size:.86rem;line-height:1.55}.control-room-foot{display:none}}
+@media(max-width:760px){body>header{position:relative;background:#060a12;border-bottom:1px solid #a7c8e520}body>header .nav{width:calc(100% - 28px);padding:10px 0;display:block}body>header .brand{display:block;width:180px;margin:0 auto 8px}body>header nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px 10px;overflow:visible;padding:0 2px 5px}body>header nav a{font-size:.68rem;flex:auto}main>.hero{padding:26px 0;min-height:calc(100svh - var(--nemi-nav-height, 100px));min-height:calc(100dvh - var(--nemi-nav-height, 100px))}.hero-grid{grid-template-columns:1fr;gap:18px}
+  @media(max-width:360px){
+    main>.hero{min-height:auto;padding:12px 0 18px;display:block}
+    main>.hero .hero-grid{display:block}
+    main>.hero .hero-slideshow{height:clamp(180px,40svh,280px);border-radius:10px 20px 10px 10px;margin:0 auto 16px;max-width:100%}
+    main>.hero .hero-content{text-align:center}
+    main>.hero .hero-content .actions{justify-content:center}
+    .slide-caption{bottom:8px!important;left:10px!important;right:10px!important;padding:6px!important;font-size:.75rem!important;line-height:1.2!important}
+    .slide-caption strong{font-size:clamp(1rem,4.5vw,1.4rem)!important;line-height:1.1!important}
+    .slide-caption small{font-size:.5rem!important}
+    .slide-dots{bottom:6px!important;left:10px!important;gap:3px!important}
+    .slide-dots button{width:5px;height:5px}
+    .slide-dots button.active{width:14px}
+    .slide-arrow{width:26px!important;height:26px!important}
+    .hero-content .actions{gap:6px;justify-content:center}
+    .hero-content .btn{padding:8px 10px;font-size:.7rem}
+  }.hero-content{max-width:none}.hero-content .hero-benefits,.hero-content .note{display:none}.hero h1{font-size:clamp(2.7rem,10vw,4.5rem);margin:.2em 0}.hero .lead{max-width:600px;font-size:.92rem;margin:9px 0 13px}.hero .actions{margin-top:12px}.hero .actions .btn{padding:10px 13px;font-size:.77rem}.hero-slideshow{height:clamp(300px,52svh,490px);min-height:0;aspect-ratio:1.28/1;border-radius:3px 30px 3px 30px}.hero-slideshow .slide--overview .overview-food{left:4%;top:10%;width:56%;height:76%}.hero-slideshow .slide--overview .overview-shop{right:5%;top:7%;width:27%;height:41%}.hero-slideshow .slide--overview .overview-craft{right:12%;bottom:9%;width:31%;height:42%}.hero-slideshow .slide--overview .overview-audio{right:1%;bottom:10%;width:30%;height:29%}.hero-slideshow .slide--overview .overview-digital{left:40%;bottom:7%;width:24%;height:25%}.overview-food{left:2%;width:57%;height:69%;top:12%}.overview-shop{width:34%;right:3%;height:35%;top:8%}.overview-craft{right:7%;width:34%;height:38%;bottom:12%}.overview-audio{width:35%;height:24%;right:1%;bottom:9%}.overview-digital{left:32%;width:31%;height:22%;bottom:8%}.overview-wordmark{left:42%;top:18%}.overview-label{font-size:.45rem;padding:5px 6px}.label-studio{bottom:41%}.slide-caption{left:18px;right:18px;bottom:43px;padding:0!important}.slide-caption strong{font-size:clamp(1.3rem,6vw,2rem)}.slide-caption small{font-size:.61rem}.slide-dots{left:18px;bottom:14px;gap:5px}.slide-dots button{width:7px;height:7px}.slide-dots button.active{width:20px}.slide-arrow{width:38px;height:38px}main>#video-presentation{padding:35px 0;min-height:100svh;min-height:100dvh}.video-grid{width:calc(100% - 32px);grid-template-columns:minmax(0,1fr) minmax(180px,.8fr);gap:20px;align-items:center}.video-title{font-size:clamp(2.6rem,9vw,4.2rem);margin:16px 0}.video-intro{font-size:.87rem}.video-frame{height:auto;width:min(100%,28svh);max-width:100%;aspect-ratio:9/16;border-radius:15px 15px 34px 15px;padding:4px}.video-frame video{border-radius:12px 12px 30px 12px}.video-art:before{inset:-8% -10%}.video-cta{font-size:.78rem;padding:11px 13px}main>#services.nemi-control-room{padding:44px 0;min-height:100svh;min-height:100dvh}.control-room-wrap{width:calc(100% - 32px)}.control-room-head{display:block;margin-bottom:17px}.control-room-head h2{font-size:clamp(2rem,8vw,3.4rem)}.control-room-head .gallery-intro{font-size:.81rem;margin-top:12px}.control-index{overflow-x:auto;scrollbar-width:none}.control-index::-webkit-scrollbar{display:none}.index-label{display:none}.service-tab{padding:11px 10px;font-size:.68rem;gap:7px}.service-tab:after{left:10px}.service-tab.is-active:after{right:10px}.control-stage{padding-top:20px}.service-panel{grid-template-columns:1fr;gap:16px;min-height:0}.stage-visual{height:clamp(245px,37svh,340px);min-height:0}.visual-campaign .campaign-gallery{inset:8% 3% 8% 1%}.device-stack{min-height:220px}.ops-window{width:82%}.ops-orbit{width:64px;height:64px}.panel-copy{max-width:none}.panel-copy:before{left:-12px}.panel-copy h3{font-size:clamp(1.8rem,7vw,2.8rem)}.panel-copy p{font-size:.86rem;line-height:1.55}.control-room-foot{display:none}}
 @media(max-width:480px){.hero-slideshow{height:clamp(270px,46svh,370px)}.overview-label{letter-spacing:.06em}.label-shop{right:2%;top:45%}.label-studio{right:1%;bottom:36%}.overview-digital{left:27%;width:34%}.video-grid{grid-template-columns:minmax(0,1fr) minmax(145px,.72fr);gap:12px}.video-title{font-size:clamp(2.15rem,9vw,3rem)}.video-eyebrow{font-size:.56rem}.video-intro{font-size:.78rem;line-height:1.5}.video-frame{width:min(100%,26svh);height:auto;aspect-ratio:9/16;padding:3px;border-radius:12px 12px 27px 12px}.video-frame video{border-radius:9px 9px 24px 9px}.video-cta{font-size:.7rem;padding:9px 10px}.service-tab{font-size:.6rem;padding-inline:8px}.panel-copy h3{font-size:1.8rem}}
 @media(max-width:360px){body>header .brand{width:150px}body>header nav{gap:2px 6px}.hero .actions{flex-wrap:wrap}.overview-label{font-size:.39rem}.video-grid{grid-template-columns:1fr}.video-frame{height:min(55svh,430px)}.video-art{grid-row:1}.video-copy{grid-row:2;display:grid;grid-template-columns:1fr auto;column-gap:10px}.video-title,.video-intro{grid-column:1}.video-cta{grid-column:1}.video-side-note{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-slideshow .slide{transition:none}.service-tab,.panel-link{transition:none}}
@@ -894,7 +928,7 @@ html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nemi-nav-height,78px) 
 body>header.nemi-site-header{position:fixed;inset:0 0 auto;z-index:100;min-height:0;background:linear-gradient(180deg,rgba(23,43,70,.98),rgba(23,43,70,.92));border-bottom:1px solid rgba(217,183,110,.25);box-shadow:0 8px 24px rgba(7,14,24,.1);backdrop-filter:blur(16px)}
 body>header.nemi-site-header .nav{width:min(1540px,calc(100% - 56px));min-height:78px;display:grid;grid-template-columns:minmax(180px,.36fr) minmax(0,1fr);align-items:center;gap:clamp(26px,5vw,82px);padding:0}
 body>header.nemi-site-header .brand{width:clamp(165px,17vw,230px);max-width:100%;display:flex;align-items:center}body>header.nemi-site-header .brand-logo{display:block;width:100%;max-width:230px;height:auto}
-body>header.nemi-site-header nav.main-nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:center;justify-content:stretch;gap:clamp(8px,1.25vw,24px);width:100%;white-space:nowrap}
+body>header.nemi-site-header nav.main-nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:center;justify-content:stretch;gap:clamp(8px,1.25vw,24px);width:100%;white-space:nowrap}
 body>header.nemi-site-header .nav-link{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:9px 2px;border:0;background:none;color:#E6E9EC;font-family:inherit;font-size:.83rem;font-weight:600;line-height:1.2;letter-spacing:.055em;text-decoration:none;text-align:center;cursor:pointer;transition:color .18s ease}
 body>header.nemi-site-header .nav-link:after{content:"";position:absolute;left:0;right:100%;bottom:4px;height:2px;background:#168BFF;box-shadow:0 0 10px rgba(22,139,255,.38);transition:right .2s ease}
 body>header.nemi-site-header .nav-link:hover,body>header.nemi-site-header .nav-link:focus-visible,body>header.nemi-site-header .nav-link.is-current{color:#F7F4EE}body>header.nemi-site-header .nav-link:hover:after,body>header.nemi-site-header .nav-link:focus-visible:after,body>header.nemi-site-header .nav-link.is-current:after{right:0}body>header.nemi-site-header .nav-link.is-current:after{background:#168BFF;box-shadow:0 0 10px rgba(22,139,255,.38)}body>header.nemi-site-header .nav-link:focus-visible{outline:2px solid #168BFF;outline-offset:4px;border-radius:2px}
@@ -917,7 +951,52 @@ main>#services.nemi-control-room{background:linear-gradient(132deg,#172B46 0%,#1
 main>#offres{background:linear-gradient(140deg,#172B46,#14243B)}main>#contact.contact{background:linear-gradient(135deg,#F7F4EE,#F0EDE5)}
 main>#services .gallery-eyebrow{color:#79B7FA}
 #portfolio .lm-process h2,#portfolio .lm-supports h2{color:#172B46}#portfolio .lm-process h2 em{color:#126FBD}#portfolio .lm-supports h2 em{color:#168BFF}#portfolio .lm-process-top>p,#portfolio .lm-support-head p{color:#46566A}#portfolio .lm-process .lm-step h3{color:#172B46}#portfolio .lm-process .lm-step p{color:#46566A}
-</style><style id="atelier-integration-style">.maquette-integration{padding:0!important;margin:0;overflow:hidden;background:#0b1422}.maquette-integration iframe{display:block;width:100%;height:max(760px,100svh);border:0;background:#0b1422}@media(max-width:740px){.maquette-integration iframe{height:1450px;min-height:1450px}}</style><style id="nemi-brand-lockup">
+</style><style id="mission-018-grand-ecran">
+/* Le bloc hero ne s'étire plus sur toute la hauteur d'un écran 4K (vides géants) :
+   il est plafonné pour rester un premier écran composé et entièrement visible. */
+@media(min-width:1900px) and (min-height:1300px){
+  main>.hero{min-height:0;height:auto;padding-block:clamp(104px,9vh,170px) clamp(40px,5vh,80px)}
+  main>.hero>.wrap{width:min(1780px,calc(100% - 96px))}
+  main>.hero .hero-grid{grid-template-columns:minmax(300px,.8fr) minmax(0,1.2fr)}
+  main>.hero .hero-slideshow{height:auto;min-height:0;max-height:none;aspect-ratio:1.42/1}
+  main>#video-presentation,main>#services.nemi-control-room{min-height:0;height:auto;padding-block:clamp(92px,9vh,150px) clamp(40px,5vh,80px)}
+}
+</style>
+<style id="atelier-integration-style">.maquette-integration{padding:0!important;margin:0;overflow:hidden;background:#0b1422}.maquette-integration iframe{display:block;width:100%;height:max(680px,88svh);border:0;background:#0b1422}</style>
+<script id="atelier-hauteur">
+/* Mission 018 : l'iframe Atelier prenait une hauteur figee (100svh ou 1450px)
+   superieure a son contenu reel, creant un grand vide sombre. Desormais sa hauteur
+   s'ajuste au contenu reel de l'atelier (same-origin srcdoc), avec repli CSS si JS inactif. */
+const demarre = () => {
+  const cadre = document.querySelector('#atelier.maquette-integration iframe');
+  if (!cadre) return;
+  let observateur = null;
+  function ajuste() {
+    try {
+      const doc = cadre.contentDocument;
+      if (!doc || !doc.body) return;
+      const h = Math.ceil(doc.body.getBoundingClientRect().height) || doc.body.scrollHeight;
+      if (h > 0) cadre.style.height = Math.max(560, h + 2) + 'px';
+    } catch (e) { /* iframe pas encore prete */ }
+  }
+  cadre.addEventListener('load', () => {
+    ajuste();
+    setTimeout(ajuste, 400);
+    setTimeout(ajuste, 1600);
+    try {
+      const doc = cadre.contentDocument;
+      if (doc && doc.body && typeof ResizeObserver === 'function') {
+        observateur = new ResizeObserver(ajuste);
+        observateur.observe(doc.body);
+      }
+    } catch (e) { /* meme origine non garanti : le repli par minute reste inutile, load/resize suffisent */ }
+  });
+  window.addEventListener('resize', ajuste);
+  ajuste();
+};
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', demarre);
+else demarre();
+</script><style id="nemi-brand-lockup">
 body>header.nemi-site-header .brand{width:clamp(190px,19vw,250px)}
 body>header.nemi-site-header .brand-lockup{display:flex;align-items:center;gap:0;width:100%;height:66px}
 body>header.nemi-site-header .brand-emblem{position:relative;display:block;flex:0 0 clamp(50px,6vw,68px);height:calc(clamp(50px,6vw,68px)*.66);overflow:hidden;background:#04070b}
@@ -1070,19 +1149,31 @@ body>header.nemi-site-header .nav-link:hover:before,body>header.nemi-site-header
 @media(max-width:380px){body>header.nemi-site-header .nav{width:calc(100% - 24px)}body>header.nemi-site-header .brand{width:min(190px,calc(100vw - 100px))}}
 @media(prefers-reduced-motion:reduce){body>header.nemi-site-header .mobile-nav-toggle,body>header.nemi-site-header .mobile-nav-toggle span{transition:none}}
 </style>
-</head>
+<link rel="icon" href="NEMI_Digital_Studio_logo_bleu_noir_or.png"><style>@media(min-width:981px){header.nemi-site-header nav.main-nav{grid-template-columns:repeat(7,minmax(0,1fr))!important}}</style><style id="nemi-ux3-reseaux">
+.reseaux-nemi{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0;padding:0;list-style:none;align-items:center}
+.reseaux-nemi a,.reseaux-nemi span{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border:1px solid #725632;border-radius:999px;color:#ffe0a4;font-size:12.5px;font-weight:500;text-decoration:none;transition:border-color .25s,background .25s,color .25s}
+.reseaux-nemi a:hover,.reseaux-nemi a:focus-visible{border-color:#d2b56e;background:#1a1f28;color:#fff2d6}
+.reseaux-nemi svg{width:15px;height:15px;fill:#d2b56e;flex:none}
+.reseaux-nemi .reseau-indisponible span{color:#c9b394;border-style:dashed;cursor:default}
+.reseaux-nemi .reseau-indisponible em{font-style:normal;font-size:10px;color:#8b8c96}
+.reseaux-nemi .nom-reseau{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+footer .reseaux-nemi{margin:14px clamp(16px,5vw,80px) 2px}
+</style>
+<style id="nemi-ux3-reprise-codex">html{overflow-anchor:none}#offres,#commercial-atelier{overflow-anchor:none}.reseaux-nemi a{width:44px;height:44px;padding:9px!important;justify-content:center;border-radius:50%}.reseaux-nemi svg{width:22px;height:22px}.reseaux-nemi .nom-reseau{padding:0!important;border:0!important;width:1px!important;height:1px!important;clip-path:inset(50%)}</style></head>
 <body>
 <header class="nemi-site-header">
   <div class="wrap nav">
-    <a class="brand" href="#accueil" data-nav-target="accueil" aria-label="NEMI Studio Digital — Accueil">
-      <span class="brand-lockup"><span class="brand-emblem" aria-hidden="true"><img src="NEMI_Digital_Studio_logo_bleu_noir_or.png" alt=""></span><img src="NEMI-Digital-Studio-logo-horizontal.png" alt="NEMI Studio Digital" class="brand-wordmark"></span>
+    <a class="brand" href="#accueil" data-nav-target="accueil" aria-label="NEMI Digital Studio — Accueil">
+      <span class="brand-lockup"><span class="brand-emblem" aria-hidden="true"><img src="NEMI_Digital_Studio_logo_bleu_noir_or.png" alt=""></span><img src="NEMI-Digital-Studio-logo-horizontal.png" alt="NEMI Digital Studio" class="brand-wordmark"></span>
     </a>
     <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
     <nav class="main-nav" id="primary-navigation" aria-label="Navigation principale">
       <a class="nav-link" href="#accueil" data-nav-key="accueil" data-nav-target="accueil">Accueil</a>
       <a class="nav-link" href="#services" data-nav-key="services" data-nav-target="services">Services</a>
-      <a class="nav-link" href="#portfolio" data-nav-key="realisations" data-nav-target="portfolio">Réalisations</a>
+      <a class="nav-link" href="#portfolio" data-nav-key="realisations" data-nav-target="portfolio">Démonstrations</a>
       <a class="nav-link" href="#atelier" data-nav-key="atelier" data-nav-target="atelier">Atelier</a>
+      <a class="nav-link" href="#methode" data-nav-key="methode" data-nav-target="methode">Méthode</a>
+      <a class="nav-link" href="#offres" data-nav-key="offres" data-nav-target="offres">Offres</a>
       <a class="nav-link" href="#contact" data-nav-key="contact" data-nav-target="contact">Contact</a>
     </nav>
   </div>
@@ -1139,7 +1230,7 @@ body>header.nemi-site-header .nav-link:hover:before,body>header.nemi-site-header
     <div class="video-copy">
       <div class="video-eyebrow"><span>02</span> NEMI · EN MOUVEMENT</div>
       <h2 class="video-title">Le geste.<br>Le son.<br><em>Le cadre.</em></h2>
-      <p class="video-intro">Des métiers vivants, des idées en mouvement. Découvrez NEMI Studio Digital.</p>
+      <p class="video-intro">Des métiers vivants, des idées en mouvement. Découvrez NEMI Digital Studio.</p>
       <div class="video-benefits">
         <div class="video-benefit"><span class="video-icon" aria-hidden="true">✳</span><div><strong>Créations visuelles</strong><p>Des contenus singuliers, pensés pour votre identité.</p></div></div>
         <div class="video-benefit"><span class="video-icon" aria-hidden="true">↗</span><div><strong>Stratégie sur mesure</strong><p>Des directions créatives différentes selon votre activité.</p></div></div>
@@ -1150,7 +1241,7 @@ body>header.nemi-site-header .nav-link:hover:before,body>header.nemi-site-header
     <div class="video-art">
       <div class="video-annotations" aria-hidden="true"><span class="av-tag av-tag-top">NEMI / MOTION UNIT</span><span class="av-tag av-tag-left">PRISE 04 <i></i> 00:12:08</span><span class="av-tag av-tag-right">CADRER<br>LE RÉEL</span><span class="av-tag av-tag-bottom">IMAGE <b>—</b> SON <b>—</b> MOUVEMENT</span><svg class="av-wave" viewBox="0 0 260 44" focusable="false"><path d="M0 22h18l6-11 9 24 9-30 10 35 10-23 9 11h13l7-17 10 28 9-34 10 27 8-12h15l8-8 8 18 8-24 9 34 8-21h12l7-8 7 16h22" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span class="av-crosshair av-crosshair-a"></span><span class="av-crosshair av-crosshair-b"></span></div>
       <svg class="foliage-shadow" viewBox="0 0 500 650" aria-hidden="true" focusable="false"><g fill="none" stroke="#9caa91" stroke-linecap="round" stroke-width="8"><path d="M35 590 C120 455 145 345 180 220 C205 130 270 65 370 28"/><path d="M110 480 C70 430 48 385 35 330 M145 385 C208 370 248 340 287 290 M170 290 C118 255 88 215 72 168 M218 205 C278 205 325 185 366 150 M255 130 C235 82 228 52 236 20"/></g><g fill="#b9c4ac"><path d="M42 337 C9 310 5 275 13 246 C46 262 69 287 72 321 C64 337 53 342 42 337Z"/><path d="M47 329 C58 295 48 270 22 252" fill="none" stroke="#9caa91" stroke-width="4"/><path d="M83 176 C48 157 39 124 45 92 C79 109 99 137 101 164 C95 176 89 180 83 176Z"/><path d="M92 167 C92 138 75 112 51 98" fill="none" stroke="#9caa91" stroke-width="4"/><path d="M280 294 C296 256 329 242 363 245 C348 280 321 301 293 305 C283 302 279 298 280 294Z"/><path d="M292 297 C316 276 340 263 359 250" fill="none" stroke="#9caa91" stroke-width="4"/><path d="M350 158 C362 123 392 106 426 106 C414 140 390 161 363 169 C353 166 349 162 350 158Z"/><path d="M361 161 C383 142 404 125 422 111" fill="none" stroke="#9caa91" stroke-width="4"/><path d="M236 34 C204 11 199 -20 209 -49 C240 -29 256 -1 255 25 C248 36 242 39 236 34Z" transform="translate(0 55)"/><path d="M240 80 C236 54 225 32 211 12" fill="none" stroke="#9caa91" stroke-width="4"/></g></svg><svg class="video-arrow" viewBox="0 0 100 100" aria-hidden="true"><path d="M82 8 C66 2 48 8 48 22 C48 35 65 39 69 27 C74 14 55 11 39 25 C25 37 25 53 13 65" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 51 L13 65 L28 61" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <div class="video-frame"><video controls playsinline webkit-playsinline preload="metadata" aria-label="Vidéo de présentation NEMI Studio Digital"><source src="NEMI_Digital_Studio_video_finale_v5.mp4" type="video/mp4">Votre navigateur ne peut pas lire cette vidéo.</video></div><button class="presentation-play" type="button" aria-label="Lire la vidéo de présentation"><span aria-hidden="true">▶</span><span>Lire la présentation</span></button><div class="video-side-note" aria-hidden="true">NEMI STUDIO DIGITAL <b>·</b> IMAGE / SON / MOUVEMENT</div>
+      <div class="video-frame"><video controls playsinline webkit-playsinline preload="metadata" aria-label="Vidéo de présentation NEMI Digital Studio"><source src="NEMI_Digital_Studio_video_finale_v5.mp4" type="video/mp4">Votre navigateur ne peut pas lire cette vidéo.</video></div><button class="presentation-play" type="button" aria-label="Lire la vidéo de présentation"><span aria-hidden="true">▶</span><span>Lire la présentation</span></button><div class="video-side-note" aria-hidden="true">NEMI STUDIO DIGITAL <b>·</b> IMAGE / SON / MOUVEMENT</div>
     </div>
   </div>
 </section>
@@ -1188,7 +1279,7 @@ body>header.nemi-site-header .nav-link:hover:before,body>header.nemi-site-header
     </div>
   </div>
 </section>
-<section id="portfolio" data-theme="sport" aria-label="Univers NEMI Digital Studio">
+<section id="portfolio" data-theme="sport" aria-label="Univers NEMI Digital Studio"><p style="text-align:center;padding:16px;color:#ffda99">Concepts de démonstration NEMI, sans commande client.</p>
 <style id="nemi-concepts-portfolio-style">#portfolio{padding:0;margin:0}
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');#portfolio{--ink:#191b21;--paper:#f1eee8;--accent:#e5fd57;--second:#ee693f;--muted:#a3a39f;--stage:#111319;--line:rgba(255,255,255,.18);--wash:#242832;color-scheme:dark}#portfolio *{box-sizing:border-box}#portfolio{scroll-behavior:smooth}#portfolio{margin:0;background:var(--ink);color:var(--paper);font:400 15px/1.45 'DM Sans',sans-serif;transition:background .65s,color .65s}#portfolio button,#portfolio a{font:inherit}#portfolio button{color:inherit}#portfolio a{color:inherit}#portfolio[data-theme="festival"]{--ink:#211326;--accent:#ffcf54;--second:#e53a86;--stage:#140c1a;--wash:#321a33}#portfolio[data-theme="formation"]{--ink:#e8e5dc;--paper:#1c2838;--accent:#9ae4d3;--second:#326a8a;--stage:#c8d9d1;--line:rgba(21,46,60,.23);--wash:#d4d9d0;color-scheme:light}#portfolio[data-theme="hebergement"]{--ink:#e8e0d2;--paper:#352b25;--accent:#d7a779;--second:#648478;--stage:#b7aa98;--line:rgba(53,43,37,.2);--wash:#d9cec0;color-scheme:light}#portfolio .page{height:100svh;min-height:0;padding:clamp(10px,2.2svh,22px) clamp(18px,4.4vw,68px) 12px;display:flex;flex-direction:column;max-width:1800px;margin:auto;overflow:hidden}#portfolio .mast{height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:12px}#portfolio .brand{font:800 15px 'Manrope',sans-serif;letter-spacing:-.04em}#portfolio .brand b{color:var(--accent)}#portfolio .meta{display:flex;align-items:center;gap:20px;color:var(--muted);font-size:11px;letter-spacing:.12em;text-transform:uppercase}#portfolio .contact{color:var(--paper);font-weight:700;text-decoration:none;border-bottom:1px solid var(--second);padding-bottom:3px}#portfolio .contact:hover{color:var(--accent)}#portfolio .workbench{display:grid;grid-template-columns:minmax(300px,.76fr) minmax(0,1.5fr);gap:clamp(22px,4vw,64px);align-items:stretch;flex:1;min-height:0}#portfolio .editorial{display:grid;grid-template-rows:auto auto auto minmax(0,1fr);min-width:0;min-height:0;padding:4px 0}#portfolio .scene-overline{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:10px;letter-spacing:.17em;text-transform:uppercase}#portfolio .scene-overline strong{color:var(--accent);font-weight:600}#portfolio .editorial h2{font:600 clamp(29px,3.7vw,54px)/1.03 'Manrope',sans-serif;letter-spacing:-.065em;margin:14px 0 10px;max-width:590px}#portfolio .summary{color:var(--muted);font-size:13px;line-height:1.48;max-width:490px;margin:0 0 14px}#portfolio .deliverable{border-left:2px solid var(--second);padding:4px 0 4px 14px;max-width:500px;margin-bottom:18px}#portfolio .deliverable small{color:var(--second);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:9px}#portfolio .deliverable p{font-size:12px;margin:4px 0 0;color:var(--paper)}#portfolio .scene-nav{display:grid;grid-row:4;align-self:end;gap:0;border-top:1px solid var(--line);margin:0 0 14px;flex:none}#portfolio .scene-choice{position:relative;display:grid;grid-template-columns:38px 1fr auto;align-items:center;text-align:left;gap:10px;min-height:52px;padding:7px 2px;background:transparent;border:0;border-bottom:1px solid var(--line);cursor:pointer;color:var(--muted);transition:color .2s}#portfolio .scene-choice .num{font:700 11px 'Manrope',sans-serif;color:var(--second)}#portfolio .scene-choice .scene-label{font:600 16px 'Manrope',sans-serif;letter-spacing:-.03em}#portfolio .scene-choice .scene-hint{font-size:10px;opacity:0;transform:translateX(-5px);transition:.2s}#portfolio .scene-choice:hover,#portfolio .scene-choice[aria-current="true"]{color:var(--paper);padding-left:2px}#portfolio .scene-choice:hover .num,#portfolio .scene-choice:hover .scene-label,#portfolio .scene-choice[aria-current="true"] .num,#portfolio .scene-choice[aria-current="true"] .scene-label{transform:translateX(7px);transition:transform .25s}#portfolio .scene-choice[aria-current="true"]{background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 12%,transparent),transparent 85%)}#portfolio .scene-choice[aria-current="true"] .scene-label{color:var(--accent)}#portfolio .scene-choice[aria-current="true"] .scene-hint{opacity:1;transform:none}#portfolio .scene-choice:focus-visible,#portfolio .contact:focus-visible{outline:2px solid var(--accent);outline-offset:3px}#portfolio .stage-wrap{position:relative;min-width:0;min-height:0;display:flex;align-items:stretch}#portfolio .stage-frame{position:relative;flex:1;overflow:hidden;background:var(--stage);transition:background .65s;border-radius:4px;isolation:isolate;box-shadow:0 25px 70px rgba(0,0,0,.2)}#portfolio .stage-frame::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.23),transparent 26%,transparent 55%,rgba(0,0,0,.73))}#portfolio .stage-frame video{width:100%;height:100%;object-fit:contain;display:block;background:var(--stage);min-height:0}#portfolio .stage-top{position:absolute;z-index:2;top:17px;left:19px;right:19px;display:flex;justify-content:space-between;align-items:center;color:#fff;font-size:10px;letter-spacing:.14em;text-transform:uppercase;text-shadow:0 1px 8px #000}#portfolio .live-mark{display:flex;align-items:center;gap:7px}#portfolio .live-mark i{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}#portfolio .stage-bottom{position:absolute;z-index:2;left:clamp(18px,3vw,42px);right:clamp(18px,3vw,42px);bottom:58px;color:white;display:flex;justify-content:space-between;align-items:end;gap:20px}#portfolio .stage-caption{font:600 clamp(26px,4vw,58px)/.98 'Manrope',sans-serif;letter-spacing:-.06em;max-width:650px;text-wrap:balance;text-shadow:0 2px 15px rgba(0,0,0,.3)}#portfolio .stage-caption em{font-style:normal;color:var(--accent)}#portfolio .stage-stamp{position:absolute;right:clamp(14px,2vw,28px);top:50%;z-index:2;transform:translateY(-50%);color:#fff;border:1px solid #ffffff65;border-radius:50%;width:74px;height:74px;display:grid;place-items:center;text-align:center;font-size:9px;line-height:1.25;letter-spacing:.1em;text-transform:uppercase;backdrop-filter:blur(6px)}#portfolio .bottomline{flex:none;border-top:1px solid var(--line);margin-top:17px;padding-top:12px;display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--muted);font-size:10px}#portfolio .services{display:flex;gap:9px;align-items:center;flex-wrap:wrap}#portfolio .services b{font-weight:500;color:var(--paper)}#portfolio .services span{color:var(--second)}#portfolio .narration{display:flex;gap:8px;align-items:center;text-align:right}#portfolio .narration strong{color:var(--second);font-size:9px;letter-spacing:.1em;text-transform:uppercase}#portfolio .narration button{background:none;border:0;color:var(--paper);text-decoration:underline;text-decoration-color:var(--second);text-underline-offset:3px;cursor:pointer;font-size:10px;padding:0}#portfolio .message{display:none;max-width:530px;padding:18px 0;color:var(--muted);font-size:13px}#portfolio .message.open{display:block}#portfolio .message p{margin:5px 0 0;color:var(--paper)}
@@ -1258,7 +1349,7 @@ buttons.forEach((b,i)=>{b.addEventListener('mouseenter',()=>choose(i));b.addEven
 </section>
 
 
-<section id="atelier" class="maquette-integration" aria-label="Explorer les univers NEMI"><iframe title="Atelier NEMI — sélection des métiers et formats" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" srcdoc="&lt;!doctype html&gt;&lt;html lang=&quot;fr&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;&lt;meta name=&quot;theme-color&quot; content=&quot;#0b1422&quot;&gt;&lt;title&gt;NEMI — Atelier &#183; s&#233;lection m&#233;tiers et m&#233;dias adapt&#233;s&lt;/title&gt;&lt;style&gt;
+<section id="atelier" class="maquette-integration" aria-label="Explorer les univers NEMI"><iframe title="Atelier NEMI — sélection des métiers et formats" loading="eager" allow="autoplay; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" srcdoc="&lt;!doctype html&gt;&lt;html lang=&quot;fr&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;&lt;meta name=&quot;theme-color&quot; content=&quot;#0b1422&quot;&gt;&lt;title&gt;NEMI — Atelier &#183; s&#233;lection m&#233;tiers et m&#233;dias adapt&#233;s&lt;/title&gt;&lt;style&gt;
 @import url(&#39;https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Cormorant+Garamond:wght@500;600;700&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap&#39;);:root{--night:#0b1422;--blue:#168bff;--ice:#f7f4ee;--gold:#d9b76e;--muted:#adbac9;--line:#31445c;--trade:#b98b4c}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--night);color:var(--ice);font:15px/1.5 &#39;DM Sans&#39;,Arial,sans-serif}.top{height:54px;padding:0 clamp(18px,4vw,64px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff18;color:#aebaca;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase}.brand{font:700 .96rem &#39;Space Grotesk&#39;;letter-spacing:.14em;color:var(--ice)}.brand i{font-style:normal;color:var(--blue)}.top-note{display:flex;gap:10px;align-items:center}.signal{width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 16px var(--blue)}main{max-width:1600px;margin:auto;padding:clamp(14px,2vh,25px) clamp(18px,4vw,64px) 32px}.hero{display:grid;grid-template-columns:1.12fr .88fr;gap:28px;align-items:end;margin:0 0 16px}.eyebrow{color:var(--blue);font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}.hero h1{font:600 clamp(2rem,4.25vw,4.4rem)/.93 &#39;Space Grotesk&#39;;letter-spacing:-.065em;margin:8px 0 0}.hero h1 span{color:var(--gold)}.hero p{max-width:470px;margin:0 0 3px;color:#c1ccd8;font-size:clamp(.86rem,1vw,1rem)}.tabs-head strong{font:600 .72rem &#39;Space Grotesk&#39;;letter-spacing:.12em;text-transform:uppercase;color:#d8e1ec}.workshop{position:relative;isolation:isolate;margin-top:16px;min-height:clamp(510px,66vh,680px);display:grid;grid-template-columns:minmax(245px,.82fr) minmax(0,1.18fr);overflow:visible;border:1px solid #2c4057;background:radial-gradient(ellipse at 69% 18%,#168bff22,transparent 37%),linear-gradient(120deg,#10233a,#0b1422 63%);box-shadow:0 28px 80px #0004}.workshop:before{content:&#39;&#39;;position:absolute;left:0;top:0;width:34%;height:2px;background:linear-gradient(90deg,var(--blue),transparent)}.copy{padding:clamp(28px,3.4vw,52px);align-self:center;position:relative;z-index:1}.number{color:var(--blue);font:600 .7rem &#39;Space Grotesk&#39;;letter-spacing:.16em;text-transform:uppercase}.copy h2{font:600 clamp(2rem,3vw,3.5rem)/.97 &#39;Space Grotesk&#39;;letter-spacing:-.06em;margin:12px 0}.copy h2 i{font-style:normal;color:var(--trade)}.promise{font-size:1rem;font-weight:600;line-height:1.4;margin:0 0 9px;color:#fff}.desc{font-size:.85rem;line-height:1.55;color:#bdc9d6;margin:0;max-width:490px}.benefit{border-left:2px solid var(--blue);padding-left:12px;margin:14px 0 0;color:#e2e9f0;font-size:.79rem}.deliver{margin-top:14px;padding-top:11px;border-top:1px solid #ffffff21}.deliver-label{font-size:.62rem;color:#8da4bc;letter-spacing:.15em;text-transform:uppercase}.formats{display:grid;gap:4px;margin:7px 0 0;padding:0;list-style:none}.formats li{font-size:.72rem;color:#e0e7ef}.formats li:before{content:&#39;↗&#39;;color:var(--blue);margin-right:8px}.movie-frame{background:#060c14;border:1px solid #ffffff3a;box-shadow:0 18px 54px #0008}.movie-frame video{background:#060c14}.film-label{position:absolute;z-index:1;left:10px;top:10px;background:#081321d9;border:1px solid #ffffff40;padding:6px 8px;color:#fff;font-size:.59rem;letter-spacing:.12em;text-transform:uppercase;pointer-events:none}.autoplay-fallback{position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-50%);border:1px solid #ffffffa0;border-radius:999px;background:#071323e8;color:#fff;padding:12px 18px;font:600 .82rem &#39;DM Sans&#39;,sans-serif;box-shadow:0 0 28px #168bff66;cursor:pointer}.autoplay-fallback:hover{background:#168bff;color:#061426}.autoplay-fallback:focus-visible{outline:2px solid #d9b76e;outline-offset:3px}[hidden].autoplay-fallback{display:none}.poster{background:linear-gradient(150deg,color-mix(in srgb,var(--trade) 21%,#172b46),#0a1422 68%);border:1px solid #ffffff52;box-shadow:0 22px 52px #0008}.poster:before{content:&#39;&#39;;position:absolute;width:190px;height:190px;border:1px solid color-mix(in srgb,var(--trade) 68%,transparent);border-radius:50%;right:-82px;top:22%;box-shadow:0 0 0 14px #ffffff08,0 0 40px color-mix(in srgb,var(--trade) 18%,transparent)}.poster:after{content:&#39;&#39;;position:absolute;inset:0;background:linear-gradient(135deg,transparent 35%,#168bff26 35.2%,transparent 36%),linear-gradient(0deg,#08111fe8,transparent 65%);pointer-events:none}.poster-top{z-index:1}
 .poster-bottom{z-index:1}.poster-kicker{font-size:.55rem;letter-spacing:.14em;color:#d9e4ef;text-transform:uppercase}
 .poster-tag{font-size:.55rem;letter-spacing:.14em;color:#d9e4ef;text-transform:uppercase}.poster-word{position:relative;z-index:1;font:700 clamp(1.4rem,2.2vw,2.7rem)/.86 &#39;Space Grotesk&#39;;letter-spacing:-.08em;text-transform:uppercase;overflow-wrap:anywhere}.poster-word i{font-style:normal;color:var(--trade)}.poster-mark{position:absolute;z-index:1;right:10px;top:44%;width:44px;height:44px;border:1px solid var(--blue);border-radius:50%;display:grid;place-items:center;color:#fff;font:600 .65rem &#39;Space Grotesk&#39;;box-shadow:0 0 22px #168bff68}.story{border:1px solid #ffffff42;background:linear-gradient(160deg,#168bff48,#10243a 42%,#0b1422);box-shadow:0 16px 38px #0007}.story:before{content:&#39;&#39;;position:absolute;width:80px;height:80px;border:1px solid #d9b76e99;border-radius:50%;left:-34px;top:27%;box-shadow:0 0 0 9px #ffffff08}.story-label{position:relative;z-index:1;font-size:.47rem;line-height:1.35;letter-spacing:.08em;text-transform:uppercase}
@@ -1445,22 +1536,10 @@ const D=[{&quot;key&quot;:&quot;recording&quot;,&quot;name&quot;:&quot;Studio d&
 </div></div>
 </section>
 
-<section id="offres">
-  <div class="wrap">
-    <div class="section-top">
-      <div><div class="kicker">Des besoins différents</div><h2 class="section-title">Une offre pensée<br>autour de votre projet.</h2></div>
-      <p class="section-desc">Le volume, les formats et les délais dépendent de votre demande. Contactez-nous pour recevoir une proposition adaptée.</p>
-    </div>
-    <div class="offers">
-      <article class="offer"><div class="offer-label">Pour commencer</div><h3>Le contenu à l'unité</h3><p>Une publication ou une Story personnalisée pour annoncer, présenter ou valoriser un élément précis de votre activité.</p><a class="btn secondary" href="#contact">Demander un devis</a></article>
-      <article class="offer featured"><div class="offer-label">Pour communiquer</div><h3>Un ensemble de contenus</h3><p>Plusieurs visuels pensés dans une même direction graphique pour garder une communication cohérente.</p><a class="btn" href="#contact">Décrire mon besoin</a></article>
-      <article class="offer"><div class="offer-label">Pour aller plus loin</div><h3>Un projet sur mesure</h3><p>Une demande spécifique à étudier : formats complémentaires, présence en ligne ou accompagnement selon les possibilités du projet.</p><a class="btn secondary" href="#contact">Parler du projet</a></article>
-    </div>
-    <p class="offer-note">Les tarifs, quantités, délais et modalités sont confirmés individuellement avant toute commande. Les services indiqués « selon le projet » restent à confirmer selon leur disponibilité.</p>
-  </div>
-</section>
-
-
+<section id="offres" style="padding:40px 0;background:#090d15;color:#f3e3cd">
+<div class="wrap"><h2>Les offres NEMI</h2><p>Découvrez nos cinq prestations. La sélection est facultative : vous pouvez aussi décrire librement votre projet.</p><span id="configurateur"></span><span id="projet"></span><span id="espace-nemi"></span>
+<iframe id="commercial-atelier" scrolling="no" src="atelier.html" title="Offres, tarifs et demande de projet NEMI" style="width:100%;height:850px;min-height:0;overflow:hidden;border:1px solid #725632;border-radius:16px" allow="clipboard-write"></iframe>
+<p><a href="atelier.html">Ouvrir l’Atelier en pleine page</a></p></div></section>
 <section class="contact" id="contact">
   <div class="wrap contact-grid">
     <div>
@@ -1470,18 +1549,20 @@ const D=[{&quot;key&quot;:&quot;recording&quot;,&quot;name&quot;:&quot;Studio d&
     </div>
     <div class="contact-panel">
       <h3>Parlons de votre projet</h3>
-      <p>Nous indiquerons ici notre nouveau compte Instagram dès sa création.</p>
-      <span class="btn" aria-disabled="true">Instagram bientôt disponible</span>
-      
+      <p><strong>Email :</strong> <a href="mailto:nemidigitalstudio@gmail.com">nemidigitalstudio@gmail.com</a></p>
+      <p><button class="btn" type="button" id="ouvrir-demande">Décrire mon projet</button></p><p><a class="btn secondary" href="mailto:nemidigitalstudio@gmail.com?subject=Mon%20projet%20NEMI">Écrire directement par email</a></p><p>Votre messagerie s’ouvre : vérifiez puis envoyez votre message. Aucune confirmation de réception n’est affichée par ce site.</p>
+      <ul class="reseaux-nemi" role="list" aria-label="Réseaux sociaux NEMI"><li><a href="https://www.instagram.com/nemi.digitalstudio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (page officielle NEMI)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><span class="nom-reseau">Instagram</span></a></li><li><a href="https://www.facebook.com/profile.php?id=61596059791034" target="_blank" rel="noopener noreferrer" aria-label="Facebook (page officielle NEMI)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg><span class="nom-reseau">Facebook</span></a></li><li><a href="https://www.linkedin.com/company/nemi-digital-studio/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (page officielle NEMI)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span class="nom-reseau">LinkedIn</span></a></li><li><a href="https://www.youtube.com/@NEMIDigitalStudio" target="_blank" rel="noopener noreferrer" aria-label="YouTube (page officielle NEMI)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span class="nom-reseau">YouTube</span></a></li><li><a href="https://www.tiktok.com/@nemidigitalstudio" target="_blank" rel="noopener noreferrer" aria-label="TikTok (page officielle NEMI)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg><span class="nom-reseau">TikTok</span></a></li></ul>
     </div>
   </div>
 </section>
 </main>
 
 <footer>
+  <ul class="reseaux-nemi" role="list" aria-label="Réseaux sociaux NEMI"><li><a href="https://www.instagram.com/nemi.digitalstudio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (page officielle NEMI)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><span class="nom-reseau">Instagram</span></a></li><li><a href="https://www.facebook.com/profile.php?id=61596059791034" target="_blank" rel="noopener noreferrer" aria-label="Facebook (page officielle NEMI)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg><span class="nom-reseau">Facebook</span></a></li><li><a href="https://www.linkedin.com/company/nemi-digital-studio/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (page officielle NEMI)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span class="nom-reseau">LinkedIn</span></a></li><li><a href="https://www.youtube.com/@NEMIDigitalStudio" target="_blank" rel="noopener noreferrer" aria-label="YouTube (page officielle NEMI)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span class="nom-reseau">YouTube</span></a></li><li><a href="https://www.tiktok.com/@nemidigitalstudio" target="_blank" rel="noopener noreferrer" aria-label="TikTok (page officielle NEMI)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg><span class="nom-reseau">TikTok</span></a></li></ul>
   <div class="wrap footer-row">
-    <span><strong>NEMI Studio Digital</strong> · Créativité & présence en ligne</span>
-    <span>© <span id="year"></span> · Tous droits réservés</span>
+    <span><strong>NEMI Digital Studio</strong> · Créativité & présence en ligne</span>
+    <span><a href="mailto:nemidigitalstudio@gmail.com">nemidigitalstudio@gmail.com</a></span>
+    <span>© <span id="year"></span> · Tous droits réservés · <a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a></span>
   </div>
 </footer>
 <style id="nemi-final-mobile-layout">
@@ -1547,6 +1628,10 @@ const D=[{&quot;key&quot;:&quot;recording&quot;,&quot;name&quot;:&quot;Studio d&
     if (control.dataset.slideControl === 'prev') showSlide(current - 1);
     else if (control.dataset.slideControl === 'next') showSlide(current + 1);
     else if (control.dataset.slideIndex !== undefined) showSlide(Number(control.dataset.slideIndex));
+    /* Correction mission 017 : après un clic souris, le bouton gardait le focus et
+       bloquait définitivement le redémarrage automatique (condition focus dans restartTimer).
+       On retire le focus après un clic souris (event.detail > 0) ; le clavier conserve la pause. */
+    if (event.detail > 0 && typeof control.blur === 'function') control.blur();
     restartTimer();
   });
   slider.addEventListener('pointerenter', stopTimer);
@@ -1602,10 +1687,10 @@ const D=[{&quot;key&quot;:&quot;recording&quot;,&quot;name&quot;:&quot;Studio d&
  const navItems=[...nav.querySelectorAll('[data-nav-key]')];
  const activate=key=>navItems.forEach(el=>{const active=el.dataset.navKey===key;el.classList.toggle('is-current',active);if(active)el.setAttribute('aria-current','location');else el.removeAttribute('aria-current')});
  const goTo=(id,hash)=>{const target=document.getElementById(id);if(!target)return;if(hash&&location.hash!==hash)history.pushState(null,'',hash);closeMenu();closeMobileMenu();const top=target.getBoundingClientRect().top+window.scrollY-header.getBoundingClientRect().height-8;window.scrollTo({top,behavior:reduced?'auto':'smooth'})};
- nav.addEventListener('click',event=>{const link=event.target.closest('a[data-nav-target]');if(!link)return;event.preventDefault();const route=link.dataset.navTarget;goTo(route,link.getAttribute('href'));if(link.dataset.goSlide!==undefined){const index=Number(link.dataset.goSlide);activate(index===1||index===10?'studios':'metiers')}else activate(route==='portfolio'?'realisations':route==='services'?'services':route==='contact'?'contact':route==='atelier'?'atelier':'accueil')});
+ nav.addEventListener('click',event=>{const link=event.target.closest('a[data-nav-target]');if(!link)return;event.preventDefault();const route=link.dataset.navTarget;goTo(route,link.getAttribute('href'));if(link.dataset.goSlide!==undefined){const index=Number(link.dataset.goSlide);activate(index===1||index===10?'studios':'metiers')}else activate(link.dataset.navKey || 'accueil')});
  header.querySelector('.brand').addEventListener('click',event=>{event.preventDefault();goTo('accueil','#accueil');activate('accueil')});
- const routes=[['accueil','accueil'],['video-presentation','accueil'],['services','services'],['portfolio','realisations'],['atelier','atelier'],['methode','services'],['offres','services'],['contact','contact']].map(([id,key])=>({el:document.getElementById(id),key})).filter(x=>x.el);
- let frame=0;const update=()=>{frame=0;const y=Math.min(window.innerHeight*.42,window.innerHeight-header.offsetHeight+10);let current=null;for(const item of routes){const r=item.el.getBoundingClientRect();if(r.top<=y&&r.bottom>y){current=item;break}}if(!current){for(let i=routes.length-1;i>=0;i--){if(routes[i].el.getBoundingClientRect().top<=y){current=routes[i];break}}}if(!current)return;let key=current.key;if(key==='accueil'){const slides=[...document.querySelectorAll('#heroSlideshow .slide')];const active=slides.findIndex(x=>x.classList.contains('active'));if(active>=2&&active<=9)key='metiers';else if(active===1||active===10)key='studios'}activate(key)};
+ const routes=[['accueil','accueil'],['video-presentation','accueil'],['services','services'],['portfolio','realisations'],['atelier','atelier'],['methode','methode'],['offres','offres'],['project-studio','offres'],['contact','contact']].map(([id,key])=>({el:document.getElementById(id),key})).filter(x=>x.el);
+ let frame=0;const update=()=>{frame=0;const y=Math.min(window.innerHeight*.42,window.innerHeight-header.offsetHeight+10);let current=null;for(const item of routes){const r=item.el.getBoundingClientRect();if(r.top<=y&&r.bottom>y){current=item;break}}if(!current){for(let i=routes.length-1;i>=0;i--){if(routes[i].el.getBoundingClientRect().top<=y){current=routes[i];break}}}if(!current)return;let key=current.key;activate(key)};
  window.addEventListener('scroll',()=>{if(!frame)frame=requestAnimationFrame(update)},{passive:true});window.addEventListener('resize',()=>{setHeight();update()});const slideRoot=document.querySelector('#heroSlideshow .slides');if(slideRoot&&'MutationObserver'in window)new MutationObserver(()=>{if(!frame)frame=requestAnimationFrame(update)}).observe(slideRoot,{subtree:true,attributes:true,attributeFilter:['class']});update();
 })();
 </script><script id="maquette-frame-auto-height">
@@ -1631,6 +1716,303 @@ const D=[{&quot;key&quot;:&quot;recording&quot;,&quot;name&quot;:&quot;Studio d&
     observer.observe(doc.body);
     window.addEventListener('resize', resizeToContent);
   }, { once: true });
+})();
+</script>
+<style id="nemi-zone-lancement">
+.zone-lancement{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:26px;margin-top:40px;align-items:start}
+.tarifs-lancement,.configurateur-compo{position:relative;padding:26px;background:linear-gradient(180deg,#0b1828,#0e2036);border:1px solid rgba(122,197,255,.22);border-radius:5px;box-shadow:0 18px 45px #0007}
+.titre-fantome{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.titre-lancement,.titre-config{font-family:Georgia,serif;font-size:1.45rem;color:#f4f8fc;margin:0 0 6px;letter-spacing:-.4px}
+.note-lancement{font-size:.85rem;color:#b9c6d6;margin:0 0 16px}
+.grille-tarifs{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.carte-tarif{display:flex;flex-direction:column;gap:2px;padding:14px 16px;border:1px solid rgba(255,255,255,.14);border-radius:5px;background:rgba(255,255,255,.035);transition:transform .18s,border-color .18s,box-shadow .18s,background .18s}
+.carte-tarif:nth-child(7){grid-column:1/-1}
+.carte-tarif .nom-tarif{font-weight:800;color:#eef4fa;font-size:.95rem}
+.carte-tarif .prix-tarif{font-family:Georgia,serif;font-size:1.3rem;color:#f1c75b}
+.carte-tarif .prix-tarif .periode{font-size:.8rem;color:#93a5ba;font-family:Arial,Helvetica,sans-serif}
+.carte-tarif .type-tarif{font-size:.7rem;letter-spacing:1.2px;text-transform:uppercase;color:#93a5ba}
+.carte-tarif.mise-en-avant{border-color:rgba(241,199,91,.45);background:rgba(241,199,91,.05)}
+.carte-tarif.carte-active{border-color:#f1c75b;border-width:2px;box-shadow:0 0 24px rgba(241,199,91,.35),inset 0 0 0 1px rgba(241,199,91,.2);background:rgba(241,199,91,.08);transform:translateY(-2px)}
+.carte-tarif.carte-active .nom-tarif{color:#f1c75b}
+.carte-tarif.carte-active .nom-tarif:after{content:" ✓";color:#f1c75b;font-weight:700}
+.carte-tarif:hover:not(.carte-active){border-color:rgba(241,199,91,.6);background:rgba(241,199,91,.04)}
+.carte-tarif:focus-within{border-color:#f1c75b;box-shadow:0 0 0 3px rgba(241,199,91,.3);outline:none}
+
+/* Nouveaux styles pour les repères du curseur */
+.curseur-wrap{position:relative;width:100%}
+.curseur-reperes{display:flex;justify-content:space-between;margin-top:8px;padding:0 4px;pointer-events:none}
+.repere{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:.7rem;color:#93a5ba;text-align:center;transition:color .2s,transform .2s;min-width:0}
+.repere-label{font-weight:600;white-space:nowrap}
+.repere-prix{font-family:Georgia,serif;font-size:.75rem;color:#f1c75b}
+.repere-active .repere-label{color:#f1c75b;font-weight:700}
+.repere-active .repere-prix{color:#f1c75b}
+.repere-active{transform:scale(1.05)}
+
+/* Styles pour le slider avec repères visuels */
+#curseur-visuels{-webkit-appearance:none;appearance:none;background:transparent;height:24px}
+#curseur-visuels::-webkit-slider-runnable-track{height:4px;background:rgba(255,255,255,.12);border-radius:2px}
+#curseur-visuels::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:#f1c75b;border:3px solid #172b46;margin-top:-8px;box-shadow:0 2px 8px rgba(0,0,0,.4);transition:transform .15s,box-shadow .15s}
+#curseur-visuels::-webkit-slider-thumb:hover{transform:scale(1.15);box-shadow:0 4px 16px rgba(241,199,91,.5)}
+#curseur-visuels::-webkit-slider-thumb:focus-visible{outline:3px solid #f1c75b;outline-offset:3px}
+#curseur-visuels::-moz-range-track{height:4px;background:rgba(255,255,255,.12);border-radius:2px;border:none}
+#curseur-visuels::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#f1c75b;border:3px solid #172b46;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+#curseur-visuels::-moz-range-thumb:hover{transform:scale(1.15)}
+#curseur-visuels::-moz-range-thumb:focus{outline:3px solid #f1c75b;outline-offset:3px}
+#curseur-visuels::-ms-track{height:4px;background:transparent;border-color:transparent;color:transparent}
+#curseur-visuels::-ms-fill-lower{background:rgba(255,255,255,.12);border-radius:2px}
+#curseur-visuels::-ms-fill-upper{background:rgba(255,255,255,.12);border-radius:2px}
+#curseur-visuels::-ms-thumb{width:20px;height:20px;border-radius:50%;background:#f1c75b;border:3px solid #172b46;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+
+@media(max-width:480px){
+  .curseur-reperes{gap:4px}
+  .repere{font-size:.62rem}
+  .repere-label{font-size:.6rem}
+  .repere-prix{font-size:.6rem}
+  #curseur-visuels::-webkit-slider-thumb{width:18px;height:18px;margin-top:-7px}
+}
+.note-types{font-size:.78rem;color:#8fa1b5;margin:14px 0 0}
+#form-configurateur fieldset{border:1px solid rgba(255,255,255,.16);border-radius:5px;padding:14px 16px 16px;margin:0 0 14px}
+#form-configurateur legend{font-weight:800;color:#eef4fa;font-size:.9rem;padding:0 6px}
+.curseur-ligne{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px}
+.curseur-libelle{font-size:.92rem;color:#eef4fa;font-weight:700}
+#curseur-affichage{font-family:Georgia,serif;color:#f1c75b;font-weight:700;font-size:1rem;text-align:right}
+#curseur-visuels{width:100%;margin:4px 0 2px;accent-color:#f1c75b;cursor:pointer}
+#curseur-visuels:focus-visible{outline:3px solid #f1c75b;outline-offset:3px}
+.curseur-echelle{display:flex;justify-content:space-between;font-size:.78rem;color:#93a5ba;margin-top:4px}
+.choix-item{margin:8px 0}
+.choix-item input[type=radio],.choix-item input[type=checkbox]{accent-color:#f1c75b;width:18px;height:18px;flex:none;margin:0 12px 0 0;cursor:pointer}
+.choix-item input[type=radio]:focus-visible,.choix-item input[type=checkbox]:focus-visible{outline:3px solid #f1c75b;outline-offset:2px}
+.choix-item label{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;border:1px solid rgba(255,255,255,.16);border-radius:5px;background:rgba(255,255,255,.04);cursor:pointer;transition:border-color .15s,background .15s}
+.choix-item label:hover{border-color:#f1c75b}
+.choix-item label:has(input:checked){border-color:#f1c75b;background:rgba(241,199,91,.09)}
+.choix-item .libelle-choix{font-weight:700;color:#eef4fa;font-size:.93rem;flex:1}
+.choix-item .prix-choix{font-family:Georgia,serif;color:#f1c75b;white-space:nowrap}
+.recapitulatif{background:rgba(241,199,91,.05);border:1px solid rgba(241,199,91,.3);border-radius:5px;padding:12px 14px;margin-top:4px}
+.ligne-recap{display:flex;justify-content:space-between;font-size:.98rem;color:#eef4fa;margin:4px 0}
+.ligne-recap .valeur-recap{font-weight:800;color:#f1c75b}
+.note-recap{font-size:.76rem;color:#8fa1b5;margin:10px 0 0}
+.note-surmesure{font-size:.82rem;font-weight:700;color:#f1c75b;margin:8px 0 0}
+.note-surmesure[hidden]{display:none}
+.actions-config{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+.actions-config .btn{margin-top:0}
+.actions-config #btn-reset{background:transparent;color:#eef4fa;border-color:#b8c4d4}
+.actions-config #btn-reset:hover{background:rgba(255,255,255,.08)}
+.actions-config #btn-config-devis{background:#f1c75b;color:#172b46;border-color:#f1c75b;font-weight:800}
+.actions-config #btn-config-devis:hover{background:#ffd867;transform:translateY(-2px)}
+#config-note{font-size:.86rem;color:#f1c75b;margin:10px 0 0;min-height:1em}
+#offres .offer .btn.secondary{color:#f4f8fc;border-color:#c6cbd3}
+#offres .offer .btn.secondary:hover{background:#ffffff1f;color:#f4f8fc}
+/* Formulaire de devis (contact) — panneau clair du thème final (ivoire / navy / or) */
+#devis-form .champ{margin:12px 0}
+#devis-form label{display:block;font-size:.85rem;font-weight:700;color:#172B46;margin-bottom:5px}
+#devis-form input,#devis-form textarea{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid rgba(23,43,70,.28);border-radius:5px;background:#fff;color:#172B46;font:inherit;font-size:.95rem}
+#devis-form input:focus,#devis-form textarea:focus{outline:3px solid rgba(217,183,110,.85);outline-offset:1px;border-color:#936F30}
+#devis-form textarea{resize:vertical;min-height:74px}
+#devis-form .btn{margin-top:4px}
+#devis-form .btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+#devis-form .btn.secondary{color:#172B46;border-color:rgba(23,43,70,.45);background:transparent}
+#devis-form .btn.secondary:hover{background:rgba(23,43,70,.07)}
+.devis-recap{background:rgba(217,183,110,.14);border:1px solid rgba(147,111,48,.45);border-radius:5px;padding:12px 14px;margin-top:14px;font-size:.9rem;color:#172B46}
+.devis-recap strong{color:#936F30;display:block;margin-bottom:4px}
+.devis-recap ul{margin:0;padding-left:18px}
+.devis-recap li{margin:3px 0}
+.devis-recap .devis-recap-note{font-size:.75rem;color:#5c6b7d;margin:8px 0 0}
+.devis-note{font-size:.8rem;color:#5c6b7d;margin:10px 0 0}
+#devis-note-envoi{color:#936F30;font-weight:700}
+/* Correction mission 017 : la ligne d'onglets services (non wrappée, défilement horizontal)
+   gonflait la piste implicite de la grille de #services à ~414 px, rognant tout le bloc
+   sur les petits écrans. On force la piste à rester dans la largeur disponible. */
+main>#services.nemi-control-room{grid-auto-columns:minmax(0,1fr)}
+main>#services.nemi-control-room>.control-room-wrap{min-width:0;max-width:100%}
+@media(max-width:900px){.zone-lancement{grid-template-columns:1fr;gap:20px}.tarifs-lancement,.configurateur-compo{padding:20px}.grille-tarifs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.grille-tarifs{grid-template-columns:1fr}.curseur-ligne{flex-direction:column;align-items:flex-start;gap:4px}#curseur-affichage{text-align:left}}
+
+/* Mission 020 — Fix final pour diaporama ≤360px : priorité maximale */
+@media(max-width:360px){
+  main>.hero{min-height:auto!important;padding:12px 0 18px!important;display:block!important}
+  main>.hero .hero-grid{display:block!important}
+  main>.hero .hero-slideshow{height:clamp(180px,40svh,280px)!important;border-radius:10px 20px 10px 10px!important;margin:0 auto 16px!important;max-width:100%!important}
+  main>.hero .hero-content{text-align:center!important}
+  main>.hero .hero-content .actions{justify-content:center!important}
+  .slide-caption{bottom:8px!important;left:10px!important;right:10px!important;padding:6px!important;font-size:.75rem!important;line-height:1.2!important}
+  .slide-caption strong{font-size:clamp(1rem,4.5vw,1.4rem)!important;line-height:1.1!important}
+  .slide-caption small{font-size:.5rem!important}
+  .slide-dots{bottom:6px!important;left:10px!important;gap:3px!important}
+  .slide-dots button{width:5px;height:5px}
+  .slide-dots button.active{width:14px}
+  .slide-arrow{width:26px!important;height:26px!important}
+  .hero-content .actions{gap:6px;justify-content:center!important}
+  .hero-content .btn{padding:8px 10px;font-size:.7rem!important}
+}
+
+</style>
+<style id="nemi-projet-perso">
+/* MISSION 021 — Parcours « Projet personnalisé ». Identité NEMI : nuit bleue, or, Georgia/Inter. */
+#projet{background:radial-gradient(ellipse at 88% 6%,rgba(22,139,255,.10),transparent 36%),radial-gradient(ellipse at 6% 96%,rgba(214,180,91,.07),transparent 32%),linear-gradient(150deg,#0d1b2b,#080e17 72%);color:#edf3f7;border-top:1px solid rgba(214,180,91,.23);padding:70px 0 84px}
+#projet .kicker{font-size:.74rem;letter-spacing:2.4px;text-transform:uppercase;color:#d2b56e;font-weight:800}
+#projet .section-title{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2.1rem,4vw,3.2rem);line-height:1.06;letter-spacing:-1.2px;color:#f7f4ee;margin:14px 0 0}
+#projet .section-desc{color:#b9c6d6;max-width:66ch;margin:16px 0 0;font-size:.98rem;line-height:1.65}
+.parcours-barre{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px;padding:12px 16px;border:1px solid rgba(255,255,255,.10);border-radius:8px;background:rgba(255,255,255,.03)}
+.parcours-lien{color:#79ddff;font-weight:700;font-size:.9rem;text-decoration:none;border-bottom:1px solid rgba(121,221,255,.4);padding-bottom:2px}
+.parcours-lien:hover{color:#d2b56e;border-color:#d2b56e}
+.parcours-etat{font-size:.82rem;color:#9fb0c3}
+.projet-grille{display:grid;grid-template-columns:minmax(0,1.42fr) minmax(0,.88fr);gap:26px;align-items:start;margin-top:24px}
+.projet-colonne{display:flex;flex-direction:column;gap:18px;min-width:0}
+/* Aperçu : la composition se construit */
+.projet-apercu{border:1px solid rgba(214,180,91,.30);border-radius:10px;background:linear-gradient(160deg,rgba(214,180,91,.07),rgba(255,255,255,.02));padding:16px 18px}
+.apercu-titre{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:#d2b56e;font-weight:800}
+.apercu-briques{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;min-height:38px;align-items:flex-start}
+.apercu-vide{font-size:.86rem;color:#93a5ba;line-height:1.5}
+.brique{display:inline-flex;flex-direction:column;gap:1px;padding:7px 12px;border:1px solid rgba(121,221,255,.30);border-radius:6px;background:rgba(22,139,255,.10);font-size:.8rem;color:#eaf3fb;line-height:1.25}
+.brique b{font-weight:700;color:#79ddff;font-size:.66rem;letter-spacing:1.2px;text-transform:uppercase}
+.brique.brique-or{border-color:rgba(214,180,91,.42);background:rgba(214,180,91,.10)}
+.brique.brique-or b{color:#d2b56e}
+/* Étapes */
+.etape{border:1px solid rgba(255,255,255,.13);border-radius:10px;background:rgba(255,255,255,.028);padding:18px 20px 18px;margin:0;min-width:0}
+.etape legend{font-family:Georgia,serif;font-size:1.12rem;color:#f7f4ee;font-weight:700;padding:0 8px;display:flex;align-items:center;gap:10px}
+.etape-num{font-family:Inter,Arial,sans-serif;font-size:.68rem;letter-spacing:1.6px;color:#0a1220;background:#d2b56e;border-radius:4px;padding:3px 7px;font-weight:900}
+.etape-aide{font-size:.83rem;color:#9fb0c3;margin:4px 0 14px;line-height:1.55}
+.etape-pied{margin-top:12px;display:flex;justify-content:flex-end}
+.effacer{background:transparent;border:1px solid rgba(255,255,255,.20);color:#9fb0c3;font-size:.74rem;padding:5px 11px;border-radius:5px;cursor:pointer;transition:border-color .18s,color .18s}
+.effacer:hover,.effacer:focus-visible{border-color:#d2b56e;color:#d2b56e;outline:none}
+.etape-options{display:grid;gap:10px}
+.options-duo{grid-template-columns:repeat(2,minmax(0,1fr))}
+.options-trio{grid-template-columns:repeat(3,minmax(0,1fr))}
+.options-budget{grid-template-columns:repeat(5,minmax(0,1fr))}
+.option{position:relative;display:flex;flex-direction:column;gap:3px;padding:12px 14px;border:1px solid rgba(255,255,255,.14);border-radius:8px;background:rgba(255,255,255,.03);cursor:pointer;transition:border-color .18s,background .18s,transform .18s,box-shadow .18s;min-width:0}
+.option input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.option-titre{font-weight:700;color:#eef4fa;font-size:.92rem}
+.option-desc{font-size:.78rem;color:#9fb0c3;line-height:1.45}
+.option-limite{font-size:.72rem;color:#d2b56e;line-height:1.45;border-top:1px dashed rgba(255,255,255,.14);padding-top:6px;margin-top:3px}
+.option:hover{border-color:rgba(214,180,91,.55);background:rgba(214,180,91,.06);transform:translateY(-2px)}
+.option:focus-within{border-color:#d2b56e;box-shadow:0 0 0 3px rgba(214,180,91,.32)}
+.option.actif{border-color:#d2b56e;border-width:2px;background:rgba(214,180,91,.12);box-shadow:0 0 20px rgba(214,180,91,.24),inset 0 0 0 1px rgba(214,180,91,.25);padding:11px 13px}
+.option.actif .option-titre{color:#f4d98d}
+.option.actif .option-titre::after{content:" \2713";color:#d2b56e}
+.option-visuels{margin-bottom:14px}
+.option-visuels-titre{display:block;font-size:.78rem;letter-spacing:1.6px;text-transform:uppercase;color:#9fb0c3;font-weight:800;margin-bottom:8px}
+.option-visuels-boutons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.visuel-btn{display:flex;flex-direction:column;gap:2px;align-items:center;justify-content:center;padding:10px 6px;border:1px solid rgba(255,255,255,.16);border-radius:8px;background:rgba(255,255,255,.03);color:#eef4fa;font-size:.84rem;font-weight:700;cursor:pointer;transition:border-color .18s,background .18s,transform .18s,box-shadow .18s}
+.visuel-btn span{font-family:Georgia,serif;font-size:.9rem;color:#d2b56e}
+.visuel-btn:hover{border-color:rgba(214,180,91,.6);transform:translateY(-2px)}
+.visuel-btn:focus-visible{outline:3px solid #d2b56e;outline-offset:2px}
+.visuel-btn.actif{border-color:#d2b56e;border-width:2px;background:rgba(214,180,91,.14);box-shadow:0 0 18px rgba(214,180,91,.28);color:#f4d98d}
+/* Cartes d'abonnement */
+.abo-grille{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.abo-carte{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:6px;padding:18px 15px 16px;border:1px solid rgba(255,255,255,.15);border-radius:10px;background:linear-gradient(165deg,rgba(255,255,255,.055),rgba(255,255,255,.015));cursor:pointer;transition:border-color .2s,background .2s,transform .2s,box-shadow .2s;min-width:0}
+.abo-carte input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.abo-coche{position:absolute;top:10px;right:12px;width:22px;height:22px;border-radius:50%;border:1.5px solid rgba(255,255,255,.30);display:flex;align-items:center;justify-content:center;font-size:.72rem;color:#0a1220;background:transparent;opacity:0;transform:scale(.7);transition:opacity .2s,transform .2s,background .2s,border-color .2s}
+.abo-nom{font-family:Georgia,serif;font-size:1.2rem;color:#f7f4ee;font-weight:700;position:relative;z-index:1}
+.abo-prix{font-family:Georgia,serif;font-size:1.05rem;color:#d2b56e;font-weight:700;position:relative;z-index:1}
+.abo-motif{position:absolute;bottom:-14px;left:-6px;font-family:Georgia,serif;font-size:3.2rem;font-weight:700;color:rgba(247,244,238,.05);white-space:nowrap;pointer-events:none;letter-spacing:-1px}
+.abo-limite{list-style:none;margin:6px 0 0;padding:9px 0 0;border-top:1px dashed rgba(255,255,255,.16);display:flex;flex-direction:column;gap:4px;position:relative;z-index:1}
+.abo-limite li{font-size:.72rem;color:#9fb0c3;line-height:1.4}
+.abo-carte:hover{border-color:rgba(214,180,91,.6);transform:translateY(-3px)}
+.abo-carte:focus-within{border-color:#d2b56e;box-shadow:0 0 0 3px rgba(214,180,91,.32)}
+.abo-carte.actif{border-color:#d2b56e;background:linear-gradient(165deg,rgba(214,180,91,.16),rgba(214,180,91,.05));box-shadow:0 14px 34px rgba(0,0,0,.36),inset 0 0 0 1px rgba(214,180,91,.35);transform:translateY(-3px)}
+.abo-carte.actif .abo-coche{opacity:1;transform:scale(1);background:#d2b56e;border-color:#d2b56e;color:#0a1220;font-weight:900}
+.abo-carte.actif .abo-nom{color:#f4d98d}
+.abo-carte.actif .abo-motif{color:rgba(214,180,91,.14)}
+.avertissement{margin-top:14px;font-size:.8rem;line-height:1.55;color:#f0d79a;background:rgba(214,180,91,.10);border:1px solid rgba(214,180,91,.38);border-left-width:3px;border-radius:6px;padding:10px 13px}
+/* Récapitulatif commun */
+.projet-recap{position:sticky;top:112px;border:1px solid rgba(214,180,91,.38);border-radius:12px;background:linear-gradient(168deg,#12203a,#0a1119 72%);padding:22px 22px 20px;box-shadow:0 24px 60px rgba(0,0,0,.42);min-width:0}
+.recap-fantome{position:absolute;top:6px;right:14px;font-family:Georgia,serif;font-size:2.6rem;color:rgba(247,244,238,.05);pointer-events:none;letter-spacing:-1px}
+.recap-titre{font-family:Georgia,serif;font-size:1.3rem;color:#f7f4ee;margin:0 0 14px;position:relative}
+.recap-ligne{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.14);font-size:.86rem;color:#b9c6d6}
+.recap-ligne strong{font-family:Georgia,serif;font-size:1.12rem;color:#f4d98d;text-align:right}
+.recap-ligne-devis strong{font-size:.92rem;color:#79ddff}
+.recap-devis{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+.recap-devis li{font-size:.78rem;color:#c9d6e4;background:rgba(121,221,255,.08);border:1px solid rgba(121,221,255,.24);border-radius:6px;padding:6px 10px;line-height:1.45}
+.recap-reperes{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.repere-b{font-size:.7rem;letter-spacing:.6px;padding:4px 9px;border-radius:20px;border:1px solid rgba(255,255,255,.18);color:#9fb0c3;background:rgba(255,255,255,.04)}
+.repere-b.actif{border-color:#d2b56e;color:#f4d98d;background:rgba(214,180,91,.12)}
+.recap-note{font-size:.75rem;color:#8fa1b5;line-height:1.55;margin:14px 0 0}
+.projet-actions{display:flex;flex-direction:column;gap:9px;margin-top:16px}
+.projet-actions .btn{width:100%;text-align:center;justify-content:center}
+/* Le .btn.secondary de base est prévu pour fond clair (texte navy) : sur #projet
+   (fond nuit) on force des couleurs lisibles, sans toucher aux autres sections. */
+#projet .btn.secondary{color:#d9e8f7;border-color:rgba(150,186,220,.4);background:rgba(12,22,35,.6)}
+#projet .btn.secondary:hover,#projet .btn.secondary:focus-visible{background:rgba(255,255,255,.12);color:#f4d98d;border-color:#d2b56e;outline:none}
+.recap-honnete{font-size:.74rem;color:#8fa1b5;line-height:1.5;margin:12px 0 0}
+.lien-parcours{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:14px 0 0;padding-top:14px;border-top:1px dashed rgba(255,255,255,.16)}
+.lien-parcours a{color:#79ddff;font-weight:700;font-size:.9rem;text-decoration:none;border-bottom:1px solid rgba(121,221,255,.45);padding-bottom:2px}
+.lien-parcours a:hover{color:#d2b56e;border-color:#d2b56e}
+.lien-parcours span{font-size:.78rem;color:#93a5ba}
+/* Animations maîtrisées */
+.js-reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+.js-reveal.visible{opacity:1;transform:none}
+.brique-in{animation:brique-in .34s ease both}
+@keyframes brique-in{from{opacity:0;transform:translateY(-7px) scale(.95)}to{opacity:1;transform:none}}
+.surligne{animation:surligne 1.1s ease}
+@keyframes surligne{0%,100%{box-shadow:none}35%{box-shadow:0 0 0 3px rgba(214,180,91,.6)}}
+@media(prefers-reduced-motion:reduce){
+ #projet *{transition:none!important;animation:none!important}
+ .js-reveal{opacity:1!important;transform:none!important}
+ .surligne{box-shadow:0 0 0 3px rgba(214,180,91,.6)}
+}
+/* Responsive */
+@media(max-width:1100px){.abo-grille{grid-template-columns:repeat(2,minmax(0,1fr))}.options-budget{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:1024px){.projet-grille{grid-template-columns:1fr}.projet-recap{position:static}.options-trio{grid-template-columns:1fr}}
+@media(max-width:760px){.options-duo{grid-template-columns:1fr}.option-visuels-boutons{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.abo-grille{grid-template-columns:1fr}.options-budget{grid-template-columns:repeat(2,minmax(0,1fr))}.etape{padding:16px 14px}}
+@media(max-width:400px){.option-visuels-boutons{grid-template-columns:1fr}.options-budget{grid-template-columns:1fr}}
+</style>
+
+
+
+<style>
+#offres .zone-lancement{grid-template-columns:minmax(0,1fr)}
+#project-studio{background:#0a1220;color:#f7f4ee;padding:clamp(18px,4vw,56px);display:grid;grid-template-columns:minmax(0,1fr) minmax(145px,16%);gap:18px;align-items:start}
+#project-studio [hidden]{display:none!important}
+.studio-modes{grid-column:2;grid-row:1;display:grid;gap:8px}
+#project-studio #projet,#project-studio #configurateur{grid-column:1;grid-row:1;min-width:0;width:100%;margin:0;padding:18px}
+#project-studio #projet>.wrap{width:100%}
+.studio-steps{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.studio-modes button,.studio-steps button{font:inherit;background:#142640;color:#f7f4ee;border:1px solid #7893ab;border-radius:6px;padding:9px 12px;min-height:44px;cursor:pointer}
+#project-studio button[aria-pressed=true]{border-color:#d2b56e;color:#f5d886;background:#21344c}
+#project-studio :focus-visible{outline:2px solid #79ddff;outline-offset:3px}
+#project-studio .projet-grille{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+#project-studio .projet-recap{min-width:0;overflow-wrap:anywhere}
+#project-studio .reveal{opacity:1!important;transform:none!important}
+#project-studio .apercu-briques .brique{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+#project-studio .brique:is([data-composant="Site"],[data-composant="Visuels"],[data-composant="Réseaux"]){min-height:65px;min-width:min(100%,105px);border-top:5px solid #79ddff}
+#project-studio .brique[data-composant="Visuels"]{border-top-color:#d2b56e}
+@media(max-width:900px){#project-studio .projet-grille{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:650px){#project-studio{grid-template-columns:minmax(0,1fr);gap:12px;padding:12px}.studio-modes{grid-column:1;grid-template-columns:1fr 1fr}#project-studio #projet,#project-studio #configurateur{grid-row:2;padding:14px}}
+</style>
+
+<script id="commercial-ux-integration">
+(()=>{
+ const frame=document.getElementById('commercial-atelier'),contact=document.getElementById('ouvrir-demande');
+ let retourContact=false,pret=false,ouvrirEnAttente=false,retourContactEnAttente=false,retourTimer;
+ const marge=()=> (document.querySelector('header.nemi-site-header')?.getBoundingClientRect().height||0)+18;
+ const comportement=()=>matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+ const envoyer=type=>frame.contentWindow?.postMessage({canal:'nemi-commercial-ux2',type},location.protocol==='file:'?'*':location.origin);
+ const revenirContact=()=>{clearTimeout(retourTimer);retourTimer=setTimeout(()=>{if(!retourContactEnAttente)return;retourContactEnAttente=false;contact.focus({preventScroll:true});window.scrollTo({top:window.scrollY+contact.getBoundingClientRect().top-marge(),behavior:comportement()})},120)};
+ const ajuster=height=>{if(!Number.isFinite(height)||height<100||height>100000)return;if(Math.abs(frame.clientHeight-height)>1)frame.style.height=height+'px';if(retourContactEnAttente)revenirContact()};
+ window.addEventListener('message',event=>{
+  const origineValide=location.protocol==='file:'?event.origin==='null':event.origin===location.origin;
+  if(event.source!==frame.contentWindow||!origineValide)return;
+  const data=event.data;if(!data||data.canal!=='nemi-commercial-ux2')return;
+  if(data.type==='ready'){
+   pret=true;ajuster(data.height);
+   if(ouvrirEnAttente){ouvrirEnAttente=false;envoyer('open-project')}
+  }else if(data.type==='size')ajuster(data.height);
+  else if(data.type==='reveal'&&Number.isFinite(data.top)&&data.top>=0&&data.top<=100000){const y=frame.getBoundingClientRect().top+data.top;if(y<marge()||y>innerHeight-100)window.scrollTo({top:window.scrollY+y-marge(),behavior:comportement()})}
+  else if(data.type==='scroll'&&Number.isFinite(data.top)&&data.top>=0&&data.top<=100000){
+   const top=window.scrollY+frame.getBoundingClientRect().top+data.top-marge();
+   window.scrollTo({top,behavior:comportement()});
+  }else if(data.type==='dossier-closed'&&retourContact){
+   retourContact=false;
+   if(data.retour===true){retourContactEnAttente=true;revenirContact()}
+  }
+ });
+ frame.addEventListener('load',()=>{pret=false;envoyer('ping')});
+ envoyer('ping');
+ contact.addEventListener('click',()=>{
+  retourContact=true;retourContactEnAttente=false;clearTimeout(retourTimer);
+  if(pret)envoyer('open-project');else{ouvrirEnAttente=true;envoyer('ping')}
+ });
 })();
 </script></body>
 </html>

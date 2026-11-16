@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NEMI Digital Studio — Offres et projet</title>
+<style>
+*{box-sizing:border-box}html{color-scheme:dark}body{margin:0;background:#07090d;color:#fff6e7;font:15px system-ui,sans-serif}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible{outline:2px solid #84eeff;outline-offset:4px}header{position:sticky;top:0;z-index:20;background:#0a0c10f5;border-bottom:1px solid #514125;display:flex;justify-content:space-between;align-items:center;padding:13px clamp(16px,5vw,80px)}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.14em}.brand i{font:italic 28px Georgia;color:#ffd782}.brand small{display:block;font-size:9px;color:#debc7a;letter-spacing:.23em}.gold{border:1px solid #ffe1a1;border-radius:30px;background:linear-gradient(155deg,#fff1bc,#e9ad4d 63%,#c18330);color:#1c1307;font-weight:750;padding:10px 17px;box-shadow:0 0 25px #eeb34e30}.intro{width:min(1180px,92%);margin:25px auto 12px;display:flex;justify-content:space-between;align-items:end;gap:15px;flex-wrap:wrap}h1{font:clamp(38px,6vw,80px)/.94 Georgia,serif;letter-spacing:-.055em;margin:0;color:#fff2d6}.intro p{margin:10px 0 0;color:#decdb3}.modes{display:flex;padding:4px;gap:4px;border:1px solid #705633;border-radius:30px;background:#151820}.modes button,.controls button{background:transparent;border:0;border-radius:25px;padding:8px 12px}.modes [aria-pressed=true]{background:#ffda8f;color:#201505;font-weight:700}
+.stage{position:relative;isolation:isolate;overflow:hidden;height:clamp(350px,48vw,455px);perspective:1100px;touch-action:pan-y;background:radial-gradient(ellipse at 51% 53%,#8a592e 0,transparent 49%),radial-gradient(ellipse at 16% 55%,#16425b,transparent 45%),linear-gradient(116deg,#07090d,#24252e 53%,#090a10)}.stage:before,.stage:after{content:"";position:absolute;pointer-events:none;z-index:-1}.stage:before{inset:69% -30% -55%;background:repeating-linear-gradient(90deg,transparent 0 87px,#f0b86544 89px 90px),repeating-linear-gradient(0deg,transparent 0 26px,#e7ba6533 28px 29px),radial-gradient(ellipse,#edb0606b,transparent 62%);transform:perspective(140px) rotateX(34deg);transform-origin:top;border-top:1px solid #f9c6727a}.stage:after{inset:0;background:linear-gradient(106deg,transparent 13%,#80d9ff19 27%,transparent 40%,#ffe1a216 58%,transparent 75%);mix-blend-mode:screen}
+.card{--w:clamp(164px,27vw,300px);position:absolute;left:50%;top:47%;width:var(--w);height:clamp(254px,32vw,325px);transform-style:preserve-3d;transform:translate(-50%,-50%) translateX(calc(var(--d) * var(--step))) translateZ(var(--depth)) rotateY(var(--yaw)) scale(var(--size));transition:transform .66s cubic-bezier(.2,.77,.22,1);--step:clamp(75px,16vw,197px)}.quick .card{--step:clamp(87px,20vw,234px);top:49%}.card.open{left:calc(50% + min(8vw,100px))}.card{transition-property:transform,left,top}.face,.inside,.coverback{border:1px solid #f7ce7f;border-radius:12px;position:absolute;inset:0;box-shadow:0 12px 30px #000a,inset 0 0 15px #eebc6540,0 0 14px #f7c97644}.face{width:100%;text-align:left;overflow:hidden;display:flex;flex-direction:column;justify-content:end;padding:17px;background:linear-gradient(151deg,#e7c99e77,transparent 32%),linear-gradient(162deg,#393a41 6%,#141820 44%,#07090e 72%,#382b20);transform-style:preserve-3d}.face:focus-visible{outline-offset:-4px}.face strong{font:clamp(21px,3vw,34px)/1 Georgia;position:relative}.face small{color:#ffda99;margin-top:8px;position:relative}.art{position:absolute;inset:12% 14% 27%;filter:drop-shadow(0 0 15px var(--glow));transform:rotate(-16deg) skewY(-5deg)}.art i{position:absolute;inset:calc(var(--n) * 9%);border:2px solid transparent;border-radius:var(--shape);background:linear-gradient(154deg,#323039,#0b0c12 49%,#2f2a22) padding-box,linear-gradient(130deg,#fff5d0,#a77538 28%,#ffe1a1 51%,var(--glow) 72%,#ffe8b5) border-box;box-shadow:inset 0 0 20px #ffc46935,6px 9px 10px #000b}.art i:nth-child(4){background:radial-gradient(ellipse at 30% 25%,#fff5cb,var(--glow) 16%,#181921 70%)}
+.cover{position:absolute;inset:0;transform-origin:left center;transform-style:preserve-3d;transition:transform .68s cubic-bezier(.18,.74,.22,1);transition-delay:0s}.open .cover{transform:rotateY(-112deg);transition-delay:.13s}.face,.coverback{backface-visibility:hidden}.coverback{transform:rotateY(180deg);background:linear-gradient(132deg,#0a0b10,#6a4f32 40%,#171b24 54%,#30241c);display:grid;place-items:center;color:#ffe1a1;font:italic 40px Georgia}.inside{visibility:hidden;background:radial-gradient(ellipse at top right,#664b32,#171b23 55%,#0d0f15);padding:clamp(11px,2vw,22px);display:flex;flex-direction:column;justify-content:center;align-items:start}.open .inside{visibility:visible}.inside h2{font:clamp(22px,3vw,34px)/1 Georgia;margin:7px 0}.inside p{color:#f3e3cd;margin:5px 0 13px;font-size:clamp(12px,1.5vw,15px)}.inside .gold{font-size:12px;padding:7px 10px}.close{position:absolute;top:6px;right:7px;background:#101319;border:1px solid #977a4a;border-radius:50%;width:29px;height:29px}.inside small{color:#ffdc93;font-size:10px;letter-spacing:.12em;text-transform:uppercase}.controls{display:flex;align-items:center;justify-content:center;gap:12px;margin:-16px auto 0;position:relative;z-index:9}.controls button{width:40px;height:38px;border:1px solid #a7804b;background:#13161d;padding:0}.controls output{font-variant-numeric:tabular-nums;color:#ffe0a4;min-width:50px;text-align:center}.summary{width:min(1180px,92%);margin:12px auto 22px;border-top:1px solid #725632;padding-top:12px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}.summary strong{color:#ffdb92}.summary output{color:#eee0cb;flex:1;min-width:165px}.quick .summary{border:1px solid #a57b49;background:linear-gradient(110deg,#382d21,#10151e);padding:12px 16px;border-radius:13px}dialog{max-width:min(92vw,490px);background:#151921;color:#fff2db;border:1px solid #d5a65c;border-radius:16px;padding:24px}dialog::backdrop{background:#07080cbb}dialog h2{margin-top:0}dialog form{margin-top:20px}@media(max-width:530px){.intro{margin-top:22px}.intro p{font-size:13px}.stage{height:345px}.open .cover{transform:rotateY(-118deg)}.card.open{left:calc(50% + 27px)}.summary{gap:8px}.summary .gold{display:none}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+html{background:#080b11}body{min-height:100vh;background:linear-gradient(160deg,#0f1c2e 0%,#101726 27%,#0a0d14 54%,#090a0d 90%)}header{background:#0c1524f7}.intro{align-items:center;margin-top:clamp(25px,5vw,54px);margin-bottom:20px}.intro p{max-width:58ch;line-height:1.55}.modes{flex-wrap:wrap;border-radius:18px;background:#121a28}.stage{background:radial-gradient(ellipse at 59% 54%,#604729,transparent 47%),radial-gradient(ellipse at 20% 38%,#185170,transparent 52%),linear-gradient(118deg,#101e32,#171a21 57%,#090a0e)}.face{background:linear-gradient(144deg,#8dc9f054,transparent 37%),linear-gradient(162deg,#24354c,#141820 45%,#08090d 69%,#493525);box-shadow:0 12px 30px #000b,inset 0 1px 10px #ffe4ae40,0 0 18px #f7c97650}.inside{background:linear-gradient(146deg,#223a51,#171b23 46%,#17110c);border-color:#ffdc97}.inside p{line-height:1.42}.card-actions{display:grid;gap:6px}.card-actions .secondary{font-size:12px;text-align:left;padding:6px 8px}.pick[aria-pressed=true]{background:#ffda8f;color:#201505;border-color:#ffda8f}.pick[aria-pressed=true]::before{content:"✓ "}.stage .card[hidden]{display:none}.workbench{width:min(900px,92%);margin:22px auto 48px;padding:clamp(17px,4vw,36px);border:1px solid #8b734a;border-radius:18px;background:linear-gradient(135deg,#162337,#11151e 55%,#18140f);scroll-margin-top:82px}.workbench h2,dialog h2{font:clamp(28px,5vw,46px)/1.05 Georgia;margin:12px 0}.steps{display:flex;gap:7px;flex-wrap:wrap}.secondary,.steps button,.choices label{border:1px solid #8b8c96;border-radius:12px;background:#171e2a;padding:9px 12px}.steps [aria-current=step]{border-color:#ffe0a0;background:#ffda8f;color:#201505}.choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr));gap:9px;margin:16px 0 22px}.choices label{display:flex;gap:8px;align-items:center}.choices label:has(:checked){border-color:#ffda8f;background:#322a20}input{accent-color:#ffc96a}.actions{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-top:17px}dialog{width:min(680px,94vw);max-width:none;max-height:90dvh;padding:clamp(18px,5vw,42px);background:radial-gradient(ellipse at 100% 0,#2e455c,transparent 60%),linear-gradient(145deg,#1b2738,#0d1119 65%,#2d2115);box-shadow:0 0 65px #e8b75935}dialog::backdrop{background:#060b16dc;backdrop-filter:blur(7px)}.dialog-top{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#ffda99}.dossier-list{display:grid;gap:8px;padding:0;list-style:none}.dossier-list li{padding:9px 12px;border-left:2px solid #deb069;background:#1b2533}.contact{display:grid;gap:12px;margin:18px 0}.contact label{display:grid;gap:4px}.contact input,.contact textarea{font:inherit;color:inherit;background:#0c1420;border:1px solid #9099a8;border-radius:9px;padding:9px;width:100%}input:focus-visible,textarea:focus-visible{outline:2px solid #84eeff;outline-offset:2px}.muted{color:#dbcdbb}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}@media(max-width:530px){header{padding-inline:12px}.brand{gap:6px}.gold{padding-inline:12px}.modes button{font-size:13px}.card{--w:clamp(164px,47vw,224px)}.inside{padding:11px}.stage{height:350px}}
+
+.card-offres .inside {padding:12px;gap:6px;overflow:hidden}
+.card-offres .inside > .close {position:absolute;top:7px;right:7px}
+.card-offres .inside h2 {margin:2px 30px 2px 0;font-size:clamp(18px,3vw,27px)}
+.card-offres .defile {width:100%;scrollbar-gutter:stable}
+.defile:focus-visible {outline:2px solid #84eeff;outline-offset:-2px}
+#review {margin-bottom:12px}
+</style>
+<style id="nemi-v2">
+/* V2 — lisibilité cartes, dossier, finalisation. Animations existantes intactes. */
+@keyframes apparition{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+.pick{display:flex;flex-direction:column;align-items:stretch;gap:2px;text-align:left}
+.pick strong{font-weight:650}
+.pick small{color:#ffda99;font-weight:500;letter-spacing:.02em;text-transform:none;font-size:12px}
+.pick[aria-pressed=true] small{color:#201505}
+.pick-bloc{display:flex;flex-direction:column;gap:4px}
+.card-offres .inside{justify-content:flex-start;gap:9px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#a7804b transparent}
+.card-offres .inside::-webkit-scrollbar{width:6px}
+.card-offres .inside::-webkit-scrollbar-thumb{background:#a7804b;border-radius:6px}
+.card-offres .inside::-webkit-scrollbar-track{background:transparent}
+.pick-desc{margin:0;color:#decdb3;font-size:12px;line-height:1.4}
+.offres-details{margin-top:12px;width:100%}
+.offres-details summary{cursor:pointer;color:#ffda99;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.offres-details[open] summary{color:#ffe0a4}
+.offres-details ul{margin:8px 0 0;padding-left:18px;color:#f3e3cd;font-size:12px;line-height:1.5}
+.offres-details li{margin-bottom:6px}
+.offres-details li:last-child{color:#decdb3;font-style:italic}
+.choices label{align-items:flex-start;animation:apparition .35s ease both}
+.choix-texte{display:flex;flex-direction:column;gap:2px}
+.choix-texte strong{font-weight:600}
+.choix-texte small{color:#decdb3;font-size:12px;line-height:1.4;text-transform:none;letter-spacing:0}
+.choix-texte em{color:#ffda99;font-style:normal;font-size:12px;font-weight:600}
+.summary #resume-montant{color:#ffdb92;font-weight:700}
+.summary #resume-noms{color:#eee0cb}
+dialog{max-height:min(86vh,760px);overflow:auto;overscroll-behavior:contain}
+.dialog-top{position:sticky;top:0;z-index:3;display:flex;justify-content:space-between;align-items:center;background:#151921;border-bottom:1px solid #725632;padding-bottom:10px;margin-bottom:6px}
+.dossier-intro{color:#decdb3;font-size:14px;line-height:1.5}
+.dossier-bloc{border:1px solid #514125;border-radius:12px;background:#101520;padding:12px 14px;margin:10px 0}
+.dossier-bloc h3{margin:0 0 6px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#debc7a;font-weight:700}
+.dossier-bloc ul{margin:0;padding-left:18px;color:#f3e3cd;font-size:14px;line-height:1.55}
+.dossier-bloc li.vide{color:#8b8c96;font-style:italic;list-style:none;margin-left:-18px}
+.montant{margin:8px 0 0;color:#decdb3;font-size:14px}
+.montant strong{color:#ffdb92;font-variant-numeric:tabular-nums}
+.avert-recouvrement{color:#f0c083;font-size:12px;line-height:1.45;margin:8px 0 0}
+.dossier-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+.finale-intro{color:#decdb3;line-height:1.55}
+.contact{display:grid;gap:12px;margin-top:14px}
+.contact label{display:flex;flex-direction:column;gap:5px;color:#debc7a;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.contact input,.contact textarea{background:#0d1118;border:1px solid #8b8c96;border-radius:10px;color:#fff2db;padding:10px 12px;font:inherit}
+.contact input:focus-visible,.contact textarea:focus-visible{outline:2px solid #84eeff;outline-offset:2px}
+.contact ::placeholder{color:#8b8c96}
+.apercu-carte{border:1px solid #d5a65c;border-radius:14px;background:linear-gradient(150deg,#1a1e28,#131720);padding:16px 18px;margin-top:14px}
+.apercu-bloc{padding:8px 0;border-bottom:1px solid #514125}
+.apercu-bloc:last-of-type{border-bottom:0}
+.apercu-bloc h4{margin:0 0 4px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#debc7a}
+.apercu-bloc ul{margin:0;padding-left:18px;color:#f3e3cd;font-size:14px;line-height:1.55}
+.apercu-estimation{margin:12px 0 0;color:#decdb3}
+.apercu-estimation strong{color:#ffdb92;font-variant-numeric:tabular-nums}
+.finale-signature{margin:14px 0 0;color:#ffdc93;font:italic 15px Georgia,serif}
+@media(max-width:560px){.dossier-bloc,.apercu-carte{padding:10px 12px}}
+
+.card-offres .inside {padding:12px;gap:6px;overflow:hidden}
+.card-offres .inside > .close {position:absolute;top:7px;right:7px}
+.card-offres .inside h2 {margin:2px 30px 2px 0;font-size:clamp(18px,3vw,27px)}
+.card-offres .defile {width:100%;scrollbar-gutter:stable}
+.defile:focus-visible {outline:2px solid #84eeff;outline-offset:-2px}
+#review {margin-bottom:12px}
+</style>
+<style id="nemi-v4-2">
+/* V4.2 — Corrections P0/P1/P2/P3/P4/P5/P6/P7. Animations intouchables. */
+
+/* --- ACCUEIL : 3 cartes immersives --- */
+.entry-card{position:relative}
+.entry-card .face{padding:24px 20px 20px}
+.entry-card .face::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(255,215,130,.08),transparent 60%);pointer-events:none}
+.entry-card .illustration{position:absolute;inset:18% 22% 30%;opacity:.12;filter:drop-shadow(0 0 20px var(--glow));pointer-events:none}
+.entry-card .illustration .vt{transform:scale(.9);opacity:.8}
+.entry-card .intro-text{margin-top:10px;color:#e8d8c0;font-size:13px;line-height:1.55;max-width:85%}
+.entry-card .intro-text strong{color:#ffda99}
+.entry-card .mode-badge{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:6px 12px;background:rgba(255,218,143,.12);border:1px solid #725632;border-radius:999px;font-size:11.5px;color:#ffda99;font-weight:600}
+
+/* --- VOLETS OUVERTS : illustrations contextuelles DIFFÉRENCIÉES --- */
+.coverback{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.coverback .dos-vitrine{width:78%;height:65%;opacity:.5;filter:drop-shadow(0 0 18px var(--glow));transform:scale(.98);pointer-events:none}
+.coverback .dos-n{font:italic 32px Georgia;color:#ffe1a1;text-shadow:0 0 20px #000c,0 3px 10px #0009;pointer-events:none;z-index:1}
+
+/* Spécifiques par catégorie - volet ouvert */
+.coverback .dos-vitrine .vt-visuels{opacity:.9}
+.coverback .dos-vitrine .vt-site{opacity:.9}
+.coverback .dos-vitrine .vt-reseaux{opacity:.9}
+.coverback .dos-vitrine .vt-video{opacity:.9}
+.coverback .dos-vitrine .vt-surmesure{opacity:.9}
+
+/* Visuels - pile de créations plus narrative */
+.coverback .dos-vitrine .vt-visuels .pl-a{--rot:-22deg;left:2%;top:12%}
+.coverback .dos-vitrine .vt-visuels .pl-b{--rot:10deg;left:18%;top:28%}
+.coverback .dos-vitrine .vt-visuels .pl-c{--rot:18deg;left:34%;top:2%}
+.coverback .dos-vitrine .vt-visuels .pl-c::after{content:"";position:absolute;left:18%;top:18%;width:30%;aspect-ratio:1;border-radius:50%;border:2px solid #ffe1a1aa}
+
+/* Site web - écran + téléphone avec contenu */
+.coverback .dos-vitrine .vt-site .ecran{opacity:.95}
+.coverback .dos-vitrine .vt-site .tel{opacity:.95}
+
+/* Réseaux - publications + engagement */
+.coverback .dos-vitrine .vt-reseaux .pub{opacity:.95}
+.coverback .dos-vitrine .vt-reseaux .coeur{animation:battement 3s ease-in-out infinite;opacity:.9}
+@keyframes battement{0%,100%{transform:scale(1)}20%{transform:scale(1.2)}40%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.coverback .dos-vitrine .vt-reseaux .coeur{animation:none!important}}
+
+/* Vidéo - lecture + timeline */
+.coverback .dos-vitrine .vt-video .lecture{opacity:.95}
+.coverback .dos-vitrine .vt-video .piste{opacity:.9}
+
+/* Sur mesure - composition riche */
+.coverback .dos-vitrine .vt-surmesure .m-poster{opacity:.95}
+.coverback .dos-vitrine .vt-surmesure .m-ecran{opacity:.95}
+
+/* --- CARTES À OFFRES : DÉFILEMENT LIBRE + CROIX STICKY --- */
+.card-offres .inside{display:flex;flex-direction:column;min-height:0}
+.card-offres .inside > .close{position:sticky;top:8px;align-self:flex-end;z-index:5;background:#101319cc;backdrop-filter:blur(4px);flex-shrink:0}
+.card-offres .defile{flex:1 1 auto;min-height:0;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#a7804b transparent;padding-right:6px;padding-bottom:10px}
+.card-offres .defile details{margin-top:8px}
+.card-offres .defile summary{cursor:pointer;color:#ffda99;font-weight:600;font-size:12px}
+.card-offres .defile details[open] summary{color:#ffe0a4}
+.card-offres .pick-desc{margin:4px 0 0;color:#e8d8c0;font-size:12px;line-height:1.4}
+.card-offres .pick-bloc{padding-bottom:6px;border-bottom:1px solid rgba(255,218,143,.08);margin-bottom:6px}
+.card-offres .pick-bloc:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0}
+
+/* --- FORMULAIRE : validation, accessibilité, mobile --- */
+.contact label small.facultatif{color:#c9b394;font-weight:400;font-size:11px;letter-spacing:.02em}
+.contact .ligne-double{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:530px){.contact .ligne-double{grid-template-columns:1fr}}
+.contact .note-donnees{margin:14px 0 10px;padding:12px 14px;border:1px solid #725632;border-radius:10px;background:#111720;font-size:12px;color:#dcc9b0;line-height:1.55}
+.contact .note-donnees strong{color:#ffda99}
+.contact .btn-apercu{background:linear-gradient(155deg,#fff1bc,#e9ad4d 63%,#c18330);border:1px solid #ffe1a1;border-radius:30px;color:#1c1307;font-weight:750;padding:12px 24px;box-shadow:0 0 30px #eeb34e40;transition:transform .15s,box-shadow .15s}
+.contact .btn-apercu:hover{transform:translateY(-1px);box-shadow:0 0 40px #eeb34e60}
+.contact .btn-apercu:focus-visible{outline:2px solid #84eeff;outline-offset:4px}
+.contact .btn-apercu:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+
+/* --- RÉSEAUX SOCIAUX : liens vérifiés + distinction --- */
+.reseaux-nemi{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 8px;padding:0;list-style:none}
+.reseaux-nemi a{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border:1px solid #725632;border-radius:999px;color:#ffe0a4;font-size:12.5px;font-weight:500;text-decoration:none;transition:border-color .25s,background .25s,color .25s}
+.reseaux-nemi a:hover,.reseaux-nemi a:focus-visible{border-color:#d2b56e;background:#1a1f28;color:#fff2d6}
+.reseaux-nemi svg{width:15px;height:15px;fill:#d2b56e;flex:none}
+.reseaux-nemi .badge-messagerie{font-size:10px;background:#2a3f2a;color:#88d888;padding:2px 6px;border-radius:999px;margin-left:4px}
+
+/* --- IDENTITÉ NEMI VISION --- */
+.vision-nemi{margin:24px 0 8px;padding:18px 20px;border:1px solid #725632;border-radius:14px;background:linear-gradient(135deg,#151c2e,#0e1219);font-size:13.5px;line-height:1.7;color:#f0e0c8}
+.vision-nemi p{margin:0 0 10px;font-style:italic}
+.vision-nemi p:last-child{margin-bottom:0}
+.vision-nemi strong{color:#ffda99;font-weight:600}
+
+/* --- TRANSMISSION : comparatif --- */
+.transmission-comparaison{display:none;margin:20px 0;padding:16px;border:1px dashed #725632;border-radius:12px;background:#111720;font-size:12px;line-height:1.6;color:#dcc9b0}
+.transmission-comparaison summary{cursor:pointer;font-weight:600;color:#ffda99;margin-bottom:8px}
+.transmission-comparaison table{width:100%;border-collapse:collapse;font-size:11px}
+.transmission-comparaison th,.transmission-comparaison td{border:1px solid #3a3228;padding:6px 8px;text-align:left;vertical-align:top}
+.transmission-comparaison th{background:#1a1f28;color:#ffda99}
+.transmission-comparaison .oui{color:#88d888}.transmission-comparaison .non{color:#f88888}.transmission-comparaison .partiel{color:#f8c888}
+
+/* --- APERÇU --- */
+.apercu-bloc li{margin:4px 0}
+
+/* --- ÉTATS MODE APERÇU --- */
+.mode-apercu{margin-top:16px;padding:14px 18px;border:1px solid #725632;border-radius:10px;background:#111720;font-size:13px;line-height:1.6;color:#e8d8c0}
+.mode-apercu strong{color:#ffda99}
+.mode-apercu .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+
+/* --- DOSSIER VIDE : état initial --- */
+.dossier-vide{text-align:center;padding:30px 20px;color:#c9b394}
+.dossier-vide .icone{font-size:36px;margin-bottom:12px;opacity:.6}
+.dossier-vide h3{margin:0 0 8px;color:#ffda99;font:clamp(22px,4vw,32px)/1.1 Georgia}
+.dossier-vide p{margin:0 0 16px;font-size:14px;line-height:1.5}
+.dossier-vide .actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+
+/* --- ÉTAPE BUDGET --- */
+.budget-rappel{margin:12px 0;padding:12px 14px;border:1px solid #725632;border-radius:10px;background:#111720;font-size:12.5px;color:#e8d8c0}
+.budget-rappel strong{color:#ffda99}
+.budget-rappel .ligne{display:flex;justify-content:space-between;gap:16px;margin:6px 0}
+.budget-rappel .ligne.important{color:#ffda99;font-weight:600;font-size:13.5px}
+
+.card-offres .inside {padding:12px;gap:6px;overflow:hidden}
+.card-offres .inside > .close {position:absolute;top:7px;right:7px}
+.card-offres .inside h2 {margin:2px 30px 2px 0;font-size:clamp(18px,3vw,27px)}
+.card-offres .defile {width:100%;scrollbar-gutter:stable}
+.defile:focus-visible {outline:2px solid #84eeff;outline-offset:-2px}
+#review {margin-bottom:12px}
+</style>
+<style id="nemi-v3">
+/* V3 — vitrines illustrées, bandeau enrichi, croix flottante. Animations validées intactes. */
+@media(max-width:420px){header{padding:12px 16px;gap:8px}header .gold{padding:8px 12px;font-size:13px;white-space:nowrap}}
+.vitrine-zone{position:absolute;inset:12% 14% 27%}
+.vt{position:absolute;inset:0;filter:drop-shadow(0 0 15px var(--glow));transform:scale(.96);transition:transform .55s cubic-bezier(.2,.77,.22,1)}
+.open .vt{transform:scale(1.02)}
+.vt-n{position:absolute;right:2%;top:0;color:#ffe1a1;opacity:.5;font:italic 15px Georgia,serif;pointer-events:none}
+.vt i,.vt b{position:absolute;display:block;margin:0}
+@keyframes flottement{from{transform:translateY(0) rotate(var(--rot,0deg))}to{transform:translateY(-5px) rotate(var(--rot,0deg))}}
+.vt i{animation:flottement 5.5s ease-in-out infinite alternate}
+.vt i:nth-of-type(2){animation-duration:6.5s}
+.vt i:nth-of-type(3){animation-duration:7.5s}
+@media(prefers-reduced-motion:reduce){.vt i,.vt-reseaux .coeur,.lecture::after{animation:none!important}}
+/* Visuels — pile de créations */
+.vt-visuales,.vt-visuels i{border:1px solid #f7ce7f;border-radius:10px;background:linear-gradient(154deg,#323039,#0b0c12 49%,#2f2a22);box-shadow:0 6px 14px #000a;width:56%;height:46%}
+.vt-visuels .pl-a{left:2%;top:16%;--rot:-14deg}
+.vt-visuels .pl-b{left:20%;top:30%;--rot:5deg;z-index:2}
+.vt-visuels .pl-c{left:38%;top:2%;--rot:12deg;z-index:3;background:radial-gradient(ellipse at 30% 25%,#fff5cb,#f9be64 20%,#181921 72%)}
+.vt-visuels .pl-c::after{content:"";position:absolute;left:14%;top:16%;width:34%;aspect-ratio:1;border-radius:50%;border:2px solid #ffe1a1aa}
+/* Site web — écran + smartphone */
+.vt-site .ecran{left:0;top:4%;width:74%;height:56%;border:1px solid #f7ce7f;border-radius:8px;background:linear-gradient(160deg,#1d2836,#0c1017);overflow:hidden;--rot:-2deg}
+.vt-site .barre{left:0;top:0;width:100%;height:16%;background:#111722;border-bottom:1px solid #514125}
+.vt-site .barre::before{content:"";position:absolute;left:8%;top:30%;width:9px;height:9px;border-radius:50%;background:#f9be64;box-shadow:13px 0 0 #74deff,26px 0 0 #8b8c96}
+.vt-site .l{left:12%;height:9%;border-radius:4px;background:#f0b86555}
+.vt-site .l1{top:32%;width:60%}.vt-site .l2{top:46%;width:44%}.vt-site .l3{top:60%;width:52%;background:#74deff33}
+.vt-site .tel{right:0;bottom:0;width:27%;height:60%;border:1px solid #f7ce7f;border-radius:12px;background:linear-gradient(160deg,#16202e,#0b0e14);--rot:3deg;z-index:2}
+.vt-site .tl{left:16%;height:8%;border-radius:3px;background:#f0b86555}
+.vt-site .tl1{top:26%;width:60%}.vt-site .tl2{top:40%;width:42%}
+/* Réseaux sociaux — publications */
+.vt-reseaux .pub{width:54%;height:42%;border:1px solid #f7ce7f;border-radius:10px;background:linear-gradient(150deg,#1c2734,#0d1119)}
+.vt-reseaux .pub-a{left:0;top:8%;--rot:-6deg}
+.vt-reseaux .pub-b{right:0;bottom:6%;--rot:7deg;z-index:2}
+.vt-reseaux .pa{left:9%;top:10%;width:18%;aspect-ratio:1;border-radius:50%;background:#9cc4ff66}
+.vt-reseaux .pl1{left:9%;top:46%;width:70%;height:11%;border-radius:4px;background:#f0b86555}
+.vt-reseaux .pl2{left:9%;top:64%;width:50%;height:11%;border-radius:4px;background:#9cc4ff33}
+.vt-reseaux .coeur{left:57%;top:42%;z-index:3;color:#ff9d9d;font-size:22px;font-style:normal;text-shadow:0 0 10px #fb9c5788;animation:battement 2.6s ease-in-out infinite}
+@keyframes battement{0%,100%{transform:scale(1)}18%{transform:scale(1.15)}36%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.vt-reseaux .coeur{animation:none!important}}
+/* Vidéo & motion — lecture + pellicule */
+.vt-video .piste{left:4%;bottom:4%;width:92%;height:22%;border:1px solid #f7ce7f;border-radius:6px;background:repeating-linear-gradient(90deg,#10151d 0 14%,#0b0e13 14% 16%)}
+.vt-video .tr{top:22%;width:15%;height:56%;border-radius:3px;background:linear-gradient(140deg,#fb9c5744,#74deff33)}
+.vt-video .tr1{left:6%}.vt-video .tr2{left:29%}.vt-video .tr3{left:52%}.vt-video .tr4{left:75%}
+.vt-video .lecture{left:28%;top:0;width:44%;aspect-ratio:1;border:2px solid #f7ce7f;border-radius:50%;background:radial-gradient(ellipse at 35% 30%,#1e2836,#0c1017);display:grid;place-items:center}
+.vt-video .triangle{position:static;width:0;height:0;border-left:16px solid #ffd782;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:6px}
+.vt-video .lecture::after{content:"";position:absolute;inset:-9px;border:1px solid #f7ce7f66;border-radius:50%;animation:pulsation 3s ease-out infinite}
+@keyframes pulsation{0%{transform:scale(.9);opacity:.8}70%,100%{transform:scale(1.12);opacity:0}}
+@media(prefers-reduced-motion:reduce){.vt-video .lecture::after{animation:none!important}}
+/* Sur mesure — composition multi-disciplines */
+.vt-surmesure .m-poster{left:0;top:10%;width:46%;height:52%;border:1px solid #f7ce7f;border-radius:10px;background:radial-gradient(ellipse at 30% 25%,#fff5cb,#f9be64 20%,#181921 72%);--rot:-10deg}
+.vt-surmesure .m-ecran{right:0;top:0;width:54%;height:44%;border:1px solid #f7ce7f;border-radius:8px;background:linear-gradient(160deg,#1d2836,#0c1017);--rot:6deg}
+.vt-surmesure .m-ecran .l{left:14%;height:14%;border-radius:3px;background:#74deff33}
+.vt-surmesure .m-ecran .l1{top:30%;width:64%}.vt-surmesure .m-ecran .l2{top:54%;width:44%}
+.vt-surmesure .m-coeur{left:14%;bottom:0;z-index:3;color:#ff9d9d;font-size:18px;font-style:normal;text-shadow:0 0 10px #fb9c5788;--rot:-4deg}
+.vt-surmesure .m-lecture{right:6%;bottom:2%;width:30%;aspect-ratio:1;border:1.5px solid #f7ce7f;border-radius:50%;background:#0d1119;display:grid;place-items:center;z-index:2}
+.vt-surmesure .m-lecture .triangle{position:static;width:0;height:0;border-left:11px solid #ffd782;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:4px}
+/* Bandeau « Votre sélection » enrichi */
+.summary #resume-compte{color:#debc7a;font-weight:700}
+.summary #resume-surdevis{color:#f0c083}
+.summary .detail-toggle{padding:6px 10px;font-size:12px;border-color:#a7804b;color:#ffe0a4}
+.resume-detail{width:min(1180px,92%);margin:-8px auto 18px;border:1px solid #725632;border-radius:12px;background:#101520f2;padding:10px 16px;animation:apparition .3s ease both}
+.resume-detail ul{margin:0;padding-left:18px;columns:2;column-gap:28px;color:#f3e3cd;font-size:13px;line-height:1.6}
+.resume-detail li{break-inside:avoid}
+.resume-detail .muted{margin:8px 0 0;font-size:12px}
+@media(max-width:760px){.resume-detail ul{columns:1}}
+/* Dossier — rubrique dépliable + croix flottante */
+.dossier-depliable summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#debc7a;font-weight:700}
+.dossier-depliable summary::-webkit-details-marker{display:none}
+.dossier-depliable summary::after{content:"▾";margin-left:auto}
+.dossier-depliable[open] summary::after{content:"▴"}
+.dossier-depliable .note-depliable{margin:8px 0 2px;font-size:12px;color:#decdb3}
+.croix-flottante{position:sticky;top:4px;float:right;z-index:4;width:32px;height:32px;border-radius:50%;border:1px solid #977a4a;background:#101319;color:#ffe1a1;font-size:15px;line-height:1;cursor:pointer;padding:0}
+.croix-flottante:hover,.croix-flottante:focus-visible{background:#1a1f28;outline-offset:2px}
+.dialog-marque{display:block;font-size:9px;letter-spacing:.23em;color:#debc7a;margin:2px 0 0}
+dialog h2{padding-right:44px}
+#choices input[type=number],#texte-copie{width:100%;min-width:0;color:#fff;background:#101520;border:1px solid #a7804b;border-radius:8px;padding:8px}
+#choices label:has(input[type=number]){display:grid}
+button:disabled{opacity:.6;cursor:default}
+.defile{overscroll-behavior:contain}
+.apercu-carte,.dossier-bloc{overflow-wrap:anywhere}
+.modes button{padding:8px 12px}
+
+.card-offres .inside {padding:12px;gap:6px;overflow:hidden}
+.card-offres .inside > .close {position:absolute;top:7px;right:7px}
+.card-offres .inside h2 {margin:2px 30px 2px 0;font-size:clamp(18px,3vw,27px)}
+.card-offres .defile {width:100%;scrollbar-gutter:stable}
+.defile:focus-visible {outline:2px solid #84eeff;outline-offset:-2px}
+#review {margin-bottom:12px}
+.dossier-suite {position:sticky;bottom:0;display:flex;flex-wrap:wrap;gap:6px;padding:8px 0 2px;background:#121822;z-index:2}
+.dossier-suite button {font-size:12px;padding:7px 9px}
+
+.card-offres .inside {padding:9px;gap:4px}
+.card-offres .inside h2 {font-size:clamp(16px,2.1vw,22px);line-height:1.1;margin:1px 29px 2px 0}
+.card-offres .inside > .close {top:4px;right:4px;width:26px;height:26px}
+.card-offres .defile {padding-bottom:3px}
+.card-estimation {width:100%;flex:none;padding:6px 3px;font-size:11px;line-height:1.2}
+.summary .estimate-action:not([hidden]) {display:inline-flex}
+dialog {width:min(530px,94vw);max-height:min(88dvh,650px);padding:clamp(12px,3vw,24px)}
+dialog h2 {font-size:clamp(23px,4vw,32px)}
+dialog form,.contact {margin-block:10px}
+.contact {gap:8px}
+@media(max-width:530px) and (max-height:700px){
+ .intro {margin-block:12px}
+ .intro h1 {font-size:clamp(28px,8vw,34px)}
+ .stage {height:305px}
+}
+</style>
+
+<style id="nemi-ux-20261114">
+/* Lecture élargie dans le flux ; façades et animations 3D préservées. */
+html.embedded,html.embedded body{height:auto;min-height:0}
+html.embedded body{display:flow-root;overflow-anchor:none}
+.card-offres .inside .read-wide{font-size:12px;text-align:left;line-height:1.5;margin-block:12px}
+.card-offres .defile{display:none}
+.offre-elargie,.dossier-flux{box-sizing:border-box;width:min(1040px,92%);margin:26px auto;padding:clamp(16px,3vw,32px);border:1px solid #a7804b;border-radius:16px;background:linear-gradient(145deg,#162638,#111620 65%,#241d15);color:#fff2db;overflow:visible;max-height:none;scroll-margin-top:100px}
+.offre-elargie[hidden],.dossier-flux[hidden]{display:none}
+.offre-elargie .lecture-entete{display:flex;align-items:start;justify-content:space-between;gap:14px;margin-bottom:18px}
+.offre-elargie h2{font:clamp(26px,4vw,38px)/1.15 Georgia;margin:0;color:#ffda99}
+.offre-elargie .defile{display:block;height:auto;max-height:none;min-height:0;overflow:visible;overscroll-behavior:auto;padding:0;scrollbar-gutter:auto}
+.offre-elargie .card-actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px}
+.offre-elargie .pick{width:100%;min-height:70px;padding:14px;font-size:16px}
+.offre-elargie .pick small{font-size:16px;margin-top:5px}
+.offre-elargie .pick-desc,.offre-elargie details p,.offre-elargie details li{font-size:15px;line-height:1.6}
+.offre-elargie .pick-bloc{min-width:0}
+.offre-elargie details{margin-top:20px}
+.offre-elargie summary{padding-block:10px;font-size:15px}
+.dossier-flux h2{font:clamp(27px,4vw,38px)/1.15 Georgia;margin-top:0;padding-right:0}
+.dossier-flux .croix-flottante{position:relative;top:0;float:none;flex:none}
+.dossier-entete{display:flex;justify-content:space-between;align-items:start;gap:16px}
+.dossier-suite{position:static;background:transparent;padding-top:16px;gap:12px}
+.dossier-suite button{font-size:15px;padding:12px 16px}
+.dossier-flux .contact{gap:16px}
+.dossier-flux .contact input,.dossier-flux .contact textarea{font-size:16px}
+.estimation-titre{display:block;color:#ffda99;font-size:14px;font-weight:700;margin:12px 0 6px}
+#resume-montant{display:block;margin-block:5px}
+#resume-surdevis{display:block}
+.estimation-explication{font-size:14px;line-height:1.65;color:#e8d8c0}
+.estimation-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px;margin:12px 0}
+.estimation-grid p{margin:0;border:1px solid #725632;border-radius:10px;padding:14px}
+.estimation-grid span,.estimation-grid strong{display:block}
+.estimation-grid strong{font-size:22px;color:#ffda99;margin-top:5px}
+.summary .estimation-explication{flex-basis:100%;margin:2px 0 0}
+@media(max-width:530px){.offre-elargie,.dossier-flux{width:94%;padding:16px}.offre-elargie .lecture-entete{flex-wrap:wrap}.dossier-flux .ligne-double{grid-template-columns:1fr}}
+</style>
+<style id="nemi-ux2-navigation">
+.offre-navigation{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:10px;margin:8px 0 20px;padding:12px 0;border-block:1px solid #725632}
+.offre-navigation button{padding:10px 14px;min-height:44px;min-width:0;max-width:100%;justify-self:start;white-space:normal}.offre-navigation button:last-child{justify-self:end}
+.offre-position{font-weight:700;color:#ffda99;min-width:48px;text-align:center;font-variant-numeric:tabular-nums}
+.offre-navigation-bas{margin:20px 0 10px}
+@media(max-width:530px){.offre-navigation{gap:8px}.offre-navigation button{font-size:13px;padding-inline:10px}}
+</style>
+
+<style id="nemi-ux3-finalisation">
+/* UX3 — finalisation commerciale : cartes informatives, pas de défilement forcé, envoi préparé (inactif).
+   Prestations, tarifs et moteur inchangés. */
+h1{font:clamp(30px,4.6vw,54px)/1 Georgia,serif}
+.stage{height:clamp(320px,42vw,400px)}
+.card{--w:clamp(152px,23.5vw,268px);height:clamp(266px,30vw,292px);--step:clamp(50px,14vw,178px)}
+.quick .card{--step:clamp(58px,16.6vw,205px)}
+.face{padding:13px 13px 11px;justify-content:flex-end;gap:4px}
+.face strong{font-size:clamp(19px,2.6vw,26px)}
+.face .vitrine-zone{inset:5% 10% 50%;opacity:.85}
+.face small{margin-top:4px}
+.face-desc{color:#e8d8c0;font-size:11px;line-height:1.35;position:relative}
+.face-offres{position:relative;display:grid;gap:4px;margin-top:2px}
+.face-offres .pick{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:5px 8px;font-size:11.5px;line-height:1.25;border-radius:9px;background:#10141cd9}
+.face-offres .pick strong{font-size:11.5px;font-weight:600}
+.face-offres .pick small{margin:0;font-size:11.5px;color:#ffda99;white-space:nowrap}
+.face-offres .pick[aria-pressed=true]{background:#ffda8f;color:#201505;border-color:#ffda8f}
+.face-offres .pick[aria-pressed=true] small{color:#201505}
+.face-offres .pick:focus-visible{outline-offset:1px}
+.face-ouvrir{color:#ffda99;font-size:10.5px;letter-spacing:.08em;position:relative;margin-top:2px}
+.consentement{display:flex;gap:10px;align-items:flex-start;color:#debc7a;font-size:12.5px;line-height:1.5;letter-spacing:.02em;text-transform:none}
+.consentement input{width:17px;height:17px;flex:none;margin-top:1px}
+.consentement a{color:#ffda99}
+.gotcha{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
+#form-status{min-height:1.2em;color:#decdb3;font-size:13.5px;line-height:1.55;margin:4px 0 0}
+#form-status.envoi-erreur{color:#f8b9a0}
+#form-status.envoi-simulation{color:#f0c083;border:1px dashed #725632;border-radius:10px;padding:10px 12px}
+#form-status.envoi-confirmation{color:#9fe2a6;font-weight:600}
+.dossier-flux .contact .ligne-double{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:530px){.dossier-flux .contact .ligne-double{grid-template-columns:1fr}}
+.pied-atelier{width:min(1180px,92%);margin:0 auto 26px;display:flex;flex-direction:column;gap:8px}
+.pied-atelier .muted{text-align:left;margin:0}
+.reseaux-nemi{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0;padding:0;list-style:none;align-items:center}
+.reseaux-nemi a,.reseaux-nemi span{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border:1px solid #725632;border-radius:999px;color:#ffe0a4;font-size:12.5px;font-weight:500;text-decoration:none;transition:border-color .25s,background .25s,color .25s}
+.reseaux-nemi a:hover,.reseaux-nemi a:focus-visible{border-color:#d2b56e;background:#1a1f28;color:#fff2d6}
+.reseaux-nemi svg{width:15px;height:15px;fill:#d2b56e;flex:none}
+.reseaux-nemi .reseau-indisponible span{color:#c9b394;border-style:dashed;cursor:default}
+.reseaux-nemi .reseau-indisponible em{font-style:normal;font-size:10px;color:#8b8c96}
+.reseaux-nemi .nom-reseau{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style><style id="nemi-ux3-reprise-codex">
+.stage{height:350px}.card{--w:clamp(224px,28vw,280px);height:306px}.quick .card{--step:clamp(104px,18vw,210px)}
+.face{display:flex;cursor:default}.face .vitrine-zone{inset:5% 14% 56%}.face-desc{font-size:12px}.face-offres .pick{min-height:32px;font-size:12px;flex-direction:row;text-align:left}.face-offres .pick::before{display:none}.face-offres .pick[aria-pressed=true]{outline:2px solid #ffda8f;outline-offset:1px}.face-offres .pick strong,.face-offres .pick small{font-size:12px}
+.face-ouvrir{border:1px solid #a7804b;border-radius:8px;background:#101520;color:#ffda99;min-height:32px;align-self:stretch;text-align:center;padding:6px;font:inherit;font-size:12px}
+.inside-summary{padding-left:16px;margin:6px 0;font-size:12px;line-height:1.6}.offre-elargie{margin-top:12px}.offre-navigation-bas{display:none}.offre-navigation{margin-block:4px 12px}
+.estimation-grid{gap:8px}.estimation-grid p{padding:10px}.estimation-grid strong{font-size:19px}.summary{gap:8px}.summary .estimation-explication{font-size:12px}
+@media(max-width:530px){.card{--w:min(76vw,258px);height:306px}.intro{margin-block:14px}.intro h1{font-size:30px}.stage{height:348px}.face-offres .pick{min-height:36px}.face .vitrine-zone{inset:3% 17% 58%}}
+.reseaux-nemi a{width:44px;height:44px;padding:9px!important;justify-content:center;border-radius:50%}.reseaux-nemi svg{width:22px;height:22px}.reseaux-nemi .nom-reseau{padding:0!important;border:0!important;width:1px!important;height:1px!important;clip-path:inset(50%)}
+</style><style id="nemi-ux4">
+/* Carte ouverte : contenu intrinsèque dans la scène, un seul défilement de page. */
+.card.open{left:50%;top:16px;width:min(92%,760px);height:auto;transform:translateX(-50%) translateZ(0);transition:transform .66s,left .66s}
+.card.open .inside{position:relative;inset:auto;min-height:306px;padding:22px;align-items:stretch;justify-content:flex-start}
+.card.open .cover{width:var(--w);pointer-events:none}
+.card.open .inside h2{padding-right:38px;font-size:28px;margin:0 0 18px}
+.livrable .pick{width:100%;min-height:44px;display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:10px;padding:8px 12px}.livrable .pick strong,.livrable .pick small{font-size:14px;margin:0}.livrable .pick::before{display:none}.livrables{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:18px}
+.livrable{min-width:0}.livrable h3{font-size:17px;color:#ffda99;margin:0 0 8px}.inside .livrable p{font:14px/1.6 system-ui;margin:6px 0}.livrable p strong{display:block;color:#ffda99}
+.inside .conditions-carte{font:13px/1.6 system-ui;margin:18px 0 0}.inside .close{width:44px;height:44px;top:5px;right:5px}
+#preview{margin-top:16px}#preview summary{cursor:pointer;min-height:44px;padding:12px 0;color:#ffda99}#preview .actions{gap:10px}
+@media(prefers-reduced-motion:reduce){.card.open{transition:none}}
+</style><header><div class="brand"><i aria-hidden="true">N</i><div>NEMI<small>DIGITAL STUDIO</small></div></div><button class="gold quote">Mon dossier NEMI ↗</button></header>
+<main id="atelier" class="quick">
+<div class="intro"><div><h1>Composez votre projet.</h1><p>Explorez les prestations ou décrivez votre projet.</p></div>
+<div class="modes" role="group" aria-label="Entrées de l’atelier"><button id="quick">Voir les offres et tarifs</button><button id="project">Décrire mon projet</button></div></div>
+<section class="stage" aria-label="Prestations NEMI"></section>
+<nav class="controls" aria-label="Parcourir les cartes"><button id="prev" aria-label="Carte précédente">←</button><output id="position" aria-live="polite"></output><button id="next" aria-label="Carte suivante">→</button></nav>
+
+<section class="summary" aria-label="Sélection commune"><strong>Votre sélection</strong><output id="summary" aria-live="polite"><span id="resume-compte"></span><span id="resume-noms">Aucune prestation sélectionnée</span><span id="resume-estimation-titre" class="estimation-titre" hidden>Estimation indicative</span><span id="resume-montant"></span><span id="resume-surdevis"></span></output><button class="gold estimate-action" id="voir-estimation" hidden>Voir mon estimation ↗</button><button class="secondary detail-toggle" id="btn-detail" aria-expanded="false" hidden>Détail ▾</button><p id="resume-explication" class="estimation-explication" hidden>Cette estimation est indicative et sans engagement. Les offres standardisées conservent les tarifs affichés pour leur périmètre. Les prestations personnalisées peuvent être adaptées après échange, selon vos besoins. Le montant final est confirmé dans un devis personnalisé. Les éléments sur devis sont chiffrés séparément.</p></section>
+<div class="resume-detail" id="resume-detail" hidden><ul id="detail-liste"></ul><p class="muted" id="detail-note" hidden>Les éléments « sur devis » ne sont pas inclus dans l'estimation : ils seront chiffrés ensemble après un premier échange.</p></div>
+<div class="pied-atelier"><ul class="reseaux-nemi" role="list" aria-label="Réseaux sociaux NEMI"><li><a href="https://www.instagram.com/nemi.digitalstudio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (page officielle NEMI)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><span class="nom-reseau">Instagram</span></a></li><li><a href="https://www.facebook.com/profile.php?id=61596059791034" target="_blank" rel="noopener noreferrer" aria-label="Facebook (page officielle NEMI)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg><span class="nom-reseau">Facebook</span></a></li><li><a href="https://www.linkedin.com/company/nemi-digital-studio/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (page officielle NEMI)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span class="nom-reseau">LinkedIn</span></a></li><li><a href="https://www.youtube.com/@NEMIDigitalStudio" target="_blank" rel="noopener noreferrer" aria-label="YouTube (page officielle NEMI)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span class="nom-reseau">YouTube</span></a></li><li><a href="https://www.tiktok.com/@nemidigitalstudio" target="_blank" rel="noopener noreferrer" aria-label="TikTok (page officielle NEMI)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg><span class="nom-reseau">TikTok</span></a></li></ul><p class="muted">Contact direct : <a href="mailto:nemidigitalstudio@gmail.com">nemidigitalstudio@gmail.com</a> · <a href="index.html" target="_top">Retour au site</a></p><p class="muted" style="text-align:left">Estimations indicatives, sans commande ni paiement en ligne. Périmètre et conditions confirmés par devis.</p></div></main>
+<section id="dossier" class="dossier-flux" aria-labelledby="quoteTitle" hidden>
+<div class="dossier-entete"><div><span class="dialog-marque">NEMI DIGITAL STUDIO</span><h2 id="quoteTitle" tabindex="-1">Mon dossier NEMI</h2></div><button class="croix-flottante" id="croix-dossier" aria-label="Fermer le dossier">×</button></div>
+<p class="muted">Vérifiez votre estimation et renseignez vos coordonnées. La sélection et la description du projet sont facultatives.</p>
+<section id="review" hidden><h3>Votre sélection</h3><ul id="dossier-choix"></ul><h3 class="estimation-titre">Estimation indicative</h3><div class="estimation-grid"><p><span>Ponctuel · base des offres sélectionnées</span><strong id="estimation-ponctuel"></strong></p><p><span>Mensuel</span><strong id="estimation-mensuel"></strong></p><p><span>Sur devis · hors montant affiché</span><strong id="estimation-surdevis"></strong></p></div><p class="estimation-explication">Cette estimation est indicative et sans engagement. Les offres standardisées conservent les tarifs affichés pour leur périmètre. Les prestations personnalisées peuvent être adaptées après échange, selon vos besoins. Le montant final est confirmé dans un devis personnalisé. Les éléments sur devis sont chiffrés séparément. Les estimations des offres web utilisent la borne basse de la fourchette affichée.</p></section>
+
+<p id="envoi-disponibilite" class="muted">L’envoi depuis le site n’est pas encore disponible. Aucune donnée n’est transmise. Vous pouvez préparer votre dossier puis utiliser votre messagerie ci-dessous.</p><form id="contactForm"><div class="contact">
+<div class="ligne-double">
+<label>Prénom <input name="prenom" maxlength="100" required autocomplete="given-name" placeholder="Ex. : Camille"></label>
+<label>Nom <input name="nom" maxlength="100" required autocomplete="family-name" placeholder="Ex. : Durand"></label>
+</div>
+<div class="ligne-double">
+<label>E-mail <input name="email" maxlength="254" type="email" required autocomplete="email" placeholder="Ex. : camille@exemple.fr"></label>
+<label>Téléphone <input required name="tel" maxlength="40" type="tel" autocomplete="tel" placeholder="Ex. : 06 12 34 56 78"></label>
+</div>
+<label>Entreprise ou activité <small class="facultatif"> (facultatif)</small> <input name="entreprise" maxlength="200" autocomplete="organization" placeholder="Ex. : salon de coiffure à Nantes"></label>
+<label>Décrivez votre projet <small id="projet-statut"></small> <textarea name="precisions" maxlength="6000" rows="3" placeholder="Ex. : ouverture en mars, besoin enseigne + site simple"></textarea></label>
+<label class="consentement"><input type="checkbox" name="consentement" required> <span>J’accepte le traitement de mes coordonnées et de mon dossier pour répondre à ma demande de devis. Aucune inscription à des messages publicitaires. <a href="confidentialite.html" target="_top">Confidentialité</a></span></label>
+<input type="text" name="_gotcha" class="gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+</div><p class="muted">Vos saisies restent dans cet onglet jusqu’au rechargement. Aucune donnée n’est transmise sans votre action explicite. <a href="confidentialite.html" target="_top">Confidentialité</a>.</p>
+
+<p id="form-status" role="status"></p></form>
+<details id="preview" hidden><summary id="preview-title">Conserver mon dossier ou utiliser ma messagerie</summary><div class="apercu-carte" id="apercu-carte"></div>
+<div class="actions"><button class="secondary" type="button" id="copier-demande">Copier mon dossier</button><button class="secondary" type="button" id="enregistrer-demande">Télécharger mon dossier</button><a class="secondary" id="envoyer-email" href="mailto:nemidigitalstudio@gmail.com">Envoyer par ma messagerie</a></div>
+<p id="note-envoi" class="muted" role="status"></p>
+<label id="copie-manuelle" hidden>Copier manuellement<textarea id="texte-copie" readonly rows="6"></textarea></label></details>
+<div id="antispam-widget"></div><input type="hidden" name="cf-turnstile-response" form="contactForm">
+<div class="dossier-suite">
+<button class="secondary" id="modifier">Retour aux offres</button>
+<button class="gold" type="submit" form="contactForm" id="preparer-brouillon">Envoyer ma demande de devis</button>
+</div></section>
+<script>window.addEventListener('error',function(e){document.documentElement.setAttribute('data-js-error',e.message+' @'+(e.lineno||'?'));});</script>
+<script>
+/* =====================================================================
+   MOTEUR NEMI UNIQUE — repris de `maquette-finale-nemi` (calculer()).
+   Source de vérité unique des montants. Aucun tarif inventé :
+   29 / 99 / 179 / 390–590 / 790–1 290 / dès 149 €/mois / sur devis.
+   ===================================================================== */
+const tarifs = { visuel: 29, pack5: 99, pack10: 179, siteEssentiel: 390, sitePerso: 790, reseaux: 149 };
+const formatePrix = prix => prix.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' });
+
+/* Vitrines illustrées des cinq catégories — CSS pur, sans image externe. */
+const vitrines = {
+ 'Visuels': '<div class="vt vt-visuels" aria-hidden="true"><i class="pl pl-a"></i><i class="pl pl-b"></i><i class="pl pl-c"></i></div>',
+ 'Site web': '<div class="vt vt-site" aria-hidden="true"><i class="ecran"><b class="barre"></b><b class="l l1"></b><b class="l l2"></b><b class="l l3"></b></i><i class="tel"><b class="tl tl1"></b><b class="tl tl2"></b></i></div>',
+ 'Réseaux sociaux': '<div class="vt vt-reseaux" aria-hidden="true"><i class="pub pub-a"><b class="pa"></b><b class="pl1"></b><b class="pl2"></b></i><i class="pub pub-b"><b class="pa"></b><b class="pl1"></b></i><b class="coeur">♥</b></div>',
+ 'Vidéo & motion': '<div class="vt vt-video" aria-hidden="true"><i class="piste"><b class="tr tr1"></b><b class="tr tr2"></b><b class="tr tr3"></b><b class="tr tr4"></b></i><i class="lecture"><b class="triangle"></b></i></div>',
+ 'Sur mesure': '<div class="vt vt-surmesure" aria-hidden="true"><i class="m-poster"></i><i class="m-ecran"><b class="l l1"></b><b class="l l2"></b></i><i class="m-coeur">♥</i><i class="m-lecture"><b class="triangle"></b></i></div>'
+};
+
+const services = [
+ {name:'Visuels',description:'Des images professionnelles pour les moments clés de votre activité.',glow:'#f9be64',shape:'50%',offers:[
+  {label:"Visuel à l’unité",affiche:'29 €',prix:tarifs.visuel,cle:'visuel',groupe:'visuel',
+   role:'Une création unique, prête à publier, pour un besoin précis.',
+   recoit:'Un visuel personnalisé, adapté à vos supports (publication, Story, affiche).',
+   preciser:'Le sujet et le format, définis ensemble avant la création.'},
+  {label:'Pack 5 visuels',affiche:'99 €',prix:tarifs.pack5,cle:'pack5',groupe:'visuel',
+   role:'Cinq visuels cohérents pour communiquer régulièrement.',
+   recoit:'Cinq visuels créés dans la même direction graphique.',
+   preciser:'Les sujets et le rythme de livraison, selon vos besoins.'},
+  {label:'Pack 10 visuels',affiche:'179 €',prix:tarifs.pack10,cle:'pack10',groupe:'visuel',
+   role:'Dix visuels pour équiper durablement votre communication.',
+   recoit:'Dix visuels dans une identité cohérente.',
+   preciser:'Les thèmes et le calendrier, à convenir ensemble.'}]},
+ {name:'Site web',description:'Un site clair, adapté aux téléphones, qui présente votre activité.',glow:'#74deff',shape:'12%',offers:[
+  {label:'Site one-page',affiche:'390–590 €',prix:tarifs.siteEssentiel,cle:'siteEssentiel',groupe:'site',
+   role:'Un site vitrine simple pour être trouvable et crédible en ligne.',
+   recoit:'Un site en ligne avec vos informations essentielles (activité, contact).',
+   preciser:'Les textes, photos et fonctionnalités — d’où la mention « dès ».'},
+  {label:'Site 3 à 5 pages',affiche:'790–1 290 €',prix:tarifs.sitePerso,cle:'sitePerso',groupe:'site',
+   role:'Un site pensé pour votre manière de travailler et vos visiteurs.',
+   recoit:'Un site sur mesure, structuré autour de vos objectifs.',
+   preciser:'Le périmètre complet, étudié ensemble — le prix final dépend du projet.'}]},
+ {name:'Réseaux sociaux',description:'Des créations adaptées aux formats de vos réseaux.',glow:'#9cc4ff',shape:'29%',offers:[
+  {label:'NEMI Social',affiche:'149 € / mois',prix:tarifs.reseaux,cle:'reseaux',mensuel:tarifs.reseaux,
+   role:'Un accompagnement récurrent pour rester visible sans y passer vos soirées.',
+   recoit:'4 publications par mois sur 2 réseaux. La maintenance web se chiffre séparément.',
+   preciser:'Les réseaux et le calendrier sont à définir ensemble. La gestion complémentaire des contenus est à préciser sur devis.'}]},
+ {name:'Vidéo & motion',description:'Présentez votre offre en mouvement, aux formats courts.',glow:'#fb9c57',shape:'48% 8%',offers:[
+  {label:'Vidéo de présentation',affiche:'sur devis',cle:'video-presenta',
+   role:'Présenter votre offre en vidéo, en quelques secondes.',
+   recoit:'Une vidéo courte, prête pour vos réseaux et votre site.',
+   preciser:'Durée, style et contenu — chiffrage après un premier échange.'},
+  {label:'Animation courte',affiche:'sur devis',cle:'video-anim',
+   role:'Donner du mouvement à vos contenus (animations graphiques).',
+   recoit:'Une animation courte, aux formats de vos canaux.',
+   preciser:'L’usage et la durée — chiffrage après un premier échange.'}]},
+ {name:'Sur mesure',description:'Associez plusieurs métiers autour d’un besoin spécifique.',glow:'#f7c575',shape:'4% 52%',offers:[
+  {label:'Accompagnement sur mesure',affiche:'sur devis',cle:'surMesure',
+   role:'Construire une solution complète quand aucune offre standard ne suffit.',
+   recoit:'Un accompagnement construit autour de votre projet, pas à partir d’un catalogue.',
+   preciser:'Maintenance web, formation et formats complémentaires sur devis, selon vos besoins.'}]}
+];
+const atelier = document.querySelector('#atelier'), stage = document.querySelector('.stage'), dialog = document.querySelector('#dossier');
+const byId = id => document.getElementById(id);
+
+const etat = { visuel: null, site: null, extras: new Set() };
+
+
+let current = 1, opened = false;
+
+
+/* Moteur unique : état → montants → tous les affichages. */
+let recapCourant = { ponctuelLignes: [], mensuelLignes: [], surDevis: [], ponctuel: 0, mensuel: 0 };
+function calculer() {
+ const ponctuelLignes = [], mensuelLignes = [], surDevis = [];
+ let ponctuel = 0, mensuel = 0;
+ const plan = { visuel: { label: "1 visuel à l’unité", prix: tarifs.visuel }, pack5: { label: 'Pack 5 visuels', prix: tarifs.pack5 }, pack10: { label: 'Pack 10 visuels', prix: tarifs.pack10 } }[etat.visuel];
+ if (plan) { ponctuel += plan.prix; ponctuelLignes.push(plan.label + ' — ' + formatePrix(plan.prix)); }
+ if (etat.site === 'sitePerso') { ponctuel += tarifs.sitePerso; ponctuelLignes.push('Site 3 à 5 pages — 790–1 290 €'); }
+ else if (etat.site === 'siteEssentiel') { ponctuel += tarifs.siteEssentiel; ponctuelLignes.push('Site one-page — 390–590 €'); }
+ if (etat.extras.has('reseaux')) { mensuel += tarifs.reseaux; mensuelLignes.push('NEMI Social (4 posts, 2 réseaux) — ' + formatePrix(tarifs.reseaux) + ' / mois'); }
+ if (etat.extras.has('video-presenta')) surDevis.push('Vidéo de présentation');
+ if (etat.extras.has('video-anim')) surDevis.push('Animation courte');
+ if (etat.extras.has('surMesure')) surDevis.push('Accompagnement sur mesure');
+ recapCourant = { ponctuelLignes, mensuelLignes, surDevis, ponctuel, mensuel };
+
+ /* Bandeau « Votre sélection » : compte, noms, montants, sur devis. */
+ const nombreChoix = ponctuelLignes.length + mensuelLignes.length + surDevis.length;
+ byId('resume-compte').textContent = nombreChoix === 0 ? '' : nombreChoix + ' prestation' + (nombreChoix > 1 ? 's' : '') + ' · ';
+ const noms = ponctuelLignes.concat(mensuelLignes).map(l => l.split(' — ')[0]).concat(surDevis.map(item => item.split(' (')[0]));
+ let texte = noms.slice(0, 3).join(' · ');
+ if (noms.length > 3) texte += ' … +' + (noms.length - 3) + ' autres';
+ byId('resume-noms').textContent = texte || 'Aucune prestation sélectionnée';
+ const morceaux = [];
+ if (ponctuel > 0) morceaux.push('Ponctuel · ' + (etat.site ? 'dès ' : '') + formatePrix(ponctuel));
+ if (mensuel > 0) morceaux.push('Mensuel · ' + formatePrix(mensuel) + ' / mois');
+ byId('resume-montant').textContent = morceaux.join(' · ');
+ byId('resume-estimation-titre').hidden = nombreChoix === 0;
+ byId('resume-explication').hidden = nombreChoix === 0;
+ byId('resume-surdevis').textContent = surDevis.length ? ' — dont ' + surDevis.length + ' à étudier (sur devis)' : '';
+ byId('btn-detail').hidden = nombreChoix === 0;
+ byId('voir-estimation').hidden = nombreChoix === 0;
+ document.querySelectorAll('.card-estimation').forEach(button => { button.hidden = nombreChoix === 0; });
+ if (!nombreChoix) byId('btn-detail').textContent = 'Détail ▾';
+ if (nombreChoix === 0) { byId('resume-detail').hidden = true; byId('btn-detail').setAttribute('aria-expanded', 'false') }
+ remplirListe('detail-liste', ponctuelLignes.concat(mensuelLignes).concat(surDevis.map(item => item + ' — sur devis')), '');
+ byId('detail-note').hidden = surDevis.length === 0;
+ if (!dialog.hidden) actualiserDossier();
+}
+function estChoisi(offer) {
+ if (offer.groupe === 'visuel') return etat.visuel === offer.cle;
+ if (offer.groupe === 'site') return etat.site === offer.cle;
+ return etat.extras.has(offer.cle);
+}
+function basculer(offer) {
+ if (offer.groupe === 'visuel') etat.visuel = etat.visuel === offer.cle ? null : offer.cle;
+ else if (offer.groupe === 'site') etat.site = etat.site === offer.cle ? null : offer.cle;
+ else if (etat.extras.has(offer.cle)) etat.extras.delete(offer.cle);
+ else etat.extras.add(offer.cle);
+ calculer();
+}
+byId('btn-detail').onclick = () => {
+ const ouvert = byId('resume-detail').hidden;
+ byId('resume-detail').hidden = !ouvert;
+ byId('btn-detail').setAttribute('aria-expanded', String(ouvert));
+ byId('btn-detail').textContent = ouvert ? 'Masquer le détail ▴' : 'Détail ▾';
+};
+
+function makeCard(item, index, prefix) {
+ const card = document.createElement('article');
+ card.className = 'card' + (item.offers ? ' card-offres' : '');
+ card.style.setProperty('--glow', item.glow);
+ card.style.setProperty('--shape', item.shape);
+ const detail = prefix + '-' + index;
+ const complements = item.offers.map(offer => '<section class="livrable"><h3>' + offer.label + '</h3><button type="button" class="secondary pick" data-cle="' + offer.cle + '" aria-pressed="false"><strong>Choisir</strong><small>' + offer.affiche + '</small></button><p>' + offer.role + '</p><p><strong>Vous recevez</strong> ' + offer.recoit + '</p><p><strong>À préciser ensemble</strong> ' + offer.preciser + '</p></section>').join('');
+ const interieur = '<div class="inside" id="' + detail + '" inert><button class="close" aria-label="Fermer la carte">×</button><h2>' + item.name + '</h2><div class="livrables">' + complements + '</div><p class="conditions-carte">Périmètre, délais et conditions confirmés dans un devis personnalisé avant toute commande.</p></div>';
+const faceOffres = '<div class="face-offres">' + item.offers.map(offer =>
+   '<button type="button" class="pick" data-cle="' + offer.cle + '" aria-pressed="false"><strong>' + offer.label + '</strong><small>' + offer.affiche + '</small></button>').join('') + '</div>';
+ const vitrine = vitrines[item.name];
+ const dosVitrine = '<div class="dos-vitrine">' + vitrine + '</div>';
+ card.innerHTML = interieur + '<div class="cover"><div class="coverback" aria-hidden="true">' + dosVitrine + '<b class="dos-n" aria-hidden="true">N</b></div><div class="face" role="group" tabindex="-1" aria-controls="' + detail + '" aria-expanded="false"><span class="vitrine-zone">' + vitrine + '<b class="vt-n" aria-hidden="true">N</b></span><strong>' + item.name + '</strong><small class="face-desc">' + item.description + '</small>' + faceOffres + '<button type="button" class="face-ouvrir">Détails complets ↗</button></div></div>';
+ stage.append(card);
+ const face = card.querySelector('.face'), inside = card.querySelector('.inside'), picks = [...card.querySelectorAll('.pick')];
+ face.setAttribute('aria-label',item.name);face.querySelector('.face-ouvrir').setAttribute('aria-label','Détails complets : '+item.name);face.removeAttribute('aria-expanded');face.removeAttribute('aria-controls');face.querySelector('.face-ouvrir').setAttribute('aria-controls',detail);
+ face.onclick = event => {if(event.target.closest('.pick'))return;move(index,true,card.querySelector('.close'))};
+ card.querySelector('.close').onclick = () => move(index, false, face.querySelector('.face-ouvrir'));
+picks.forEach(pick => {
+  const offer = item.offers.find(candidate => candidate.cle === pick.dataset.cle);
+  pick.onclick = event => { event.stopPropagation(); basculer(offer); render(); };
+ });
+ return { card, face, inside, picks, item };
+}
+const cards = services.map((item, i) => makeCard(item, i, "service"));
+const activeCards = () => cards;
+function move(index, open = false, focus) {
+ const length = activeCards().length;
+ current = (index + length) % length; opened = open; render();
+ focus?.focus({ preventScroll: true });
+ /* Les sélections et la navigation ne déplacent pas la page. Détails sur action explicite. */
+}
+function render() {
+ const cards = activeCards(), middle = Math.floor(cards.length / 2);
+ cards.forEach(({ card, face, inside, picks, item }, index) => {
+  card.hidden = false;
+  const d = (index - current + cards.length + middle) % cards.length - middle;
+  const distance = Math.abs(d), active = opened && d === 0;
+  card.style.setProperty('--d', d); card.style.setProperty('--depth', d === 0 ? (opened ? '35px' : '0px') : distance * -73 + 'px');
+  card.style.setProperty('--yaw', d === 0 ? '0deg' : -Math.sign(d) * 17 + 'deg');
+  card.style.setProperty('--size', d === 0 ? '1' : '.87');
+  card.style.zIndex = 6 - distance; card.classList.toggle('open', active);
+  face.querySelector('.face-ouvrir').setAttribute('aria-expanded', active); face.inert = active; inside.inert = !active;
+  face.querySelectorAll('button').forEach(button=>button.tabIndex=d===0?0:-1);
+  if (item.offers) picks.forEach(pick => {const offre = item.offers.find(candidate => candidate.cle === pick.dataset.cle);pick.setAttribute('aria-pressed', String(offre ? estChoisi(offre) : false))});
+ });
+ byId('position').textContent = (current + 1) + ' / ' + cards.length;
+ ajusterScene();
+}
+function openCatalogue() {
+ move(current, false, cards[current].face.querySelector('.face-ouvrir'));
+ stage.scrollIntoView({ block: 'start' });
+}
+function remplirListe(id, items, messageVide) {
+ const liste = byId(id);
+ liste.replaceChildren(...(items.length ? items.map(texte => {
+  const li = document.createElement('li'); li.textContent = texte; return li;
+ }) : (() => { const li = document.createElement('li'); li.className = 'vide'; li.textContent = messageVide; return [li] })()));
+}
+let retourDossier = null, dossierDepuisParent = false;
+function notifierParent(type,donnees={}) {
+ if(window.parent===window)return;
+ window.parent.postMessage({canal:'nemi-commercial-ux2',type,...donnees},location.protocol==='file:'?'*':location.origin);
+}
+function defilementPrefere(){return matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}
+let generationDefilement=0;
+function siHorsChamp(element,action){
+ if(window.parent!==window){notifierParent('reveal',{top:Math.max(0,Math.round(element.getBoundingClientRect().top+scrollY)),height:Math.round(element.getBoundingClientRect().height)});return}
+ const r=element.getBoundingClientRect();if(r.top<80||r.top>innerHeight-100)action();
+}
+
+function voirDansPage(element) {
+ const generation=++generationDefilement;
+ requestAnimationFrame(()=>requestAnimationFrame(()=>{
+  if(generation!==generationDefilement||!element.isConnected||element.closest('[hidden]'))return;
+  if(window.parent!==window) notifierParent('scroll',{top:Math.max(0,Math.round(element.getBoundingClientRect().top+window.scrollY))});
+  else element.scrollIntoView({block:'start',behavior:defilementPrefere()});
+ }));
+}
+function initialiserPontCommercial(){
+ if(window.parent===window)return;
+ document.documentElement.classList.add('embedded');
+ let pending=false,derniereHauteur=0;
+ const mesure=()=>Math.ceil(document.body.getBoundingClientRect().height)+4;
+ const taille=()=>{if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;const height=mesure();if(height!==derniereHauteur){derniereHauteur=height;notifierParent('size',{height})}})};
+ window.addEventListener('message',event=>{
+  const origineValide=location.protocol==='file:'?event.origin==='null':event.origin===location.origin;
+  if(event.source!==window.parent||!origineValide)return;
+  const data=event.data;if(!data||data.canal!=='nemi-commercial-ux2')return;
+  if(data.type==='ping')notifierParent('ready',{height:mesure()});
+  else if(data.type==='open-project')openDossier(true,true);
+ });
+ new ResizeObserver(taille).observe(document.body);
+ notifierParent('ready',{height:mesure()});taille();
+}
+function ajusterScene() {
+ const inside=cards[current]?.inside;
+ stage.style.height=opened&&inside?Math.max(350,Math.ceil(inside.getBoundingClientRect().height)+32)+'px':'';
+}
+new ResizeObserver(()=>ajusterScene()).observe(stage);
+window.addEventListener('resize',ajusterScene);
+function actualiserDossier() {
+ const choix=JSON.stringify([etat.visuel,etat.site,...etat.extras].filter(Boolean).sort());
+ if(choix!==selectionDossier){invaliderDemande();selectionDossier=choix}
+ const {ponctuelLignes,mensuelLignes,surDevis,ponctuel,mensuel} = recapCourant;
+ const lignes = ponctuelLignes.concat(mensuelLignes,surDevis.map(item=>item+' — sur devis'));
+ byId('review').hidden = lignes.length === 0;
+ remplirListe('dossier-choix',lignes,'');
+ byId('estimation-ponctuel').textContent = ponctuel ? (etat.site ? 'Dès ' : '')+formatePrix(ponctuel) : 'Aucune offre ponctuelle';
+ byId('estimation-mensuel').textContent = mensuel ? formatePrix(mensuel)+' / mois' : 'Aucune offre mensuelle';
+ byId('estimation-surdevis').textContent = surDevis.length ? surDevis.length+' prestation'+(surDevis.length>1?'s':'')+' à chiffrer' : 'Aucun élément';
+ contact.elements.precisions.required = false;
+ byId('projet-statut').textContent = ' (facultatif)';
+ contact.elements.precisions.setCustomValidity('');
+ byId('preview').hidden = true;
+}
+function openDossier(focusProject = false,depuisParent = false) {
+ if(depuisParent) dossierDepuisParent=true;
+ if (dialog.hidden) {retourDossier = document.activeElement;dossierDepuisParent=depuisParent}
+ actualiserDossier();
+ byId('quoteTitle').textContent = !byId('review').hidden && !focusProject ? 'Mon estimation NEMI' : 'Décrire mon projet';
+ dialog.hidden = false;
+ chargerAntispam();
+ (focusProject ? contact.elements.precisions : byId('quoteTitle')).focus({preventScroll:true});
+ voirDansPage(dialog);
+}
+function fermerDossier(retour = true) {
+ generationDefilement++;
+ dialog.hidden = true;
+ if (retour && !dossierDepuisParent && retourDossier?.isConnected) {retourDossier.focus({preventScroll:true});voirDansPage(retourDossier)}
+ notifierParent('dossier-closed',{retour});
+ dossierDepuisParent=false;
+}
+byId('croix-dossier').onclick = () => fermerDossier();
+byId('modifier').onclick = () => { fermerDossier(false); openCatalogue() };
+document.addEventListener('keydown',event=>{
+ if(event.key !== 'Escape') return;
+ if(!dialog.hidden) {event.preventDefault();fermerDossier()}
+ else if(opened) {event.preventDefault();move(current,false,cards[current].face.querySelector('.face-ouvrir'))}
+});
+const contact = byId('contactForm');
+/* Réception préparée, volontairement désactivée. Clés privées uniquement côté Worker. */
+const CONFIG_ENVOI = {service:'cloudflare-worker-d1',actif:false,endpoint:'',sitekey:'',honeypot:'_gotcha',timeoutMs:15000};
+let envoiEnCours=false,envoiReussi=false,requetePreparee=null,derniereSignature='',referenceDemande='',widgetCharge=false,selectionDossier='';
+function invaliderDemande(){
+ requetePreparee=null;envoiReussi=false;byId('preparer-brouillon').disabled=false;
+ byId('preview').hidden=true;byId('form-status').className='';byId('form-status').textContent='';
+}
+const rapporterChamp = (input, message) => { input.setCustomValidity(message); input.reportValidity(); };
+contact.oninput = event => {
+ event.target.setCustomValidity('');
+ invaliderDemande();
+};
+let corpsDemande = '';
+contact.onsubmit = async event => {
+ event.preventDefault();
+ if (envoiEnCours) return;
+ if(!contact.reportValidity())return;
+ const data = new FormData(contact);
+ const [prenom, nom, email, tel, entreprise, precisions] = ['prenom','nom','email','tel','entreprise','precisions'].map(key => String(data.get(key) || '').trim());
+ if (!prenom) { rapporterChamp(contact.elements.prenom, 'Indiquez votre prénom.'); return; }
+ if (!nom) { rapporterChamp(contact.elements.nom, 'Indiquez votre nom.'); return; }
+ if (!tel || !/^[+0-9 ().-]+$/.test(tel) || tel.replace(/\D/g, '').length < 7 || tel.replace(/\D/g, '').length > 15) {
+  rapporterChamp(contact.elements.tel, 'Indiquez un numéro de téléphone valide (7 à 15 chiffres).');
+  return;
+ }
+ if (contact.elements.precisions.required && !precisions) {
+  rapporterChamp(contact.elements.precisions, 'Décrivez brièvement votre projet.');
+  return;
+ }
+ if (!contact.elements.consentement.checked) {
+  rapporterChamp(contact.elements.consentement, 'Cochez la case pour envoyer votre demande.');
+  return;
+ }
+ const groupes = [
+  ['Prestations ponctuelles', recapCourant.ponctuelLignes],
+  ['Accompagnement mensuel', recapCourant.mensuelLignes],
+  ['À chiffrer ensemble', recapCourant.surDevis],
+  ['Estimation indicative', [
+   recapCourant.ponctuel ? 'Ponctuel · ' + (etat.site ? 'dès ' : '') + formatePrix(recapCourant.ponctuel) : '',
+   recapCourant.mensuel ? 'Mensuel · ' + formatePrix(recapCourant.mensuel) + ' / mois' : ''
+  ].filter(Boolean)],
+  ['Votre projet', precisions ? [precisions] : []],
+  ['Vos coordonnées', [[prenom, nom].filter(Boolean).join(' '), email, tel, entreprise].filter(Boolean)],
+  ['Consentement', ['Traitement de ces informations uniquement pour répondre à la demande (voir Confidentialité).']]
+ ].filter(([, items]) => items.length);
+ byId('apercu-carte').replaceChildren(...groupes.map(([titre, items]) => {
+  const section = document.createElement('section');
+  section.className = 'apercu-bloc';
+  const heading = document.createElement('h4');
+  heading.textContent = titre;
+  const list = document.createElement('ul');
+  for (const item of items) {
+   const li = document.createElement('li');
+   li.textContent = item;
+   list.append(li);
+  }
+  section.append(heading, list);
+  return section;
+ }));
+ corpsDemande = 'Demande de devis NEMI Digital Studio\n\n' +
+  groupes.map(([titre, items]) => titre + '\n' + items.join('\n')).join('\n\n') +
+  '\n\nEstimation indicative. Cette estimation est indicative et sans engagement. Les offres standardisées conservent les tarifs affichés pour leur périmètre. Les prestations personnalisées peuvent être adaptées après échange. Le montant final est confirmé dans un devis personnalisé. Les éléments sur devis sont chiffrés séparément.';
+ byId('copie-manuelle').hidden = true;
+ byId('texte-copie').value = corpsDemande;
+ byId('envoyer-email').href = 'mailto:nemidigitalstudio@gmail.com?subject=' + encodeURIComponent('Mon projet — NEMI Digital Studio') + '&body=' + encodeURIComponent(corpsDemande);
+ byId('note-envoi').textContent = 'Repli : votre messagerie s’ouvre avec le brouillon prérempli ; vérifiez-le puis envoyez-le à nemidigitalstudio@gmail.com.';
+ byId('preview').hidden = false;
+ chargerAntispam();
+
+ const selection=[etat.visuel,etat.site,...etat.extras].filter(Boolean).sort();
+ const charge={contact:{prenom,nom,email,tel,entreprise},projet:precisions,selection,
+  estimation:{ponctuel:recapCourant.ponctuel,mensuel:recapCourant.mensuel,surDevis:selection.filter(x=>['video-presenta','video-anim','surMesure'].includes(x))},
+  recap:corpsDemande,informationAcceptee:true,informationVersion:'2026-11-15-UX4'};
+ const signature=JSON.stringify(charge);
+ if(signature!==derniereSignature){referenceDemande=crypto.randomUUID();derniereSignature=signature;envoiReussi=false}
+ requetePreparee={requestId:referenceDemande,...charge};
+ byId('preparer-brouillon').disabled=envoiReussi;
+ byId('form-status').className='';
+ byId('form-status').textContent=CONFIG_ENVOI.actif&&CONFIG_ENVOI.endpoint?'Votre dossier est prêt.':'Dossier préparé, aucun envoi effectué. Utilisez votre messagerie ou conservez une copie.';
+ if(CONFIG_ENVOI.actif&&CONFIG_ENVOI.endpoint) await transmettreDemande();
+};
+function figerEdition(inactif){
+ document.querySelectorAll('.stage,.controls,.offre-elargie,.summary,.contact').forEach(el=>el.inert=inactif);
+}
+async function transmettreDemande(){
+ if(envoiEnCours||envoiReussi||!requetePreparee)return;
+ const statut=byId('form-status'),bouton=byId('preparer-brouillon');
+ if(!CONFIG_ENVOI.actif||!CONFIG_ENVOI.endpoint){statut.textContent='Service de réception non activé. Aucun envoi effectué.';return}
+ if(location.protocol==='file:'){statut.textContent='Pour transmettre, ouvrez le site en HTTP ou HTTPS. Votre dossier reste disponible ici.';return}
+ const token=String(contact.elements['cf-turnstile-response'].value||'');
+ if(!token){statut.textContent='La vérification antispam doit être effectuée avant l’envoi.';return}
+ let url;try{url=new URL(CONFIG_ENVOI.endpoint,location.href);if(url.protocol!=='https:'&&!(url.protocol==='http:'&&['127.0.0.1','localhost'].includes(url.hostname)))throw Error()}catch{statut.textContent='Canal de réception non configuré. Aucun envoi effectué.';return}
+ envoiEnCours=true;bouton.disabled=true;byId('preparer-brouillon').disabled=true;figerEdition(true);
+ statut.className='';statut.textContent='Transmission en cours…';
+ const abort=new AbortController(),timer=setTimeout(()=>abort.abort(),CONFIG_ENVOI.timeoutMs);
+ try{
+  const response=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({...requetePreparee,website:String(contact.elements._gotcha.value||''),turnstileToken:token}),signal:abort.signal,credentials:'omit'});
+  const receipt=await response.json();
+  if(!response.ok||receipt.stored!==true||receipt.requestId!==requetePreparee.requestId)throw Error('receipt_unconfirmed');
+  envoiReussi=true;statut.className='envoi-confirmation';
+  statut.textContent='Demande enregistrée. Référence : '+receipt.requestId+'. La réception dans une boîte email n’est pas confirmée par ce message.';
+  byId('note-envoi').textContent='Votre dossier a été enregistré par le service de réception. Vous pouvez en conserver une copie.';
+ }catch{
+  statut.className='envoi-erreur';statut.textContent='Réception non confirmée : réseau, vérification antispam ou stockage indisponible. Vos saisies et votre référence sont conservées ; réessayez ou gardez une copie du dossier.';
+ }finally{
+  clearTimeout(timer);envoiEnCours=false;figerEdition(false);bouton.disabled=envoiReussi;
+  if(window.turnstile)window.turnstile.reset();contact.elements['cf-turnstile-response'].value='';
+ }
+};
+function chargerAntispam(){
+ if(!CONFIG_ENVOI.actif||!CONFIG_ENVOI.endpoint||!CONFIG_ENVOI.sitekey||location.protocol==='file:'||widgetCharge)return;
+ widgetCharge=true;
+ byId('envoi-disponibilite').textContent='Vérifiez vos coordonnées, votre sélection et le contrôle antispam avant d’envoyer votre demande.';
+ const script=document.createElement('script');script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';script.async=true;
+ script.onload=()=>window.turnstile.render('#antispam-widget',{sitekey:CONFIG_ENVOI.sitekey,action:'devis','response-field':false,'expired-callback':()=>contact.elements['cf-turnstile-response'].value='',callback:token=>contact.elements['cf-turnstile-response'].value=token,'error-callback':()=>byId('form-status').textContent='Vérification antispam indisponible ; votre dossier est conservé.'});
+ script.onerror=()=>{widgetCharge=false;byId('form-status').textContent='Vérification antispam indisponible ; conservez votre dossier et réessayez.'};
+ document.head.append(script);
+}
+byId('enregistrer-demande').onclick = () => {
+ const url = URL.createObjectURL(new Blob([corpsDemande], {type: 'text/plain;charset=utf-8'}));
+ const lien = document.createElement('a');
+ lien.href = url;
+ lien.download = 'dossier-nemi.txt';
+ lien.click();
+ setTimeout(() => URL.revokeObjectURL(url), 1000);
+};
+byId('copier-demande').onclick = async () => {
+ try {
+  await navigator.clipboard.writeText(corpsDemande);
+  byId('note-envoi').textContent = 'Dossier copié dans le presse-papiers.';
+ } catch {
+  byId('copie-manuelle').hidden = false;
+  byId('texte-copie').focus();
+  byId('texte-copie').select();
+  byId('note-envoi').textContent = 'Copie automatique indisponible. Copiez le texte sélectionné.';
+ }
+};
+byId('prev').onclick = () => move(current - 1); byId('next').onclick = () => move(current + 1);
+byId('project').onclick = () => openDossier(true);
+byId('quick').onclick = openCatalogue;
+byId('voir-estimation').onclick = () => openDossier();
+document.querySelectorAll('.quote').forEach(button => button.onclick = () => openDossier());
+stage.onkeydown = event => {
+ const cards = activeCards();
+ if (event.key === 'Escape' && opened) { move(current, false, cards[current].face.querySelector('.face-ouvrir')); return }
+ if (opened || !['ArrowLeft','ArrowRight'].includes(event.key)) return;
+ event.preventDefault();
+ const next = (current + (event.key === 'ArrowRight' ? 1 : -1) + cards.length) % cards.length;
+ move(next, false, cards[next].face.querySelector('.face-ouvrir'));
+};
+let gesture, ignoreClickUntil = 0, lastWheel = 0;
+stage.addEventListener('pointerdown', e => { gesture = opened ? null : { id: e.pointerId, x: e.clientX, y: e.clientY } });
+stage.addEventListener('pointercancel', () => { gesture = null });
+stage.addEventListener('pointerup', e => {
+ if (!gesture || gesture.id !== e.pointerId) return;
+ const dx = e.clientX - gesture.x, dy = e.clientY - gesture.y; gesture = null;
+ if (Math.abs(dx) > 42 && Math.abs(dx) > Math.abs(dy) * 1.25) { ignoreClickUntil = performance.now() + 350; move(current - Math.sign(dx)) }
+});
+stage.addEventListener('click', e => { if (e.detail && performance.now() < ignoreClickUntil) { e.preventDefault(); e.stopPropagation() } }, true);
+stage.addEventListener('wheel', e => {
+ if (opened) return;
+ const delta = e.shiftKey ? e.deltaY : e.deltaX; if (Math.abs(delta) < 5) return;
+ e.preventDefault(); if (performance.now() - lastWheel < 360) return;
+ lastWheel = performance.now(); move(current + Math.sign(delta));
+}, { passive: false });
+initialiserPontCommercial();
+render();
+calculer();
+if(location.hash === "#demande") openDossier(true);
+
+</script></html>
